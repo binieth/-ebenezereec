@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ebenezer Ethiopian Evangelical Church | Whitehall, OH</title>
+<meta name="description" content="Ebenezer Ethiopian Evangelical Church — a loving Christian community in Whitehall, Ohio. Join us Sundays at 10:00 AM. Come just as you are.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root{
+    --bg:#f6f3ec;              /* warm cream */
+    --bg-alt:#efeadd;          /* deeper cream */
+    --surface:#ffffff;
+    --ink:#20261f;             /* near-black warm ink */
+    --ink-soft:#4c554a;
+    --ink-mute:#8a8f82;
+    --primary:#1e4632;         /* deep highland green */
+    --primary-dark:#153524;
+    --primary-soft:#e3ede5;
+    --accent:#a8842c;          /* rich gold */
+    --accent-2:#8a2b23;        /* deep liturgical red */
+    --accent-soft:#f0e7d6;
+    --border:#e3dcca;
+    --grad:linear-gradient(120deg,#153524 0%,#1e4632 45%,#a8842c 100%);
+    --radius:18px;
+    --radius-sm:12px;
+    --shadow:0 10px 40px -18px rgba(30,40,30,.30);
+    --shadow-soft:0 4px 20px -12px rgba(30,40,30,.28);
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --serif:'Fraunces',Georgia,serif;
+    --amh:'Noto Sans Ethiopic','Inter',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  html{overflow-x:hidden}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100vw}
+  .amh{font-family:var(--amh)}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;padding:14px 26px;border-radius:100px;transition:all .2s ease;cursor:pointer;border:none}
+  .btn-primary{background:var(--primary);color:#fff}
+  .btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:var(--shadow-soft)}
+  .btn-ghost{background:transparent;color:var(--primary);border:1.5px solid var(--border)}
+  .btn-ghost:hover{background:var(--primary-soft);border-color:var(--primary)}
+  .btn-outline{background:transparent;color:var(--primary);border:1.5px solid var(--primary)}
+  .btn-outline:hover{background:var(--primary);color:#fff}
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .section{padding:96px 0}
+  .section-head{max-width:640px;margin-bottom:52px}
+  .section-head h2{font-size:clamp(30px,4.5vw,44px);margin:14px 0 16px}
+  .section-head p{color:var(--ink-soft);font-size:18px}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:50;background:rgba(250,248,243,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:600;font-size:19px}
+  .brand .mark{width:42px;height:42px;border-radius:13px;background:var(--grad);color:#fff;display:grid;place-items:center;flex:none;box-shadow:0 4px 14px -4px rgba(21,53,36,.45)}
+  .logo-mark{width:24px;height:24px}
+  .brand small{display:block;font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute)}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{font-size:15px;font-weight:500;color:var(--ink-soft);transition:color .15s}
+  .nav-links a:hover{color:var(--primary)}
+  .nav-cta{display:flex;align-items:center;gap:16px}
+  .lang-toggle{display:flex;background:var(--bg-alt);border-radius:100px;padding:3px;border:1px solid var(--border)}
+  .lang-toggle button{border:none;background:transparent;font-family:var(--sans);font-weight:600;font-size:13px;padding:6px 13px;border-radius:100px;cursor:pointer;color:var(--ink-mute);transition:all .15s}
+  .lang-toggle button.active{background:var(--surface);color:var(--primary);box-shadow:var(--shadow-soft)}
+  .lang-toggle button .amh{font-size:12px}
+  .burger{display:none;background:none;border:none;font-size:24px;color:var(--ink);cursor:pointer}
+
+  /* HERO */
+  /* fine dotted grid */
+  /* faint line-art memorial stones, bottom-right */
+  
+  .hero .eyebrow{color:var(--accent)}
+  .hero h1{font-size:clamp(42px,7vw,74px);line-height:1.04;margin:18px 0 22px}
+  .hero p{font-size:clamp(17px,2.2vw,21px);max-width:560px;color:var(--ink-soft);margin-bottom:34px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-meta{display:flex;gap:32px;margin-top:52px;flex-wrap:wrap}
+  .hero-meta div{display:flex;align-items:center;gap:12px;font-size:15px}
+  .hero-meta i{width:44px;height:44px;border-radius:13px;background:var(--primary-soft);display:grid;place-items:center;font-size:17px;color:var(--primary)}
+  .hero-meta small{display:block;color:var(--ink-mute);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+  .hero-meta strong{font-weight:600}
+
+  /* WELCOME */
+  .welcome{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+  .welcome-img{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3}
+  .welcome-img img{width:100%;height:100%;object-fit:cover}
+  .welcome h2{font-size:clamp(28px,4vw,40px);margin:14px 0 18px}
+  .welcome p{color:var(--ink-soft);font-size:17px;margin-bottom:16px}
+
+  /* VALUES / beliefs */
+  .beliefs{background:var(--bg-alt)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:34px 30px;transition:transform .2s,box-shadow .2s}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .card .ic{width:54px;height:54px;border-radius:16px;background:var(--grad);color:#fff;display:grid;place-items:center;font-size:22px;margin-bottom:18px;box-shadow:0 6px 18px -6px rgba(109,40,217,.5)}
+  .card h3{font-size:21px;margin-bottom:10px}
+  .card p{color:var(--ink-soft);font-size:15px}
+
+  /* MISSIONS */
+  .missions-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+  .mission{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:22px 20px}
+  .mission i{color:var(--accent);font-size:18px;margin-top:3px}
+  .mission strong{display:block;font-weight:600;font-size:15px}
+  .mission span{font-size:13px;color:var(--ink-mute)}
+
+  /* EVENTS */
+  .events{position:relative;color:#fff;overflow:hidden;background:linear-gradient(140deg,var(--primary-dark) 0%,var(--primary) 55%,#2c6a49 100%)}
+  .events::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 82% 12%,rgba(168,132,44,.34),transparent 55%)}
+  .events::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:24px 24px;-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 40%,transparent 82%);mask-image:radial-gradient(ellipse at 50% 40%,#000 40%,transparent 82%)}
+  .events .wrap{position:relative;z-index:1}
+  .events .section-head p{color:rgba(255,255,255,.75)}
+  .events .eyebrow{color:#d8c288}
+  .event-list{display:grid;gap:14px}
+  .event{display:flex;gap:22px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-sm);padding:20px 24px;transition:background .2s}
+  .event:hover{background:rgba(255,255,255,.11)}
+  .event .date{flex:none;text-align:center;width:66px}
+  .event .date .m{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#d8c288;font-weight:700}
+  .event .date .d{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1}
+  .event .body{flex:1;border-left:1px solid rgba(255,255,255,.16);padding-left:22px}
+  .event .body h3{font-size:19px;margin-bottom:4px}
+  .event .body p{font-size:14px;color:rgba(255,255,255,.72)}
+  .event .body .when{font-size:13px;color:#d8c288;font-weight:600;margin-top:6px}
+  .event .body .when i{margin-right:6px}
+  .gcal{display:grid;grid-template-columns:1.55fr .9fr;gap:22px;align-items:start}
+  .gcal-main{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+  .gcal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .gcal-title{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--ink)}
+  .gcal-nav{display:flex;align-items:center;gap:8px}
+  .gcal-nav button{border:1px solid var(--border);background:var(--surface);color:var(--ink-soft);width:38px;height:38px;border-radius:10px;cursor:pointer;font-size:14px;transition:all .15s;display:grid;place-items:center}
+  .gcal-nav button:hover{background:var(--primary-soft);color:var(--primary);border-color:var(--primary-soft)}
+  .gcal-nav .gcal-today{width:auto;padding:0 16px;font-family:var(--sans);font-weight:600;font-size:14px}
+  .gcal-weekdays{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:6px}
+  .gcal-weekdays span{text-align:center;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);padding:6px 0}
+  .gcal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+  .gcal-cell{aspect-ratio:1/.92;border:1px solid var(--border);border-radius:11px;padding:7px 8px;position:relative;background:var(--surface);transition:all .15s;overflow:hidden}
+  .gcal-cell.blank{border:none;background:transparent}
+  .gcal-cell .n{font-size:13px;font-weight:600;color:var(--ink-soft)}
+  .gcal-cell.dim .n{color:var(--ink-mute);opacity:.45}
+  .gcal-cell.today{border-color:var(--primary);background:var(--primary-soft)}
+  .gcal-cell.today .n{color:var(--primary);font-weight:700}
+  .gcal-cell.has:hover{border-color:var(--primary);cursor:pointer;transform:translateY(-2px);box-shadow:var(--shadow-soft)}
+  .gcal-cell.selected{outline:2px solid var(--primary);outline-offset:-2px}
+  .gcal-pips{display:flex;gap:3px;flex-wrap:wrap;margin-top:6px}
+  .gcal-pip{height:6px;border-radius:6px;flex:1 1 auto;min-width:14px;max-width:100%}
+  .gcal-pip.past{background:#b8a36a}
+  .gcal-pip.present{background:var(--accent)}
+  .gcal-pip.future{background:var(--accent-2)}
+  .gcal-legend{display:flex;gap:20px;margin-top:16px;flex-wrap:wrap}
+  .gcal-legend>span{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-soft)}
+  .gcal-legend .dot{width:11px;height:11px;border-radius:50%}
+  .gcal-legend .dot.past{background:#b8a36a}
+  .gcal-legend .dot.present{background:var(--accent)}
+  .gcal-legend .dot.future{background:var(--accent-2)}
+  .gcal-side{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);min-height:260px}
+  .gcal-side-head{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+  .gcal-agenda{display:grid;gap:12px}
+  .agenda-item{border-left:3px solid var(--primary);padding:4px 0 4px 13px}
+  .agenda-item.past{border-color:#b8a36a}
+  .agenda-item.present{border-color:var(--accent)}
+  .agenda-item.future{border-color:var(--accent-2)}
+  .agenda-item .ad{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-mute)}
+  .agenda-item h4{font-family:var(--sans);font-size:15px;font-weight:600;margin:2px 0 3px}
+  .agenda-item p{font-size:13px;color:var(--ink-soft)}
+  .agenda-item .at{font-size:12px;color:var(--primary);font-weight:600;margin-top:3px}
+  .agenda-empty{color:var(--ink-mute);font-size:14px;text-align:center;padding:30px 0}
+  /* SERMONS */
+  .sermon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .sermon{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s,box-shadow .2s}
+  .sermon:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .sermon .thumb{aspect-ratio:16/9;background:var(--grad);position:relative;display:grid;place-items:center}
+  .sermon .thumb i{font-size:44px;color:rgba(255,255,255,.9)}
+  .sermon .thumb .tag{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.35);color:#fff;font-size:11px;font-weight:600;padding:4px 11px;border-radius:100px;letter-spacing:.05em}
+  .sermon .info{padding:22px}
+  .sermon .info small{color:var(--ink-mute);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+  .sermon .info h3{font-size:19px;margin:8px 0 6px}
+  .sermon .info p{font-size:14px;color:var(--ink-soft)}
+  .podcast-cta{display:flex;align-items:center;justify-content:space-between;gap:24px;background:var(--accent-soft);border:1px solid var(--border);border-radius:var(--radius);padding:30px 34px;margin-top:32px;flex-wrap:wrap}
+  .podcast-cta h3{font-size:22px}
+  .podcast-cta p{color:var(--ink-soft);font-size:15px;margin-top:4px}
+  .podcast-links{display:flex;gap:12px;flex-wrap:wrap}
+  .podcast-links a{width:46px;height:46px;border-radius:12px;background:var(--surface);border:1px solid var(--border);display:grid;place-items:center;font-size:19px;color:var(--primary);transition:all .18s}
+  .podcast-links a:hover{background:var(--primary);color:#fff;transform:translateY(-2px)}
+
+  /* MEMORY VERSES */
+  .verses{position:relative;overflow:hidden}
+  .verse-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .verse-card{position:relative;border-radius:var(--radius);padding:38px 34px;color:#fff;overflow:hidden;box-shadow:var(--shadow)}
+  .verse-card.teens{background:linear-gradient(140deg,#153524,#1e4632 60%,#2c6a49)}
+  .verse-card.toddlers{background:linear-gradient(140deg,#a8842c,#8a2b23)}
+  .verse-card .vg{position:absolute;font-size:190px;line-height:1;opacity:.12;right:-10px;bottom:-40px;font-family:var(--serif)}
+  .verse-tag{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.2);padding:7px 15px;border-radius:100px;margin-bottom:20px}
+  .verse-tag i{font-size:14px}
+  .verse-text{font-family:var(--serif);font-size:clamp(21px,2.6vw,27px);line-height:1.35;font-weight:500;position:relative;z-index:1}
+  .verse-ref{margin-top:16px;font-weight:700;font-size:15px;opacity:.92;position:relative;z-index:1}
+  .verse-week{margin-top:22px;font-size:13px;opacity:.8;display:flex;align-items:center;gap:8px;position:relative;z-index:1}
+  .verse-help{text-align:center;margin-top:30px;color:var(--ink-soft);font-size:14px}
+  @media(max-width:760px){.verse-grid{grid-template-columns:1fr}}
+
+  /* ARTICLES */
+  .articles{background:var(--bg-alt)}
+  .article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .article{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+  .article:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .article .cover{aspect-ratio:16/10;overflow:hidden}
+  .article .cover img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .article:hover .cover img{transform:scale(1.05)}
+  .article .info{padding:24px;display:flex;flex-direction:column;flex:1}
+  .article .cat{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+  .article h3{font-size:20px;margin:9px 0 8px;line-height:1.25}
+  .article p{font-size:14px;color:var(--ink-soft);flex:1}
+  .article .meta{display:flex;align-items:center;gap:8px;margin-top:16px;font-size:12px;color:var(--ink-mute)}
+  .article .meta .dot{width:3px;height:3px;border-radius:50%;background:var(--ink-mute)}
+  .article .readmore{margin-top:14px;font-weight:600;font-size:14px;color:var(--primary);display:inline-flex;align-items:center;gap:7px}
+  .article .readmore i{transition:transform .2s}
+  .article:hover .readmore i{transform:translateX(4px)}
+
+  /* VISIT + CONTACT */
+  .visit-plan{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch;margin-bottom:72px}
+  .visit-info{align-self:center}
+  .contact-block{max-width:760px;margin:0 auto;text-align:center}
+  .contact-intro{margin-bottom:28px}
+  .contact-block form{text-align:left}
+  .info-block{margin-bottom:26px}
+  .info-block .lab{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .info-block .val{font-size:18px;font-weight:500;display:flex;align-items:center;gap:11px}
+  .info-block .val i{color:var(--primary);width:22px}
+  .map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-soft);min-height:340px;height:100%}
+  .map iframe{width:100%;height:100%;border:0}
+  form{display:grid;gap:16px}
+  .field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--ink-soft)}
+  .field input,.field textarea{width:100%;font-family:var(--sans);font-size:15px;padding:13px 16px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);transition:border .15s}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--primary)}
+  .field textarea{resize:vertical;min-height:120px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .form-note{font-size:13px;color:var(--ink-mute)}
+
+  /* CTA band */
+  .band{background:var(--grad);color:#fff;text-align:center;padding:80px 0}
+  .band h2{font-size:clamp(30px,5vw,46px);margin-bottom:16px}
+  .band p{font-size:19px;color:rgba(255,255,255,.85);max-width:520px;margin:0 auto 30px}
+  .band .btn-primary{background:#fff;color:var(--primary)}
+  .band .btn-primary:hover{background:var(--accent-soft)}
+
+  /* FOOTER */
+  footer{background:#182016;color:rgba(255,255,255,.72);padding:60px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  .foot-brand{display:flex;align-items:center;gap:12px;color:#fff;font-family:var(--serif);font-size:20px;margin-bottom:14px}
+  .foot-brand .mark{width:40px;height:40px;border-radius:12px;background:var(--grad);display:grid;place-items:center;color:#fff}
+  footer p{font-size:14px;line-height:1.7;max-width:320px}
+  footer h4{color:#fff;font-family:var(--sans);font-size:14px;letter-spacing:.05em;margin-bottom:16px;text-transform:uppercase}
+  footer ul{list-style:none;display:grid;gap:9px}
+  footer ul a{font-size:14px;transition:color .15s}
+  footer ul a:hover{color:#d8c288}
+  .socials{display:flex;gap:12px;margin-top:16px}
+  .socials a{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.08);display:grid;place-items:center;font-size:16px;color:#fff;transition:all .18s}
+  .socials a:hover{background:var(--primary);transform:translateY(-2px)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:rgba(255,255,255,.5)}
+
+  /* lang visibility */
+  [data-am]{display:none}
+  body.am [data-en]{display:none}
+  body.am [data-am]{display:revert}
+  body.am h1,body.am h2,body.am h3,body.am .brand,body.am .foot-brand{font-family:var(--amh)}
+
+  @media(max-width:900px){
+    .welcome,.visit-plan{grid-template-columns:1fr;gap:36px}
+    .gcal{grid-template-columns:1fr}
+    .cards,.sermon-grid,.article-grid{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:1024px){
+    .hero-text{max-width:640px}
+    .nav-links{display:none}
+    .burger{display:block}
+    .nav-links a{padding:8px 0;font-size:17px}
+    .nav-links.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:var(--bg);padding:20px 24px;gap:16px;border-bottom:1px solid var(--border);box-shadow:var(--shadow);max-height:80vh;overflow:auto}
+    .nav-hello{display:none}
+    .brand{max-width:none}
+  }
+  @media(max-width:680px){
+    .btn{padding:15px 24px;font-size:16px}
+    .cards,.sermon-grid,.article-grid,.row2,.foot-grid,.verse-grid{grid-template-columns:1fr}
+    .section{padding:56px 0}
+    .wrap{padding:0 20px}
+    .map{min-height:260px}
+    .gcal-main,.gcal-side{padding:16px}
+    .gcal-cell{border-radius:9px;padding:5px 5px}
+    .gcal-cell .n{font-size:12px}
+    .gcal-weekdays span{font-size:10px;padding:4px 0}
+    .gcal-title{font-size:20px}
+    .gcal-nav button{width:34px;height:34px}
+    .verse-card{padding:30px 24px}
+    .hero h1{font-size:clamp(34px,9vw,46px);margin:14px 0 16px}
+    .hero p{font-size:16px;max-width:100%;margin-bottom:26px}
+    
+    
+  }
+  @media(max-width:400px){
+    .gcal-weekdays span{font-size:0}
+    .gcal-weekdays span::first-letter{font-size:10px}
+  }
+
+  /* ---------- Leadership / Staff ---------- */
+  .leadership{background:var(--bg-alt);}
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:34px;}
+  @media(max-width:820px){.team-grid{grid-template-columns:1fr;max-width:360px;margin-inline:auto;}}
+  .team-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    overflow:hidden;box-shadow:var(--shadow-soft);transition:transform .25s ease,box-shadow .25s ease;text-align:center;}
+  .team-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+  .team-photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--primary-soft);}
+  .team-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;
+    transition:transform .5s ease;}
+  .team-card:hover .team-photo img{transform:scale(1.05);}
+  .team-body{padding:20px 18px 24px;}
+  .team-body h3{margin:0 0 4px;font-size:1.18rem;color:var(--ink);}
+  .team-role{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--primary);background:var(--primary-soft);padding:4px 12px;border-radius:999px;margin-bottom:10px;}
+  .team-body p{margin:0;color:var(--ink-soft);font-size:.94rem;line-height:1.5;}
+  
+  @media(max-width:680px){}
+
+
+  /* ---------- About Us (merged from About page) ---------- */
+  #about .about-body{max-width:820px;margin:0 auto;}
+  #about .about-block{padding:34px 0;border-bottom:1px solid var(--border);}
+  #about .about-block:last-child{border-bottom:none;}
+  #about .about-block h3{font-size:clamp(1.4rem,3vw,1.9rem);color:var(--ink);margin:6px 0 8px;font-family:var(--serif);font-weight:600;}
+  #about .about-block .eyebrow{margin-bottom:10px;}
+  #about .about-block p{color:var(--ink-soft);font-size:1.03rem;line-height:1.75;margin:0 0 14px;}
+  #about .about-block p:last-child{margin-bottom:0;}
+  #about .belief-list{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:13px;}
+  #about .belief-list li{display:flex;gap:12px;align-items:flex-start;color:var(--ink-soft);line-height:1.6;font-size:1.0rem;}
+  #about .belief-list li i{color:var(--primary);margin-top:5px;flex:none;font-size:.95rem;}
+  #about .about-callout{background:var(--primary-soft);border-radius:var(--radius);padding:22px 26px;margin-top:10px;}
+  #about .about-callout p{color:var(--primary-dark);margin:0;}
+
+
+  /* ---------- Say Hello modal ---------- */
+  .modal-overlay{position:fixed;inset:0;background:rgba(30,40,34,.55);backdrop-filter:blur(3px);
+    display:none;align-items:center;justify-content:center;z-index:1000;padding:20px;opacity:0;transition:opacity .25s ease;}
+  .modal-overlay.open{display:flex;opacity:1;}
+  .modal{background:var(--bg);border-radius:var(--radius);max-width:520px;width:100%;max-height:90vh;overflow:auto;
+    box-shadow:0 30px 80px rgba(0,0,0,.35);transform:translateY(14px) scale(.98);transition:transform .25s ease;position:relative;}
+  .modal-overlay.open .modal{transform:none;}
+  .modal-head{background:var(--primary);color:#fff;padding:30px 32px 26px;border-radius:var(--radius) var(--radius) 0 0;position:relative;overflow:hidden;}
+  .modal-head::after{content:"👋";position:absolute;right:22px;top:18px;font-size:42px;opacity:.9;}
+  .modal-head .eyebrow{color:var(--accent);opacity:.95;}
+  .modal-head h3{font-family:var(--serif);font-size:1.7rem;margin:6px 0 6px;color:#fff;}
+  .modal-head p{margin:0;color:rgba(255,255,255,.85);font-size:.98rem;line-height:1.5;max-width:90%;}
+  .modal-body{padding:26px 32px 32px;}
+  .modal-body .field{margin-bottom:16px;}
+  .modal-body label{display:block;font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:6px;}
+  .modal-body input,.modal-body textarea,.modal-body select{width:100%;padding:12px 14px;border:1px solid var(--border);
+    border-radius:12px;font-size:1rem;font-family:inherit;background:var(--bg-soft);color:var(--ink);transition:border .15s ease;box-sizing:border-box;}
+  .modal-body input:focus,.modal-body textarea:focus,.modal-body select:focus{outline:none;border-color:var(--primary);}
+  .modal-body textarea{resize:vertical;min-height:90px;}
+  .modal-body .btn{width:100%;justify-content:center;margin-top:6px;}
+  .modal-close{position:absolute;right:14px;top:14px;width:38px;height:38px;border-radius:50%;border:none;
+    background:rgba(255,255,255,.18);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;transition:background .15s;}
+  .modal-close:hover{background:rgba(255,255,255,.32);}
+  .modal-note{font-size:.82rem;color:var(--ink-soft);text-align:center;margin-top:14px;}
+  #helloSuccess{display:none;text-align:center;padding:20px 0;}
+  #helloSuccess .ok{font-size:48px;}
+  #helloSuccess h3{font-family:var(--serif);color:var(--primary);margin:10px 0 6px;}
+  #helloSuccess p{color:var(--ink-soft);margin:0;}
+
+
+  .nav-hello{padding:9px 18px;font-size:14px;}
+  @media(max-width:900px){.nav-hello span[data-en]{font-size:13px;}}
+  @media(max-width:680px){.nav-hello{display:none;}}
+  
+  
+  
+  
+  
+  
+  
+  
+  .hero-verse{display:inline-flex;align-items:center;gap:10px;margin-top:30px;
+    background:rgba(255,255,255,.14);backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:10px 18px;
+    font-size:.86rem;font-weight:600;color:#fff;font-style:italic;}
+  .hero-verse i{color:#f0d9a0;font-style:normal;}
+
+  @media(max-width:680px){
+    .hero{min-height:88vh;}
+    .hero-inner{padding:80px 0;}
+    .hero-verse{font-size:.78rem;padding:9px 15px;}
+  }
+
+
+  /* ---------- Branded motif panel (replaces stock photos) ---------- */
+  .motif-panel{position:relative;width:100%;height:100%;min-height:220px;
+    background:linear-gradient(140deg,var(--primary-dark) 0%,var(--primary) 55%,#2c6a49 100%);
+    display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .motif-panel::after{content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 80% 15%,rgba(168,132,44,.35),transparent 55%);}
+  .motif-panel .motif-dots{position:absolute;inset:0;
+    background-image:radial-gradient(rgba(255,255,255,.10) 1px,transparent 1px);
+    background-size:22px 22px;-webkit-mask-image:radial-gradient(ellipse at 50% 60%,#000 45%,transparent 80%);
+    mask-image:radial-gradient(ellipse at 50% 60%,#000 45%,transparent 80%);}
+  .motif-panel svg{position:relative;z-index:1;width:min(62%,240px);height:auto;}
+  .welcome-img .motif-panel{min-height:360px;border-radius:var(--radius);}
+
+
+  .contact-cta .btn{width:100%;margin-bottom:12px;}
+  .contact-cta{max-width:420px;margin:0 auto;}
+
+  .nav{gap:18px}
+  .brand{margin-right:auto;flex:none;max-width:60%}
+  .brand > span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+
+  .brand-name{font-family:var(--serif);font-weight:600;font-size:20px;line-height:1;color:var(--ink)}
+  
+  
+  
+  
+  .sched-worship 
+  
+  
+  
+  
+  
+  
+  @media(max-width:900px){}
+  @media(max-width:600px){}
+
+
+  /* ---------- Google Calendar embed ---------- */
+  .gcal-embed{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+    overflow:hidden;box-shadow:var(--shadow);max-width:900px;margin:0 auto;}
+  .gcal-embed iframe{display:block;width:100%;}
+  .gcal-note{text-align:center;margin-top:16px;color:rgba(255,255,255,.9);font-size:.92rem;}
+
+
+  
+  /* ---------- Hero (full-cover rock background) ---------- */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--primary-dark)}
+  .hero-bg{position:absolute;inset:0;overflow:hidden;z-index:0}
+  .hero-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+  .hero-overlay{position:absolute;inset:0;
+    background:linear-gradient(105deg,
+      rgba(21,53,36,.86) 0%,
+      rgba(21,53,36,.64) 42%,
+      rgba(21,53,36,.30) 72%,
+      rgba(168,132,44,.18) 100%)}
+  .hero-inner{position:relative;z-index:2;padding:110px 0;max-width:1120px;width:100%;margin:0 auto}
+  .hero-text{max-width:680px;text-align:center;margin:0 auto}
+  .hero .eyebrow{color:#f0d9a0}
+  .hero h1{font-size:clamp(40px,7vw,72px);line-height:1.05;margin:18px 0 22px;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+  .hero p{font-size:clamp(17px,2.2vw,21px);max-width:560px;color:rgba(255,255,255,.92);margin-bottom:34px;text-shadow:0 1px 12px rgba(0,0,0,.3)}
+  .hero-meta{display:flex;gap:32px;margin-top:42px;flex-wrap:wrap}
+  .hero-meta>div{display:flex;align-items:center;gap:12px;font-size:15px}
+  .hero-meta i{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.16);display:grid;place-items:center;font-size:17px;color:#f0d9a0}
+  .hero-meta small{display:block;color:rgba(255,255,255,.7);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+  .hero-meta strong{color:#fff}
+  .hero-verse{display:inline-flex;align-items:center;gap:10px;margin-top:30px;
+    background:rgba(255,255,255,.14);backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:10px 18px;
+    font-size:.86rem;font-weight:600;color:#fff;font-style:italic}
+  .hero-verse i{color:#f0d9a0;font-style:normal}
+
+  @media(max-width:680px){
+    .hero{min-height:88vh}
+    .hero-inner{padding:80px 0}
+    .hero-text{max-width:100%}
+    .hero h1{font-size:clamp(32px,9vw,46px)}
+    .hero p{font-size:16px;max-width:100%}
+    .hero-meta{gap:18px;margin-top:30px}
+    .hero-verse{font-size:.78rem;padding:9px 15px}
+    .hero-overlay{background:linear-gradient(180deg,rgba(21,53,36,.72) 0%,rgba(21,53,36,.55) 55%,rgba(21,53,36,.72) 100%)}
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <span class="mark"><svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 40 V19 a8 8 0 0 1 16 0 V40 Z" fill="currentColor"/><rect x="22.4" y="22" width="3.2" height="13" rx="1.4" fill="#fff" opacity=".95"/><rect x="18.6" y="26.4" width="10.8" height="3.2" rx="1.4" fill="#fff" opacity=".95"/><rect x="11" y="40" width="26" height="3.4" rx="1.7" fill="currentColor" opacity=".55"/></svg></span>
+      <span class="brand-name">Ebenezer</span>
+    </a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#welcome"><span data-en>Welcome</span><span data-am class="amh">እንኳን ደህና መጡ</span></a>
+      <a href="#beliefs"><span data-en>Beliefs</span><span data-am class="amh">እምነታችን</span></a>
+      <a href="#events"><span data-en>Events</span><span data-am class="amh">ዝግጅቶች</span></a>
+      <a href="#sermons"><span data-en>Sermons</span><span data-am class="amh">ስብከቶች</span></a>
+      <a href="#verses"><span data-en>Memory Verse</span><span data-am class="amh">ጥቅስ</span></a>
+      <a href="#articles"><span data-en>Articles</span><span data-am class="amh">ጽሑፎች</span></a>
+      <a href="#leadership"><span data-en>Leadership</span><span data-am class="amh">አመራር</span></a>
+      <a href="#visit"><span data-en>Visit</span><span data-am class="amh">ይጎብኙን</span></a>
+      <a href="#about"><span data-en>About</span><span data-am class="amh">ስለ እኛ</span></a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-toggle">
+        <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+        <button id="btn-am" onclick="setLang('am')"><span class="amh">አማ</span></button>
+      </div>
+      <button class="burger" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img class="hero-cover" src="images/hero_rock.jpg" alt="A person standing on a great rock rising from the sea — Ebenezer, stone of help">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <span class="eyebrow" data-en>Welcome home · Whitehall, Ohio</span>
+      <span class="eyebrow amh" data-am>እንኳን ደህና መጡ · ዋይትሆል፣ ኦሃዮ</span>
+      <h1 data-en>Come just as you are.</h1>
+      <h1 data-am class="amh">እንዳሉ ይምጡ።</h1>
+      <p data-en>We are a loving Christian community that worships God and serves others — reaching Columbus and beyond with the transforming message of Jesus Christ.</p>
+      <p data-am class="amh">እግዚአብሔርን የምናመልክ እና ሌሎችን የምናገለግል ፍቅር የተሞላ የክርስቲያን ማህበረሰብ ነን። ኢየሱስ ይወዳችኋል፣ እኛም እንዲሁ።</p>
+      <div class="hero-meta">
+        <div><i class="fa-solid fa-clock"></i><span><small data-en>Sundays</small><small data-am class="amh">እሁድ</small><strong>10:00 AM</strong></span></div>
+        <div><i class="fa-solid fa-location-dot"></i><span><small data-en>Gather at</small><small data-am class="amh">አድራሻ</small><strong>700 Bernhard Rd, Whitehall</strong></span></div>
+      </div>
+      <div class="hero-verse">
+        <i class="fa-solid fa-mountain"></i>
+        <span data-en>&ldquo;Thus far the Lord has helped us.&rdquo; · 1 Samuel 7:12</span>
+        <span data-am class="amh">&ldquo;እስከዚህ ድረስ እግዚአብሔር ረድቶናል።&rdquo; · 1 ሳሙኤል 7፥12</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WELCOME -->
+<section class="section" id="welcome">
+  <div class="wrap welcome">
+    <div>
+      <span class="eyebrow" data-en>About Us</span>
+      <span class="eyebrow amh" data-am>ስለ እኛ</span>
+      <h2 data-en>A friendly family, seeking and serving together</h2>
+      <h2 data-am class="amh">አብረን የምንፈልግ እና የምናገለግል ቤተሰብ</h2>
+      <p data-en>Ebenezer is a Christian congregation serving our local community and encouraging others through a life-changing Christian journey. We place a high priority on teaching from the Bible and following the example of Jesus.</p>
+      <p data-am class="amh">ኤቤኔዘር በመጽሐፍ ቅዱስ ትምህርት እና በኢየሱስ ምሳሌ ላይ ትኩረት የምናደርግ፣ አካባቢያችንን የምናገለግል የክርስቲያን ጉባኤ ነው።</p>
+      <p data-en>Our vision is to make an impact in Columbus and beyond with the transforming message of Jesus Christ — through words and actions. If you're looking for a church home, you are very welcome to join us.</p>
+      <p data-am class="amh">ራዕያችን በቃላትና በተግባር በኢየሱስ ክርስቶስ መልእክት ኮሎምበስንና ከዚያም ባሻገር መለወጥ ነው። የቤተክርስቲያን ቤት እየፈለጉ ከሆነ በጣም እንኳን ደህና መጡ።</p>
+      <a href="#beliefs" class="btn btn-outline" style="margin-top:8px"><span data-en>Our Beliefs</span><span data-am class="amh">እምነታችን</span> <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="welcome-img">
+      <div class="motif-panel" role="img" aria-label="Ebenezer stones — stone of help">
+        <div class="motif-dots"></div>
+        <svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#e9d29a" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M70 185 V95 a40 40 0 0 1 80 0 V185 Z"/>
+            <path d="M150 185 V120 a30 30 0 0 1 60 0 V185 Z"/>
+            <path d="M20 185 V132 a24 24 0 0 1 48 0 V185 Z"/>
+            <line x1="8" y1="185" x2="224" y2="185"/>
+            <line x1="110" y1="70" x2="110" y2="120"/>
+            <line x1="92" y1="90" x2="128" y2="90"/>
+          </g>
+          <circle cx="185" cy="60" r="7" fill="#e9d29a" opacity=".85"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT US -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;max-width:680px;margin-left:auto;margin-right:auto">
+      <span class="eyebrow" data-en>About Us</span>
+      <span class="eyebrow amh" data-am>ስለ እኛ</span>
+      <h2 data-en>Who We Are</h2>
+      <h2 data-am class="amh">እኛ እነማን ነን</h2>
+    </div>
+    <div class="about-body">
+
+      <div class="about-block">
+        <span class="eyebrow" data-en>Our Story</span>
+        <span class="eyebrow amh" data-am>ታሪካችን</span>
+        <h3 data-en>A friendly community that worships God and serves others</h3>
+        <h3 data-am class="amh">እግዚአብሔርን የሚያመልክ እና ሌሎችን የሚያገለግል ወዳጃዊ ማህበረሰብ</h3>
+        <p data-en>Ebenezer Ethiopian Evangelical Church is a Christian congregation serving our local community and reaching others with the transforming message of Jesus Christ. The name <em>Ebenezer</em> means &ldquo;stone of help&rdquo; (1 Samuel 7:12) — a lasting reminder that, thus far, the Lord has helped us.</p>
+        <p data-am class="amh">ኤቤኔዘር የኢትዮጵያ ወንጌላዊት ቤተክርስቲያን አካባቢያችንን የምናገለግልና ሌሎችን በኢየሱስ ክርስቶስ መልእክት የምንደርስ የክርስቲያን ጉባኤ ነው። <em>ኤቤኔዘር</em> ማለት &ldquo;የእርዳታ ድንጋይ&rdquo; ማለት ነው (1 ሳሙኤል 7፥12) — &ldquo;እስከዚህ ድረስ እግዚአብሔር ረድቶናል&rdquo; የሚል ዘላቂ ማስታወሻ።</p>
+      </div>
+
+      <div class="about-block">
+        <span class="eyebrow" data-en>What We Believe</span>
+        <span class="eyebrow amh" data-am>የምናምነው</span>
+        <h3 data-en>Our Statement of Faith</h3>
+        <h3 data-am class="amh">የእምነት መግለጫችን</h3>
+        <ul class="belief-list">
+          <li><i class="fa-solid fa-check"></i><span data-en>The Bible is the inspired, infallible Word of God — our sufficient guide for life.</span><span data-am class="amh">መጽሐፍ ቅዱስ በእግዚአብሔር መንፈስ የተጻፈ፣ የማይሳሳት የእግዚአብሔር ቃል ነው — ለሕይወታችን በቂ መመሪያ።</span></li>
+          <li><i class="fa-solid fa-check"></i><span data-en>There is one God, eternally existent in three Persons: Father, Son, and Holy Spirit.</span><span data-am class="amh">አንድ አምላክ አለ፣ በሦስት አካላት የሚኖር፦ አብ፣ ወልድ እና መንፈስ ቅዱስ።</span></li>
+          <li><i class="fa-solid fa-check"></i><span data-en>In the deity of Jesus Christ, His virgin birth, sinless life, atoning death, resurrection, and return.</span><span data-am class="amh">በኢየሱስ ክርስቶስ አምላክነት፣ በድንግል መወለዱ፣ ኃጢአት በሌለው ሕይወቱ፣ በማስተስረይ ሞቱ፣ በትንሣኤውና በዳግም ምጽአቱ።</span></li>
+          <li><i class="fa-solid fa-check"></i><span data-en>Salvation comes through repentance and faith in the death and resurrection of Jesus Christ.</span><span data-am class="amh">መዳን የሚገኘው በንስሐና በኢየሱስ ክርስቶስ ሞትና ትንሣኤ በማመን ነው።</span></li>
+          <li><i class="fa-solid fa-check"></i><span data-en>In the regenerating and empowering work of the Holy Spirit in every believer.</span><span data-am class="amh">በእያንዳንዱ አማኝ ውስጥ በመንፈስ ቅዱስ የዳግም ልደትና የማብቃት ሥራ።</span></li>
+          <li><i class="fa-solid fa-check"></i><span data-en>In baptism by immersion and the resurrection to eternal life for all who believe.</span><span data-am class="amh">በመጥለቅ ጥምቀትና ለሚያምኑ ሁሉ ወደ ዘላለም ሕይወት በሚሆን ትንሣኤ።</span></li>
+        </ul>
+      </div>
+
+      <div class="about-block">
+        <span class="eyebrow" data-en>Our Purpose</span>
+        <span class="eyebrow amh" data-am>ዓላማችን</span>
+        <h3 data-en>Believe · Belong · Be an Ambassador</h3>
+        <h3 data-am class="amh">እመኑ · የማህበሩ አካል ሁኑ · አምባሳደር ሁኑ</h3>
+        <p data-en>Our purpose is to be disciples of the Lord Jesus Christ ourselves, and then to make disciples in obedience to His commission (Matthew 28:18-20). We emphasize new birth, holiness of heart, mutual love, moral purity, and sharing God's truth — grounding every part of life on God's Word.</p>
+        <p data-am class="amh">ዓላማችን በመጀመሪያ እኛ ራሳችን የጌታ የኢየሱስ ክርስቶስ ደቀ መዛሙርት መሆን፣ ከዚያም በትእዛዙ መሠረት ደቀ መዛሙርትን ማድረግ ነው (ማቴዎስ 28፥18-20)። ዳግም ልደትን፣ የልብ ቅድስናን፣ የእርስ በርስ ፍቅርን፣ የሥነ ምግባር ንጽሕናንና የእግዚአብሔርን እውነት ማካፈልን እናሳስባለን።</p>
+      </div>
+
+      <div class="about-block">
+        <span class="eyebrow" data-en>Our Meetings</span>
+        <span class="eyebrow amh" data-am>ስብሰባዎቻችን</span>
+        <h3 data-en>Gathering together as a family</h3>
+        <h3 data-am class="amh">እንደ ቤተሰብ አብሮ መሰብሰብ</h3>
+        <p data-en>We gather every <strong>Sunday at 10:00 AM</strong> for worship, teaching from the Word, prayer, and fellowship. We believe in meeting regularly to encourage one another (Hebrews 10:25), and our fellowship continues throughout the week in homes and small groups.</p>
+        <p data-am class="amh">በየ<strong>እሁዱ ጠዋት 10፡00 ሰዓት</strong> ለአምልኮ፣ ከቃሉ ለመማር፣ ለጸሎትና ለኅብረት እንሰበሰባለን። አንዳችን ሌላውን ለማበረታታት አዘውትሮ መሰብሰብ አስፈላጊ እንደሆነ እናምናለን (ዕብራውያን 10፥25)።</p>
+        <div class="about-callout">
+          <p data-en>💛 All visitors are warmly welcome — come just as you are, and join us for fellowship after the service.</p>
+          <p data-am class="amh">💛 ሁሉም ጎብኚዎች እንኳን ደህና መጡ — እንዳሉ ይምጡ፣ ከአገልግሎቱ በኋላም በኅብረታችን ይሳተፉ።</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- BELIEFS -->
+<section class="section beliefs" id="beliefs">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-en>What We Believe</span>
+      <span class="eyebrow amh" data-am>የምናምነው</span>
+      <h2 data-en>Believe · Belong · Be an Ambassador</h2>
+      <h2 data-am class="amh">እመኑ · የማህበሩ አካል ሁኑ · አምባሳደር ሁኑ</h2>
+      <p data-en>By the grace of God, we live out our faith in Jesus Christ and build one another up.</p>
+      <p data-am class="amh">በእግዚአብሔር ጸጋ በኢየሱስ ክርስቶስ ያለንን እምነት እየኖርን አንዳችን ሌላውን እናንጻለን።</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="ic"><i class="fa-solid fa-book-bible"></i></div>
+        <h3 data-en>Believe in Christ</h3><h3 data-am class="amh">በክርስቶስ እመኑ</h3>
+        <p data-en>We trust, feed on, and obey God's Word as it molds and shapes us into mature, Christ-centered followers.</p>
+        <p data-am class="amh">የእግዚአብሔርን ቃል እናምናለን፣ እንመገባለን እናም እንታዘዛለን — ብስለት ወዳላቸው የክርስቶስ ተከታዮች ይቀርፀናል።</p>
+      </div>
+      <div class="card">
+        <div class="ic"><i class="fa-solid fa-people-group"></i></div>
+        <h3 data-en>Belong to Community</h3><h3 data-am class="amh">የማህበሩ አካል ሁኑ</h3>
+        <p data-en>Called out of the world, we live in mutual love, care, and accountability within the Body of Christ.</p>
+        <p data-am class="amh">ከዓለም ተጠርተን በክርስቶስ አካል ውስጥ በፍቅር፣ በእንክብካቤ እና በተጠያቂነት እንኖራለን።</p>
+      </div>
+      <div class="card">
+        <div class="ic"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <h3 data-en>Be an Ambassador</h3><h3 data-am class="amh">አምባሳደር ሁኑ</h3>
+        <p data-en>We represent Christ and make His love known in our community and the world through our witness and work.</p>
+        <p data-am class="amh">ክርስቶስን እንወክላለን እናም በምስክርነትና በሥራ ፍቅሩን በአካባቢያችንና በዓለም እናሳውቃለን።</p>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top:72px">
+      <span class="eyebrow" data-en>Our Missions</span>
+      <span class="eyebrow amh" data-am>ተልእኮዎቻችን</span>
+      <h2 data-en>Making disciples of all nations</h2>
+      <h2 data-am class="amh">ሁሉንም አሕዛብ ደቀ መዛሙርት ማድረግ</h2>
+      <p data-en>Locally and globally, Ebenezer participates in missions down the street and around the world.</p>
+      <p data-am class="amh">ኤቤኔዘር በአካባቢውና በዓለም ዙሪያ በተልእኮዎች ይሳተፋል።</p>
+    </div>
+    <div class="missions-grid">
+      <div class="mission"><i class="fa-solid fa-children"></i><div><strong data-en>Addis Ababa Orphan Kids</strong><strong data-am class="amh">የአዲስ አበባ ወላጅ አልባ ህጻናት</strong><span data-en>Project support</span><span data-am class="amh">የፕሮጀክት ድጋፍ</span></div></div>
+      <div class="mission"><i class="fa-solid fa-church"></i><div><strong data-en>Support Dessie Church</strong><strong data-am class="amh">የደሴ ቤተክርስቲያን ድጋፍ</strong><span data-en>Ongoing partnership</span><span data-am class="amh">ቀጣይ አጋርነት</span></div></div>
+      <div class="mission"><i class="fa-solid fa-house-chimney-crack"></i><div><strong data-en>Haiti Earthquake Relief</strong><strong data-am class="amh">የሃይቲ የመሬት መንቀጥቀጥ እርዳታ</strong><span data-en>Disaster response</span><span data-am class="amh">የአደጋ ምላሽ</span></div></div>
+      <div class="mission"><i class="fa-solid fa-seedling"></i><div><strong data-en>Hamer &amp; Benna Tribes</strong><strong data-am class="amh">የሃመር እና ቤና ጎሳዎች</strong><span data-en>Evangelization</span><span data-am class="amh">ወንጌል ስርጭት</span></div></div>
+      <div class="mission"><i class="fa-solid fa-hands-holding-circle"></i><div><strong data-en>Western Ethiopia Outreach</strong><strong data-am class="amh">የምዕራብ ኢትዮጵያ ተደራሽነት</strong><span data-en>Community support</span><span data-am class="amh">የማህበረሰብ ድጋፍ</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section leadership" id="leadership">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-en>Our Team</span>
+      <span class="eyebrow amh" data-am>የእኛ ቡድን</span>
+      <h2 data-en>Meet Our Leadership</h2>
+      <h2 data-am class="amh">አመራራችንን ይተዋወቁ</h2>
+      <p data-en>Our pastor and elders shepherd the congregation, teach the Word, and care for the Ebenezer family.</p>
+      <p data-am class="amh">ፓስተራችንና ሽማግሌዎቻችን ጉባኤውን ይጠብቃሉ፣ ቃሉን ያስተምራሉ፣ የኤቤኔዘርንም ቤተሰብ ይንከባከባሉ።</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-photo"><img src="images/pastor_berhanu.webp" alt="Pastor Berhanu Arsse"></div>
+        <div class="team-body">
+          <h3>Berhanu Arsse</h3>
+          <span class="team-role" data-en>Pastor</span><span class="team-role amh" data-am>ፓስተር</span>
+          <p data-en>Leads the congregation in teaching, worship, and pastoral care.</p>
+          <p data-am class="amh">ጉባኤውን በትምህርት፣ በአምልኮና በእረኝነት እንክብካቤ ይመራል።</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="images/elder_belay.webp" alt="Elder Belay Arega"></div>
+        <div class="team-body">
+          <h3>Belay Arega</h3>
+          <span class="team-role" data-en>Elder</span><span class="team-role amh" data-am>ሽማግሌ</span>
+          <p data-en>Serves the church in spiritual oversight, prayer, and discipleship.</p>
+          <p data-am class="amh">ቤተክርስቲያኗን በመንፈሳዊ ቁጥጥር፣ በጸሎትና በደቀ መዝሙርነት ያገለግላል።</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="images/elder_kebebe.webp" alt="Elder Kebebe Dema"></div>
+        <div class="team-body">
+          <h3>Kebebe Dema</h3>
+          <span class="team-role" data-en>Elder</span><span class="team-role amh" data-am>ሽማግሌ</span>
+          <p data-en>Serves the church in spiritual oversight, prayer, and discipleship.</p>
+          <p data-am class="amh">ቤተክርስቲያኗን በመንፈሳዊ ቁጥጥር፣ በጸሎትና በደቀ መዝሙርነት ያገለግላል።</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMORY VERSES -->
+<section class="section verses" id="verses">
+  <div class="wrap">
+    <div class="section-head" style="max-width:680px;margin-left:auto;margin-right:auto;text-align:center">
+      <span class="eyebrow" data-en>Grow in the Word</span>
+      <span class="eyebrow amh" data-am>በቃሉ አድጉ</span>
+      <h2 data-en>This Week's Memory Verse</h2>
+      <h2 data-am class="amh">የዚህ ሳምንት የቃል ጥቅስ</h2>
+      <p data-en>A verse to learn by heart together at home — with a version for our teens and a simpler one for our little ones.</p>
+      <p data-am class="amh">በቤት ውስጥ አብረን የምንሸመድደው ጥቅስ — ለወጣቶቻችን እና ለታናናሾቻችን።</p>
+    </div>
+    <div class="verse-grid">
+      <div class="verse-card teens">
+        <span class="vg">&ldquo;</span>
+        <div class="verse-tag"><i class="fa-solid fa-user-graduate"></i><span data-en>For Teens</span><span data-am class="amh">ለወጣቶች</span></div>
+        <div class="verse-text" data-en>&ldquo;Trust in the Lord with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.&rdquo;</div>
+        <div class="verse-text amh" data-am>&ldquo;በፍጹም ልብህ በእግዚአብሔር ታመን፤ በራስህም ማስተዋል አትደገፍ። በመንገድህ ሁሉ እርሱን እወቅ፤ እርሱም ጎዳናህን ያቀናል።&rdquo;</div>
+        <div class="verse-ref">Proverbs 3:5–6 <span class="amh" data-am>· ምሳሌ 3፥5–6</span></div>
+        <div class="verse-week"><i class="fa-regular fa-calendar"></i><span data-en>Week of July 27, 2026</span><span data-am class="amh">የጁላይ 27፣ 2026 ሳምንት</span></div>
+      </div>
+      <div class="verse-card toddlers">
+        <span class="vg">&ldquo;</span>
+        <div class="verse-tag"><i class="fa-solid fa-child-reaching"></i><span data-en>For Toddlers</span><span data-am class="amh">ለታናናሾች</span></div>
+        <div class="verse-text" data-en>&ldquo;God is love.&rdquo;</div>
+        <div class="verse-text amh" data-am>&ldquo;እግዚአብሔር ፍቅር ነው።&rdquo;</div>
+        <div class="verse-ref">1 John 4:8 <span class="amh" data-am>· 1 ዮሐንስ 4፥8</span></div>
+        <div class="verse-week"><i class="fa-regular fa-calendar"></i><span data-en>Week of July 27, 2026</span><span data-am class="amh">የጁላይ 27፣ 2026 ሳምንት</span></div>
+      </div>
+    </div>
+    <p class="verse-help" data-en>💛 Say it three times each morning together. New verses posted every Sunday. <em>[Update weekly.]</em></p>
+    <p class="verse-help amh" data-am>💛 በየማለዳው ሦስት ጊዜ አብራችሁ በሉት። አዲስ ጥቅስ በየእሁዱ ይለጠፋል።</p>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="section events" id="events">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center;max-width:680px;margin-left:auto;margin-right:auto">
+      <span class="eyebrow" data-en>Church Calendar</span>
+      <span class="eyebrow amh" data-am>የቤተክርስቲያን የቀን መቁጠሪያ</span>
+      <h2 data-en>Events &amp; Gatherings</h2>
+      <h2 data-am class="amh">ዝግጅቶች እና ስብሰባዎች</h2>
+      <p data-en>See what's happening this week and beyond. Managed live in Google Calendar.</p>
+      <p data-am class="amh">በዚህ ሳምንትና ከዚያ በኋላ ያለውን ይመልከቱ። በGoogle Calendar በቀጥታ ይተዳደራል።</p>
+    </div>
+
+    <div class="gcal-embed">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID%40group.calendar.google.com&ctz=America%2FNew_York&mode=MONTH&showTitle=0&showPrint=0&showTabs=1&showCalendars=0&showTz=0&bgcolor=%23ffffff"
+        style="border:0" width="100%" height="620" frameborder="0" scrolling="no"
+        title="Ebenezer Church Events Calendar"></iframe>
+    </div>
+    <p class="gcal-note" data-en>📅 Events are managed in Google Calendar — add or change an event there and it updates here automatically. <em>[Replace YOUR_CALENDAR_ID with the church's public calendar ID.]</em></p>
+    <p class="gcal-note amh" data-am>📅 ዝግጅቶች በGoogle Calendar ይተዳደራሉ — እዚያ ላይ ሲጨምሩ ወይም ሲቀይሩ እዚህ በራሱ ይዘመናል።</p>
+  </div>
+</section>
+
+<!-- SERMONS -->
+<section class="section" id="sermons">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-en>Listen</span>
+      <span class="eyebrow amh" data-am>ያዳምጡ</span>
+      <h2 data-en>Sermons &amp; Podcast</h2>
+      <h2 data-am class="amh">ስብከቶች እና ፖድካስት</h2>
+      <p data-en>Missed a Sunday? Listen to past messages and podcast episodes anytime on Spotify.</p>
+      <p data-am class="amh">እሁድ አምልጦዎታል? ያለፉ ስብከቶችን በማንኛውም ጊዜ በSpotify ያዳምጡ።</p>
+    </div>
+    <div class="sermon-grid">
+      <div class="sermon">
+        <div class="thumb"><span class="tag">Latest</span><i class="fa-solid fa-headphones"></i></div>
+        <div class="info"><small>July 27, 2026</small><h3 data-en>The Transforming Message</h3><h3 data-am class="amh">የሚለውጥ መልእክት</h3><p data-en>Living out the Gospel in words and actions.</p><p data-am class="amh">ወንጌልን በቃልና በተግባር መኖር።</p></div>
+      </div>
+      <div class="sermon">
+        <div class="thumb"><i class="fa-solid fa-headphones"></i></div>
+        <div class="info"><small>July 20, 2026</small><h3 data-en>Belonging to Community</h3><h3 data-am class="amh">የማህበሩ አካል መሆን</h3><p data-en>Called together into the Body of Christ.</p><p data-am class="amh">ወደ ክርስቶስ አካል አብረን ተጠርተናል።</p></div>
+      </div>
+      <div class="sermon">
+        <div class="thumb"><i class="fa-solid fa-headphones"></i></div>
+        <div class="info"><small>July 13, 2026</small><h3 data-en>Ambassadors for Christ</h3><h3 data-am class="amh">የክርስቶስ አምባሳደሮች</h3><p data-en>Making His love known in the world.</p><p data-am class="amh">ፍቅሩን በዓለም ማሳወቅ።</p></div>
+      </div>
+    </div>
+    <div class="podcast-cta">
+      <div>
+        <h3 data-en>🎧 Listen to Our Podcast</h3><h3 data-am class="amh">🎧 ፖድካስታችንን ያዳምጡ</h3>
+        <p data-en>Stream every episode on your favorite platform.</p>
+        <p data-am class="amh">እያንዳንዱን ክፍል በሚወዱት መድረክ ላይ ያዳምጡ።</p>
+      </div>
+      <div class="podcast-links">
+        <a href="#" title="Listen on Spotify"><i class="fa-brands fa-spotify"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section class="section articles" id="articles">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-en>From Our Blog</span>
+      <span class="eyebrow amh" data-am>ከብሎጋችን</span>
+      <h2 data-en>Articles &amp; Reflections</h2>
+      <h2 data-am class="amh">ጽሑፎች እና አሰላሰሎች</h2>
+      <p data-en>Encouragement, devotionals, and news from our church family. <em>[Replace with your own articles.]</em></p>
+      <p data-am class="amh">ማበረታቻ፣ የጸሎት ማሰላሰያዎች እና ከቤተክርስቲያናችን ዜናዎች። <em>[በራስዎ ጽሑፎች ይተኩ]</em></p>
+    </div>
+    <div class="article-grid">
+      <div class="article">
+        <div class="cover"><div class="motif-panel" role="img" aria-label="Ebenezer stones — stone of help">
+        <div class="motif-dots"></div>
+        <svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#e9d29a" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M70 185 V95 a40 40 0 0 1 80 0 V185 Z"/>
+            <path d="M150 185 V120 a30 30 0 0 1 60 0 V185 Z"/>
+            <path d="M20 185 V132 a24 24 0 0 1 48 0 V185 Z"/>
+            <line x1="8" y1="185" x2="224" y2="185"/>
+            <line x1="110" y1="70" x2="110" y2="120"/>
+            <line x1="92" y1="90" x2="128" y2="90"/>
+          </g>
+          <circle cx="185" cy="60" r="7" fill="#e9d29a" opacity=".85"/>
+        </svg>
+      </div></div>
+        <div class="info">
+          <span class="cat" data-en>Devotional</span><span class="cat amh" data-am>የጸሎት ማሰላሰያ</span>
+          <h3 data-en>Walking in Grace Each Day</h3><h3 data-am class="amh">በየቀኑ በጸጋ መመላለስ</h3>
+          <p data-en>A short reflection on living out God's grace in our everyday moments and relationships.</p>
+          <p data-am class="amh">የእግዚአብሔርን ጸጋ በዕለት ተዕለት ኑሮአችን ስለ መኖር አጭር ማሰላሰያ።</p>
+          <div class="meta"><span>[Author]</span><span class="dot"></span><span>Jul 25, 2026</span><span class="dot"></span><span>4 min</span></div>
+          <a href="#" class="readmore"><span data-en>Read more</span><span data-am class="amh">ተጨማሪ ያንብቡ</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="article">
+        <div class="cover"><div class="motif-panel" role="img" aria-label="Ebenezer stones — stone of help">
+        <div class="motif-dots"></div>
+        <svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#e9d29a" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M70 185 V95 a40 40 0 0 1 80 0 V185 Z"/>
+            <path d="M150 185 V120 a30 30 0 0 1 60 0 V185 Z"/>
+            <path d="M20 185 V132 a24 24 0 0 1 48 0 V185 Z"/>
+            <line x1="8" y1="185" x2="224" y2="185"/>
+            <line x1="110" y1="70" x2="110" y2="120"/>
+            <line x1="92" y1="90" x2="128" y2="90"/>
+          </g>
+          <circle cx="185" cy="60" r="7" fill="#e9d29a" opacity=".85"/>
+        </svg>
+      </div></div>
+        <div class="info">
+          <span class="cat" data-en>Missions</span><span class="cat amh" data-am>ተልእኮ</span>
+          <h3 data-en>Stories from Our Mission Field</h3><h3 data-am class="amh">ከተልእኮ ሜዳችን ታሪኮች</h3>
+          <p data-en>Updates from our partners in Ethiopia, Haiti, and beyond — see how God is at work.</p>
+          <p data-am class="amh">በኢትዮጵያ፣ በሃይቲ እና ከዚያም ባሻገር ካሉ አጋሮቻችን ዝማኔዎች — እግዚአብሔር እንዴት እየሰራ እንደሆነ ይመልከቱ።</p>
+          <div class="meta"><span>[Author]</span><span class="dot"></span><span>Jul 18, 2026</span><span class="dot"></span><span>6 min</span></div>
+          <a href="#" class="readmore"><span data-en>Read more</span><span data-am class="amh">ተጨማሪ ያንብቡ</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="article">
+        <div class="cover"><div class="motif-panel" role="img" aria-label="Ebenezer stones — stone of help">
+        <div class="motif-dots"></div>
+        <svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#e9d29a" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M70 185 V95 a40 40 0 0 1 80 0 V185 Z"/>
+            <path d="M150 185 V120 a30 30 0 0 1 60 0 V185 Z"/>
+            <path d="M20 185 V132 a24 24 0 0 1 48 0 V185 Z"/>
+            <line x1="8" y1="185" x2="224" y2="185"/>
+            <line x1="110" y1="70" x2="110" y2="120"/>
+            <line x1="92" y1="90" x2="128" y2="90"/>
+          </g>
+          <circle cx="185" cy="60" r="7" fill="#e9d29a" opacity=".85"/>
+        </svg>
+      </div></div>
+        <div class="info">
+          <span class="cat" data-en>Community</span><span class="cat amh" data-am>ማህበረሰብ</span>
+          <h3 data-en>Growing Together in Fellowship</h3><h3 data-am class="amh">በኅብረት አብረን ማደግ</h3>
+          <p data-en>Why gathering as a church family matters, and how you can get more involved this season.</p>
+          <p data-am class="amh">እንደ ቤተክርስቲያን ቤተሰብ መሰብሰብ ለምን አስፈላጊ እንደሆነ እና እንዴት የበለጠ መሳተፍ እንደሚችሉ።</p>
+          <div class="meta"><span>[Author]</span><span class="dot"></span><span>Jul 11, 2026</span><span class="dot"></span><span>3 min</span></div>
+          <a href="#" class="readmore"><span data-en>Read more</span><span data-am class="amh">ተጨማሪ ያንብቡ</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:44px">
+      <a href="#" class="btn btn-outline"><span data-en>View All Articles</span><span data-am class="amh">ሁሉንም ጽሑፎች ይመልከቱ</span> <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT + CONTACT -->
+<section class="section" id="visit">
+  <div class="wrap">
+    <!-- Row 1: Plan Your Visit -->
+    <div class="visit-plan">
+      <div class="visit-info">
+        <span class="eyebrow" data-en>Plan Your Visit</span>
+        <span class="eyebrow amh" data-am>ጉብኝት ያቅዱ</span>
+        <h2 data-en style="font-size:clamp(28px,4vw,36px);margin:12px 0 24px">We'd love to see you Sunday</h2>
+        <h2 data-am class="amh" style="font-size:clamp(28px,4vw,36px);margin:12px 0 24px">እሁድ ልናይዎት እንወዳለን</h2>
+        <div class="info-block">
+          <div class="lab" data-en>Service Time</div><div class="lab amh" data-am>የአገልግሎት ሰዓት</div>
+          <div class="val"><i class="fa-solid fa-clock"></i>Sundays at 10:00 AM</div>
+        </div>
+        <div class="info-block">
+          <div class="lab" data-en>Location</div><div class="lab amh" data-am>አድራሻ</div>
+          <div class="val"><i class="fa-solid fa-location-dot"></i>700 Bernhard Rd, Whitehall, OH 43213</div>
+        </div>
+        <div class="info-block">
+          <div class="lab" data-en>Contact</div><div class="lab amh" data-am>ያግኙን</div>
+          <div class="val"><i class="fa-solid fa-envelope"></i>[email@placeholder.com]</div>
+          <div class="val" style="margin-top:10px"><i class="fa-solid fa-phone"></i>[(614) 000-0000]</div>
+        </div>
+      </div>
+      <div class="map">
+        <iframe loading="lazy" allowfullscreen title="Map to Ebenezer Ethiopian Evangelical Church"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=39.9605686,-82.8799424&z=17&t=m&output=embed"></iframe>
+      </div>
+    </div>
+
+    <!-- Row 2: Get in Touch (full width, own row) -->
+    <div class="contact-block">
+      <div class="contact-intro">
+        <span class="eyebrow" data-en>Get in Touch</span>
+        <span class="eyebrow amh" data-am>ያግኙን</span>
+        <h2 data-en style="font-size:clamp(28px,4vw,36px);margin:12px 0 14px">Send us a message</h2>
+        <h2 data-am class="amh" style="font-size:clamp(28px,4vw,36px);margin:12px 0 14px">መልእክት ይላኩልን</h2>
+        <p data-en style="color:var(--ink-soft);font-size:16px">Have a question or a prayer request? We'd love to hear from you.</p>
+        <p data-am class="amh" style="color:var(--ink-soft);font-size:16px">ጥያቄ ወይም የጸሎት ጥያቄ አለዎት? ልንሰማዎት እንወዳለን።</p>
+      </div>
+      <div class="contact-cta">
+        <a href="#" data-hello class="btn btn-primary" style="justify-content:center"><i class="fa-solid fa-hand-sparkles"></i><span data-en>Say Hello</span><span data-am class="amh">ሰላም ይበሉን</span></a>
+        <p class="form-note" data-en>Click to open a quick form — we usually reply within a day. Messages go straight to the church inbox.</p>
+        <p class="form-note amh" data-am>ፎርሙን ለመክፈት ጠቅ ያድርጉ — ብዙውን ጊዜ በአንድ ቀን ውስጥ እንመልሳለን። መልእክቶች ወደ ቤተክርስቲያኑ ኢሜይል ይላካሉ።</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="band">
+  <div class="wrap">
+    <h2 data-en>Jesus loves you — so do we.</h2>
+    <h2 data-am class="amh">ኢየሱስ ይወዳችኋል — እኛም እንዲሁ።</h2>
+    <p data-en>Whoever you are, wherever you've been, there's a seat for you this Sunday.</p>
+    <p data-am class="amh">ማንም ብትሆኑ፣ ከየትም ብትመጡ፣ በዚህ እሁድ ወንበር አለልዎት።</p>
+    <a href="#visit" class="btn btn-primary"><i class="fa-solid fa-location-dot"></i><span data-en>Plan Your Visit</span><span data-am class="amh">ጉብኝት ያቅዱ</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="mark"><svg class="logo-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 40 V19 a8 8 0 0 1 16 0 V40 Z" fill="currentColor"/><rect x="22.4" y="22" width="3.2" height="13" rx="1.4" fill="#fff" opacity=".95"/><rect x="18.6" y="26.4" width="10.8" height="3.2" rx="1.4" fill="#fff" opacity=".95"/><rect x="11" y="40" width="26" height="3.4" rx="1.7" fill="currentColor" opacity=".55"/></svg></span> Ebenezer <span data-am class="amh"></span></div>
+        <p data-en>Ebenezer Ethiopian Evangelical Church — a loving and friendly community that worships God and serves others in Columbus and beyond.</p>
+        <p data-am class="amh">የኢትዮጵያ ወንጌላዊት ቤተክርስቲያን — እግዚአብሔርን የምናመልክ እና ሌሎችን የምናገለግል ማህበረሰብ።</p>
+        <div class="socials">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-solid fa-podcast"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 data-en>Explore</h4><h4 data-am class="amh">ያስሱ</h4>
+        <ul>
+          <li><a href="#welcome" data-en>About Us</a><a href="#welcome" data-am class="amh">ስለ እኛ</a></li>
+          <li><a href="#beliefs" data-en>Beliefs</a><a href="#beliefs" data-am class="amh">እምነታችን</a></li>
+          <li><a href="#events" data-en>Events</a><a href="#events" data-am class="amh">ዝግጅቶች</a></li>
+          <li><a href="#sermons" data-en>Sermons</a><a href="#sermons" data-am class="amh">ስብከቶች</a></li>
+          <li><a href="#verses" data-en>Memory Verse</a><a href="#verses" data-am class="amh">የቃል ጥቅስ</a></li>
+          <li><a href="#articles" data-en>Articles</a><a href="#articles" data-am class="amh">ጽሑፎች</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-en>Visit Us</h4><h4 data-am class="amh">ይጎብኙን</h4>
+        <ul>
+          <li>700 Bernhard Rd</li>
+          <li>Whitehall, OH 43213</li>
+          <li>Sundays · 10:00 AM</li>
+          <li>[email@placeholder.com]</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Ebenezer Ethiopian Evangelical Church. All rights reserved.</span>
+      <span data-en>Come just as you are.</span><span data-am class="amh">እንዳሉ ይምጡ።</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.classList.toggle('am', l==='am');
+    document.getElementById('btn-en').classList.toggle('active', l==='en');
+    document.getElementById('btn-am').classList.toggle('active', l==='am');
+    document.documentElement.lang = l;
+  }
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  </script>
+
+<!-- SAY HELLO MODAL -->
+<div class="modal-overlay" id="helloModal" role="dialog" aria-modal="true" aria-labelledby="helloTitle">
+  <div class="modal">
+    <button class="modal-close" id="helloClose" aria-label="Close">&times;</button>
+    <div class="modal-head">
+      <span class="eyebrow" data-en>Say Hello</span>
+      <span class="eyebrow amh" data-am>ሰላም ይበሉን</span>
+      <h3 id="helloTitle" data-en>We'd love to meet you</h3>
+      <h3 data-am class="amh">ልናውቅዎ እንወዳለን</h3>
+      <p data-en>Tell us a little about yourself and we'll be in touch. New here? We can't wait to welcome you.</p>
+      <p data-am class="amh">ስለ ራስዎ ትንሽ ይንገሩን፣ እኛም እናገኝዎታለን። አዲስ ነዎት? እንኳን ደህና መጡ ልንልዎ በጉጉት እንጠብቃለን።</p>
+    </div>
+    <div class="modal-body">
+      <form action="https://api.web3forms.com/submit" method="POST" id="helloForm">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="New 'Say Hello' message from the website">
+        <input type="hidden" name="from_name" value="Ebenezer Church Website">
+        <input type="checkbox" name="botcheck" style="display:none">
+        <div class="field">
+          <label data-en>Your name</label><label data-am class="amh">ስምዎ</label>
+          <input type="text" name="name" required placeholder="First and last name">
+        </div>
+        <div class="field">
+          <label data-en>Email</label><label data-am class="amh">ኢሜይል</label>
+          <input type="email" name="email" required placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label data-en>Phone (optional)</label><label data-am class="amh">ስልክ (አማራጭ)</label>
+          <input type="tel" name="phone" placeholder="(614) 000-0000">
+        </div>
+        <div class="field">
+          <label data-en>I'm reaching out because…</label><label data-am class="amh">የማገኝበት ምክንያት…</label>
+          <select name="reason">
+            <option data-en>I'm new and would like to visit</option>
+            <option data-en>I'd like prayer</option>
+            <option data-en>I have a question</option>
+            <option data-en>I'd like to get involved / serve</option>
+            <option data-en>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label data-en>Message</label><label data-am class="amh">መልእክት</label>
+          <textarea name="message" placeholder="Say hello and tell us anything you'd like us to know…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i><span data-en>Send</span><span data-am class="amh">ላክ</span></button>
+        <p class="modal-note" data-en>We'll never share your information. Expect a warm reply soon. 💛</p>
+      </form>
+      <div id="helloSuccess">
+        <div class="ok">🎉</div>
+        <h3 data-en>Thank you for saying hello!</h3>
+        <p data-en>We received your message and someone from Ebenezer will reach out soon.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var modal=document.getElementById('helloModal');
+  var openers=document.querySelectorAll('[data-hello]');
+  var closeBtn=document.getElementById('helloClose');
+  var form=document.getElementById('helloForm');
+  var success=document.getElementById('helloSuccess');
+  function open(e){if(e)e.preventDefault();modal.classList.add('open');document.body.style.overflow='hidden';}
+  function close(){modal.classList.remove('open');document.body.style.overflow='';}
+  openers.forEach(function(b){b.addEventListener('click',open);});
+  closeBtn.addEventListener('click',close);
+  modal.addEventListener('click',function(e){if(e.target===modal)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var data=new FormData(form);
+    fetch('https://api.web3forms.com/submit',{method:'POST',body:data,headers:{'Accept':'application/json'}})
+      .then(function(r){return r.json();})
+      .then(function(){form.style.display='none';success.style.display='block';})
+      .catch(function(){form.style.display='none';success.style.display='block';});
+  });
+})();
+</script>
+
+</body>
+</html>
