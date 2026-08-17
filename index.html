@@ -732,29 +732,29 @@
       <span class="eyebrow amh" data-am>በቃሉ አድጉ</span>
       <h2 data-en>This Week's Memory Verse</h2>
       <h2 data-am class="amh">የዚህ ሳምንት የቃል ጥቅስ</h2>
-      <p data-en>A verse to learn by heart together at home — with a version for our teens and a simpler one for our little ones.</p>
+      <p data-en>A verse to learn by heart together at home — with a version for our teens and a simpler one for our little ones. <em>(NASB 1995)</em></p>
       <p data-am class="amh">በቤት ውስጥ አብረን የምንሸመድደው ጥቅስ — ለወጣቶቻችን እና ለታናናሾቻችን።</p>
     </div>
     <div class="verse-grid">
       <div class="verse-card teens">
         <span class="vg">&ldquo;</span>
         <div class="verse-tag"><i class="fa-solid fa-user-graduate"></i><span data-en>For Teens</span><span data-am class="amh">ለወጣቶች</span></div>
-        <div class="verse-text" data-en>&ldquo;Trust in the Lord with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.&rdquo;</div>
-        <div class="verse-text amh" data-am>&ldquo;በፍጹም ልብህ በእግዚአብሔር ታመን፤ በራስህም ማስተዋል አትደገፍ። በመንገድህ ሁሉ እርሱን እወቅ፤ እርሱም ጎዳናህን ያቀናል።&rdquo;</div>
-        <div class="verse-ref">Proverbs 3:5–6 <span class="amh" data-am>· ምሳሌ 3፥5–6</span></div>
-        <div class="verse-week"><i class="fa-regular fa-calendar"></i><span data-en>Week of July 27, 2026</span><span data-am class="amh">የጁላይ 27፣ 2026 ሳምንት</span></div>
+        <div class="verse-text" data-en id="teenVerseEn"></div>
+        <div class="verse-text amh" data-am id="teenVerseAm"></div>
+        <div class="verse-ref" id="teenRef"></div>
+        <div class="verse-week"><i class="fa-regular fa-calendar"></i><span id="verseWeekLabel"></span></div>
       </div>
       <div class="verse-card toddlers">
         <span class="vg">&ldquo;</span>
         <div class="verse-tag"><i class="fa-solid fa-child-reaching"></i><span data-en>For Toddlers</span><span data-am class="amh">ለታናናሾች</span></div>
-        <div class="verse-text" data-en>&ldquo;God is love.&rdquo;</div>
-        <div class="verse-text amh" data-am>&ldquo;እግዚአብሔር ፍቅር ነው።&rdquo;</div>
-        <div class="verse-ref">1 John 4:8 <span class="amh" data-am>· 1 ዮሐንስ 4፥8</span></div>
-        <div class="verse-week"><i class="fa-regular fa-calendar"></i><span data-en>Week of July 27, 2026</span><span data-am class="amh">የጁላይ 27፣ 2026 ሳምንት</span></div>
+        <div class="verse-text" data-en id="toddlerVerseEn"></div>
+        <div class="verse-text amh" data-am id="toddlerVerseAm"></div>
+        <div class="verse-ref" id="toddlerRef"></div>
+        <div class="verse-week"><i class="fa-regular fa-calendar"></i><span id="verseWeekLabel2"></span></div>
       </div>
     </div>
-    <p class="verse-help" data-en>💛 Say it three times each morning together. New verses posted every Sunday. <em>[Update weekly.]</em></p>
-    <p class="verse-help amh" data-am>💛 በየማለዳው ሦስት ጊዜ አብራችሁ በሉት። አዲስ ጥቅስ በየእሁዱ ይለጠፋል።</p>
+    <p class="verse-help" data-en>💛 Say it three times each morning together. New verses rotate automatically each week.</p>
+    <p class="verse-help amh" data-am>💛 በየማለዳው ሦስት ጊዜ አብራችሁ በሉት። አዲስ ጥቅስ በየሳምንቱ በራሱ ይቀየራል።</p>
   </div>
 </section>
 
@@ -1104,5 +1104,84 @@
 })();
 </script>
 
+
+<script>
+(function(){
+  // Memory Verse Plan — add more weeks here as needed (NASB 1995)
+  var VERSES = [
+    {
+      week: '2026-08-09',
+      teen_en: '\u201cFor whoever will call on the name of the Lord will be saved.\u201d',
+      teen_am: '\u201cየእግዚአብሔርን ስም የሚጠራ ሁሉ ይድናልና።\u201d',
+      teen_ref: 'Romans 10:13',
+      toddler_en: '\u201cCall upon Me and I will answer you.\u201d',
+      toddler_am: '\u201cወደ እኔ ጩኽ፣ እመልስልሃለሁም።\u201d',
+      toddler_ref: 'Jeremiah 33:3'
+    },
+    {
+      week: '2026-08-16',
+      teen_en: '\u201cFor the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord.\u201d',
+      teen_am: '\u201cየኃጢአት ደመወዝ ሞት ነውና፤ የእግዚአብሔር ጸጋ ስጦታ ግን በክርስቶስ ኢየሱስ በጌታችን የዘላለም ሕይወት ነው።\u201d',
+      teen_ref: 'Romans 6:23',
+      toddler_en: '\u201cFor God so loved the world, that He gave His only begotten Son.\u201d',
+      toddler_am: '\u201cእግዚአብሔር አንድ ልጁን እስኪሰጥ ድረስ ዓለሙን እንዲሁ ወዶአልና።\u201d',
+      toddler_ref: 'John 3:16a'
+    },
+    {
+      week: '2026-08-23',
+      teen_en: '\u201cFor by grace you have been saved through faith; and that not of yourselves, it is the gift of God; not as a result of works, so that no one may boast.\u201d',
+      teen_am: '\u201cበጸጋ በእምነት ድናችኋልና፤ ይህም ከእናንተ አይደለም የእግዚአብሔር ስጦታ ነው እንጂ፤ ማንም እንዳይመካ ከሥራ አይደለም።\u201d',
+      teen_ref: 'Ephesians 2:8-9',
+      toddler_en: '\u201cFor by grace you have been saved through faith.\u201d',
+      toddler_am: '\u201cበጸጋ በእምነት ድናችኋልና።\u201d',
+      toddler_ref: 'Ephesians 2:8a'
+    },
+    {
+      week: '2026-08-30',
+      teen_en: '\u201cIf you confess with your mouth Jesus as Lord, and believe in your heart that God raised Him from the dead, you will be saved;\u201d',
+      teen_am: '\u201cኢየሱስ ጌታ ነው ብለህ በአፍህ ብትመሰክር እግዚአብሔርም ከሙታን እንዳስነሣው በልብህ ብታምን ትድናለህ፤\u201d',
+      teen_ref: 'Romans 10:9',
+      toddler_en: '\u201cJesus is Lord.\u201d',
+      toddler_am: '\u201cኢየሱስ ጌታ ነው።\u201d',
+      toddler_ref: 'Romans 10:9b'
+    }
+  ];
+
+  function getWeekVerse(){
+    var today = new Date();
+    var todayStr = today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
+    // Find the most recent week that has started (week date <= today)
+    var current = VERSES[VERSES.length-1]; // fallback to last
+    for(var i=VERSES.length-1; i>=0; i--){
+      if(VERSES[i].week <= todayStr){ current = VERSES[i]; break; }
+    }
+    return current;
+  }
+
+  function renderVerse(){
+    var v = getWeekVerse();
+    var isAm = document.body.classList.contains('am');
+    document.getElementById('teenVerseEn').textContent = v.teen_en;
+    document.getElementById('teenVerseAm').textContent = v.teen_am;
+    document.getElementById('teenRef').textContent = v.teen_ref;
+    document.getElementById('toddlerVerseEn').textContent = v.toddler_en;
+    document.getElementById('toddlerVerseAm').textContent = v.toddler_am;
+    document.getElementById('toddlerRef').textContent = v.toddler_ref;
+    // Week label
+    var d = new Date(v.week+'T00:00:00');
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var label = 'Week of '+months[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear();
+    var labelAm = 'የ'+months[d.getMonth()]+' '+d.getDate()+'፣ '+d.getFullYear()+' ሳምንት';
+    var lbl = isAm ? labelAm : label;
+    document.getElementById('verseWeekLabel').textContent = lbl;
+    document.getElementById('verseWeekLabel2').textContent = lbl;
+  }
+
+  renderVerse();
+  // Re-render when language toggles
+  var origSetLang = window.setLang;
+  window.setLang = function(l){ origSetLang(l); renderVerse(); };
+})();
+</script>
 </body>
 </html>
