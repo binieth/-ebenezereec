@@ -529,6 +529,19 @@
     .hero-cross{left:2%;height:70%;width:auto;opacity:.35}
   }
 
+
+  /* ---------- Back to top button ---------- */
+  .back-to-top{position:fixed;bottom:28px;right:28px;width:48px;height:48px;border-radius:50%;
+    background:var(--primary);color:#fff;display:grid;place-items:center;font-size:18px;
+    box-shadow:0 4px 16px rgba(21,53,36,.4);z-index:900;
+    opacity:0;transform:translateY(20px);pointer-events:none;
+    transition:opacity .25s ease,transform .25s ease;text-decoration:none}
+  .back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+  .back-to-top:hover{background:var(--accent);transform:translateY(-3px)}
+  @media(max-width:680px){
+    .back-to-top{bottom:20px;right:20px;width:44px;height:44px;font-size:16px}
+  }
+
 </style>
 </head>
 <body>
@@ -758,19 +771,19 @@
         <h3 class="cal-col-title amh" data-am>የሚመጡ ስብሰባዎች</h3>
         <div class="cal-events">
           <div class="cal-event">
-            <div class="cal-date"><span class="cal-month">Aug</span><span class="cal-day">22</span></div>
+            <div class="cal-date"><span class="cal-month">Aug</span><span class="cal-day">21</span></div>
             <div class="cal-detail"><strong data-en>Virtual Bible Study</strong><strong data-am class="amh">የመስመር ላይ የመጽሐፍ ቅዱስ ጥናት</strong><span data-en>Friday, 6:00 PM – 7:00 PM</span><span data-am class="amh">ዓርብ፣ 6:00 PM – 7:00 PM</span></div>
           </div>
           <div class="cal-event">
-            <div class="cal-date"><span class="cal-month">Aug</span><span class="cal-day">24</span></div>
+            <div class="cal-date"><span class="cal-month">Aug</span><span class="cal-day">23</span></div>
             <div class="cal-detail"><strong data-en>Sunday Meeting</strong><strong data-am class="amh">የእሁድ ስብሰባ</strong><span data-en>Sunday, 10:00 AM</span><span data-am class="amh">እሁድ፣ 10:00 AM</span></div>
           </div>
           <div class="cal-event">
-            <div class="cal-date"><span class="cal-month">Aug</span><span class="cal-day">24</span></div>
+            <div class="cal-date"><span class="cal-month">Aug</span><span class="cal-day">23</span></div>
             <div class="cal-detail"><strong data-en>Kunama Sunday Service</strong><strong data-am class="amh">የኩናማ የእሁድ አገልግሎት</strong><span data-en>Sunday, 2:00 PM</span><span data-am class="amh">እሁድ፣ 2:00 PM</span></div>
           </div>
           <div class="cal-event">
-            <div class="cal-date"><span class="cal-month">Aug</span><span class="cal-day">29</span></div>
+            <div class="cal-date"><span class="cal-month">Aug</span><span class="cal-day">28</span></div>
             <div class="cal-detail"><strong data-en>Virtual Bible Study</strong><strong data-am class="amh">የመስመር ላይ የመጽሐፍ ቅዱስ ጥናት</strong><span data-en>Friday, 6:00 PM – 7:00 PM</span><span data-am class="amh">ዓርብ፣ 6:00 PM – 7:00 PM</span></div>
           </div>
         </div>
@@ -1195,5 +1208,19 @@
   window.setLang = function(l){ origSetLang(l); renderVerse(); };
 })();
 </script>
+
+<!-- BACK TO TOP -->
+<a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</a>
+<script>
+(function(){
+  var btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function(){
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+})();
+</script>
+
 </body>
 </html>
