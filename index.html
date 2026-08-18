@@ -51,7 +51,7 @@
   .btn-outline:hover{background:var(--primary);color:#fff}
   .eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
   .section{padding:96px 0}
-  .section-head{max-width:640px;margin-bottom:52px}
+  .section-head{max-width:640px;margin-bottom:52px;margin-left:auto;margin-right:auto;text-align:center}
   .section-head h2{font-size:clamp(30px,4.5vw,44px);margin:14px 0 16px}
   .section-head p{color:var(--ink-soft);font-size:18px}
 
@@ -95,25 +95,11 @@
 
   /* VALUES / beliefs */
   .beliefs{background:var(--bg-alt)}
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:34px 30px;transition:transform .2s,box-shadow .2s}
-  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-  .card .ic{width:54px;height:54px;border-radius:16px;background:var(--grad);color:#fff;display:grid;place-items:center;font-size:22px;margin-bottom:18px;box-shadow:0 6px 18px -6px rgba(109,40,217,.5)}
-  .card h3{font-size:21px;margin-bottom:10px}
-  .card p{color:var(--ink-soft);font-size:15px}
 
   /* MISSIONS */
-  .missions-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
-  .mission{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:22px 20px}
-  .mission i{color:var(--accent);font-size:18px;margin-top:3px}
-  .mission strong{display:block;font-weight:600;font-size:15px}
-  .mission span{font-size:13px;color:var(--ink-mute)}
 
   /* EVENTS */
-  .events{position:relative;color:#fff;overflow:hidden;background:linear-gradient(140deg,var(--primary-dark) 0%,var(--primary) 55%,#2c6a49 100%)}
-  .events::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 82% 12%,rgba(168,132,44,.34),transparent 55%)}
-  .events::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:24px 24px;-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 40%,transparent 82%);mask-image:radial-gradient(ellipse at 50% 40%,#000 40%,transparent 82%)}
-  .events .wrap{position:relative;z-index:1}
+  .events{background:var(--surface);padding:0}
   .events .section-head p{color:rgba(255,255,255,.75)}
   .events .eyebrow{color:#d8c288}
   .event-list{display:grid;gap:14px}
@@ -327,18 +313,6 @@
 
 
   /* ---------- About Us (merged from About page) ---------- */
-  #about .about-body{max-width:820px;margin:0 auto;}
-  #about .about-block{padding:34px 0;border-bottom:1px solid var(--border);}
-  #about .about-block:last-child{border-bottom:none;}
-  #about .about-block h3{font-size:clamp(1.4rem,3vw,1.9rem);color:var(--ink);margin:6px 0 8px;font-family:var(--serif);font-weight:600;}
-  #about .about-block .eyebrow{margin-bottom:10px;}
-  #about .about-block p{color:var(--ink-soft);font-size:1.03rem;line-height:1.75;margin:0 0 14px;}
-  #about .about-block p:last-child{margin-bottom:0;}
-  #about .belief-list{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:13px;}
-  #about .belief-list li{display:flex;gap:12px;align-items:flex-start;color:var(--ink-soft);line-height:1.6;font-size:1.0rem;}
-  #about .belief-list li i{color:var(--primary);margin-top:5px;flex:none;font-size:.95rem;}
-  #about .about-callout{background:var(--primary-soft);border-radius:var(--radius);padding:22px 26px;margin-top:10px;}
-  #about .about-callout p{color:var(--primary-dark);margin:0;}
 
 
   /* ---------- Say Hello modal ---------- */
@@ -433,13 +407,6 @@
   @media(max-width:600px){}
 
 
-  /* ---------- Google Calendar embed ---------- */
-  .gcal-embed{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-    overflow:hidden;box-shadow:var(--shadow);max-width:900px;margin:0 auto;}
-  .gcal-embed iframe{display:block;width:100%;}
-  .gcal-note{text-align:center;margin-top:16px;color:rgba(255,255,255,.9);font-size:.92rem;}
-
-
   
   /* ---------- Hero (full-cover rock background) ---------- */
   .hero{position:relative;min-height:92vh;display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--primary-dark)}
@@ -456,8 +423,9 @@
   .hero .eyebrow{color:#f0d9a0}
   .hero h1{font-size:clamp(40px,7vw,72px);line-height:1.05;margin:18px 0 22px;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.35)}
   .hero p{font-size:clamp(17px,2.2vw,21px);max-width:560px;color:rgba(255,255,255,.92);margin-bottom:34px;text-shadow:0 1px 12px rgba(0,0,0,.3)}
-  .hero-meta{display:flex;gap:32px;margin-top:42px;flex-wrap:wrap}
-  .hero-meta>div{display:flex;align-items:center;gap:12px;font-size:15px}
+  .hero-meta{display:flex;gap:32px;margin-top:42px;flex-wrap:wrap;justify-content:center}
+  .hero-meta-link{display:flex;align-items:center;gap:12px;font-size:15px;text-decoration:none;color:inherit;transition:transform .2s ease}
+  .hero-meta-link:hover{transform:translateY(-2px)}
   .hero-meta i{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.16);display:grid;place-items:center;font-size:17px;color:#f0d9a0}
   .hero-meta small{display:block;color:rgba(255,255,255,.7);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
   .hero-meta strong{color:#fff}
@@ -478,6 +446,89 @@
     .hero-overlay{background:linear-gradient(180deg,rgba(21,53,36,.72) 0%,rgba(21,53,36,.55) 55%,rgba(21,53,36,.72) 100%)}
   }
 
+
+  /* ---------- Calendar layout (3-column) ---------- */
+  .cal-layout{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;padding:48px 0 32px;border-top:3px solid var(--primary)}
+  .cal-col-title{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--ink);margin:0 0 14px}
+  .cal-desc{color:var(--ink-soft);font-size:.98rem;line-height:1.7;margin:0 0 18px}
+  .cal-links{display:flex;gap:20px;flex-wrap:wrap}
+  .cal-link{display:inline-flex;align-items:center;gap:7px;font-size:.88rem;font-weight:700;
+    text-transform:uppercase;letter-spacing:.06em;color:var(--primary);transition:color .15s}
+  .cal-link:hover{color:var(--accent)}
+  .cal-link i{font-size:.8rem}
+  .cal-events{display:grid;gap:18px}
+  .cal-event{display:flex;gap:16px;align-items:flex-start}
+  .cal-date{flex:none;text-align:center;line-height:1}
+  .cal-month{display:block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-mute)}
+  .cal-day{display:block;font-family:var(--serif);font-size:2rem;font-weight:600;color:var(--ink);line-height:1.1}
+  .cal-detail{display:flex;flex-direction:column;gap:2px}
+  .cal-detail strong{font-size:1rem;color:var(--ink)}
+  .cal-detail span{font-size:.88rem;color:var(--ink-mute)}
+  .cal-empty{color:var(--ink-mute);font-size:.95rem;font-style:italic}
+  .cal-footer{text-align:center;padding-top:28px;border-top:1px solid var(--border);margin-top:28px}
+  .cal-full{font-size:.95rem}
+  @media(max-width:900px){.cal-layout{grid-template-columns:1fr;gap:32px}}
+
+
+  /* ---------- Mission verse (Great Commission) ---------- */
+  .mission-verse{margin-top:72px;text-align:center;padding:56px 32px;
+    background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+    border-radius:var(--radius);position:relative;overflow:hidden;}
+  .mission-verse::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 80% 15%,rgba(168,132,44,.3),transparent 50%)}
+  .mission-verse .eyebrow{color:#f0d9a0;position:relative;z-index:1}
+  .great-commission{position:relative;z-index:1;border:none;margin:0;padding:0;max-width:780px;margin:20px auto 0}
+  .great-commission p{font-family:var(--serif);font-size:clamp(1.3rem,3vw,2rem);
+    font-weight:500;line-height:1.55;color:#fff;font-style:italic;text-shadow:0 2px 20px rgba(0,0,0,.25)}
+  .great-commission cite{display:block;margin-top:18px;font-style:normal;font-size:1rem;
+    font-weight:700;color:#f0d9a0;letter-spacing:.02em}
+  .great-commission .version{font-weight:500;opacity:.75;font-size:.88rem}
+  @media(max-width:680px){
+    .mission-verse{padding:40px 20px}
+    .great-commission p{font-size:clamp(1.1rem,4.5vw,1.5rem)}
+  }
+
+
+  /* ---------- Beliefs prose ---------- */
+
+
+  .mission-verse h2{color:#fff;font-size:clamp(1.8rem,4vw,2.6rem);margin:12px 0 20px}
+
+  /* ---------- Three-column (About / Beliefs / Mission) ---------- */
+  .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-items:start}
+  .three-col-item h3{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--ink);margin:10px 0 16px}
+  .three-col-item p{font-size:1.12rem;line-height:1.8;color:var(--ink-soft);margin:0 0 14px}
+  .three-col-item p:last-of-type{margin-bottom:0}
+  .three-col-item em{font-style:italic;color:var(--primary)}
+  .three-col-item strong{color:var(--ink)}
+  .mission-quote{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.75;color:var(--ink-soft)}
+  .three-col-item cite{display:block;margin-top:12px;font-style:normal;font-size:.95rem;font-weight:700;color:var(--accent)}
+  @media(max-width:900px){.three-col{grid-template-columns:1fr;gap:36px}}
+
+
+  /* ---------- Beliefs expand/collapse ---------- */
+  .pillar-list{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:6px}
+  .pillar-list li{font-size:1.08rem;color:var(--ink);padding-left:18px;position:relative}
+  .pillar-list li::before{content:"·";position:absolute;left:0;color:var(--accent);font-weight:700;font-size:1.2rem;line-height:1.4}
+  .expand-btn{background:none;border:none;font-family:var(--sans);font-size:.95rem;font-weight:700;
+    color:var(--primary);cursor:pointer;padding:0;margin-top:14px;text-transform:uppercase;letter-spacing:.04em;transition:color .15s}
+  .expand-btn:hover{color:var(--accent)}
+  .beliefs-expanded{display:none;margin-top:14px}
+  .beliefs-expanded p{font-size:1.05rem;line-height:1.75;color:var(--ink-soft);margin:0 0 12px}
+  .beliefs-expanded p:last-child{margin-bottom:0}
+  .beliefs-expanded strong{color:var(--ink)}
+  .three-col-item.expanded .beliefs-expanded{display:block}
+
+
+  /* ---------- Hero cross overlay ---------- */
+  .hero-cross{position:absolute;left:5%;top:50%;transform:translateY(-50%);
+    height:85%;width:auto;z-index:1;
+    opacity:.45;pointer-events:none;
+    filter:drop-shadow(0 8px 30px rgba(0,0,0,.4))}
+  @media(max-width:680px){
+    .hero-cross{left:2%;height:70%;width:auto;opacity:.35}
+  }
+
 </style>
 </head>
 <body>
@@ -491,14 +542,14 @@
     </a>
     <nav class="nav-links" id="navlinks">
       <a href="#welcome"><span data-en>Welcome</span><span data-am class="amh">እንኳን ደህና መጡ</span></a>
-      <a href="#beliefs"><span data-en>Beliefs</span><span data-am class="amh">እምነታችን</span></a>
+      <a href="#welcome"><span data-en>Beliefs</span><span data-am class="amh">እምነታችን</span></a>
       <a href="#events"><span data-en>Events</span><span data-am class="amh">ዝግጅቶች</span></a>
       <a href="#sermons"><span data-en>Sermons</span><span data-am class="amh">ስብከቶች</span></a>
       <a href="#verses"><span data-en>Memory Verse</span><span data-am class="amh">ጥቅስ</span></a>
       <a href="#articles"><span data-en>Articles</span><span data-am class="amh">ጽሑፎች</span></a>
       <a href="#leadership"><span data-en>Leadership</span><span data-am class="amh">አመራር</span></a>
       <a href="#visit"><span data-en>Visit</span><span data-am class="amh">ይጎብኙን</span></a>
-      <a href="#about"><span data-en>About</span><span data-am class="amh">ስለ እኛ</span></a>
+      <a href="#welcome"><span data-en>About</span><span data-am class="amh">ስለ እኛ</span></a>
     </nav>
     <div class="nav-cta">
       <div class="lang-toggle">
@@ -515,178 +566,105 @@
   <div class="hero-bg">
     <img class="hero-cover" src="images/hero_rock.jpg" alt="A person standing on a great rock rising from the sea — Ebenezer, stone of help">
     <div class="hero-overlay"></div>
+    <img class="hero-cross" src="images/cross_overlay.png" alt="" aria-hidden="true">
   </div>
   <div class="wrap hero-inner">
     <div class="hero-text">
       <span class="eyebrow" data-en>Welcome home · Whitehall, Ohio</span>
       <span class="eyebrow amh" data-am>እንኳን ደህና መጡ · ዋይትሆል፣ ኦሃዮ</span>
-      <h1 data-en>Come just as you are.</h1>
-      <h1 data-am class="amh">እንዳሉ ይምጡ።</h1>
-      <p data-en>We are a loving Christian community that worships God and serves others — reaching Columbus and beyond with the transforming message of Jesus Christ.</p>
-      <p data-am class="amh">እግዚአብሔርን የምናመልክ እና ሌሎችን የምናገለግል ፍቅር የተሞላ የክርስቲያን ማህበረሰብ ነን። ኢየሱስ ይወዳችኋል፣ እኛም እንዲሁ።</p>
+      <h1 data-en>The Lord has helped us this far — and there's room for you.</h1>
+      <h1 data-am class="amh">እስከዚህ ድረስ እግዚአብሔር ረድቶናል — ለእርስዎም ቦታ አለ።</h1>
+      <p data-en>An Ethiopian evangelical church family in Columbus — worshiping God, serving one another, and reaching our community with the transforming message of Jesus Christ.</p>
+      <p data-am class="amh">በኮሎምበስ የሚገኝ የኢትዮጵያ ወንጌላዊ የቤተክርስቲያን ቤተሰብ — እግዚአብሔርን የምናመልክ፣ አንዳችን ሌላውን የምናገለግል፣ ማህበረሰባችንን በኢየሱስ ክርስቶስ መልእክት የምንደርስ።</p>
+      <a href="https://www.bible.com/bible/100/1SA.7.12.NASB1995" target="_blank" rel="noopener" class="hero-verse">
+        <i class="fa-solid fa-book-bible"></i>
+        <span data-en>&ldquo;Thus far the Lord has helped us.&rdquo; — 1 Samuel 7:12 (NASB)</span>
+        <span data-am class="amh">&ldquo;እስከዚህ ድረስ እግዚአብሔር ረድቶናል።&rdquo; — 1 ሳሙኤል 7፥12</span>
+        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.7rem;opacity:.7"></i>
+      </a>
       <div class="hero-meta">
-        <div><i class="fa-solid fa-clock"></i><span><small data-en>Sundays</small><small data-am class="amh">እሁድ</small><strong>10:00 AM</strong></span></div>
-        <div><i class="fa-solid fa-location-dot"></i><span><small data-en>Gather at</small><small data-am class="amh">አድራሻ</small><strong>700 Bernhard Rd, Whitehall</strong></span></div>
+        <a href="#events" class="hero-meta-link"><i class="fa-solid fa-clock"></i><span><small data-en>Sundays</small><small data-am class="amh">እሁድ</small><strong>10:00 AM</strong></span></a>
+        <a href="#visit" class="hero-meta-link"><i class="fa-solid fa-location-dot"></i><span><small data-en>Gather at</small><small data-am class="amh">አድራሻ</small><strong>700 Bernhard Rd, Whitehall</strong></span></a>
       </div>
-      <div class="hero-verse">
-        <i class="fa-solid fa-mountain"></i>
-        <span data-en>&ldquo;Thus far the Lord has helped us.&rdquo; · 1 Samuel 7:12</span>
-        <span data-am class="amh">&ldquo;እስከዚህ ድረስ እግዚአብሔር ረድቶናል።&rdquo; · 1 ሳሙኤል 7፥12</span>
-      </div>
+      
     </div>
   </div>
 </section>
 
-<!-- WELCOME -->
-<section class="section" id="welcome">
-  <div class="wrap welcome">
-    <div>
-      <span class="eyebrow" data-en>About Us</span>
-      <span class="eyebrow amh" data-am>ስለ እኛ</span>
-      <h2 data-en>A friendly family, seeking and serving together</h2>
-      <h2 data-am class="amh">አብረን የምንፈልግ እና የምናገለግል ቤተሰብ</h2>
-      <p data-en>Ebenezer is a Christian congregation serving our local community and encouraging others through a life-changing Christian journey. We place a high priority on teaching from the Bible and following the example of Jesus.</p>
-      <p data-am class="amh">ኤቤኔዘር በመጽሐፍ ቅዱስ ትምህርት እና በኢየሱስ ምሳሌ ላይ ትኩረት የምናደርግ፣ አካባቢያችንን የምናገለግል የክርስቲያን ጉባኤ ነው።</p>
-      <p data-en>Our vision is to make an impact in Columbus and beyond with the transforming message of Jesus Christ — through words and actions. If you're looking for a church home, you are very welcome to join us.</p>
-      <p data-am class="amh">ራዕያችን በቃላትና በተግባር በኢየሱስ ክርስቶስ መልእክት ኮሎምበስንና ከዚያም ባሻገር መለወጥ ነው። የቤተክርስቲያን ቤት እየፈለጉ ከሆነ በጣም እንኳን ደህና መጡ።</p>
-      <a href="#beliefs" class="btn btn-outline" style="margin-top:8px"><span data-en>Our Beliefs</span><span data-am class="amh">እምነታችን</span> <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    <div class="welcome-img">
-      <div class="motif-panel" role="img" aria-label="Ebenezer stones — stone of help">
-        <div class="motif-dots"></div>
-        <svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g stroke="#e9d29a" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round">
-            <path d="M70 185 V95 a40 40 0 0 1 80 0 V185 Z"/>
-            <path d="M150 185 V120 a30 30 0 0 1 60 0 V185 Z"/>
-            <path d="M20 185 V132 a24 24 0 0 1 48 0 V185 Z"/>
-            <line x1="8" y1="185" x2="224" y2="185"/>
-            <line x1="110" y1="70" x2="110" y2="120"/>
-            <line x1="92" y1="90" x2="128" y2="90"/>
-          </g>
-          <circle cx="185" cy="60" r="7" fill="#e9d29a" opacity=".85"/>
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ABOUT US -->
-<section class="section" id="about">
-  <div class="wrap">
-    <div class="section-head" style="text-align:center;max-width:680px;margin-left:auto;margin-right:auto">
-      <span class="eyebrow" data-en>About Us</span>
-      <span class="eyebrow amh" data-am>ስለ እኛ</span>
-      <h2 data-en>Who We Are</h2>
-      <h2 data-am class="amh">እኛ እነማን ነን</h2>
-    </div>
-    <div class="about-body">
 
-      <div class="about-block">
-        <span class="eyebrow" data-en>Our Story</span>
-        <span class="eyebrow amh" data-am>ታሪካችን</span>
-        <h3 data-en>A friendly community that worships God and serves others</h3>
-        <h3 data-am class="amh">እግዚአብሔርን የሚያመልክ እና ሌሎችን የሚያገለግል ወዳጃዊ ማህበረሰብ</h3>
-        <p data-en>Ebenezer Ethiopian Evangelical Church is a Christian congregation serving our local community and reaching others with the transforming message of Jesus Christ. The name <em>Ebenezer</em> means &ldquo;stone of help&rdquo; (1 Samuel 7:12) — a lasting reminder that, thus far, the Lord has helped us.</p>
-        <p data-am class="amh">ኤቤኔዘር የኢትዮጵያ ወንጌላዊት ቤተክርስቲያን አካባቢያችንን የምናገለግልና ሌሎችን በኢየሱስ ክርስቶስ መልእክት የምንደርስ የክርስቲያን ጉባኤ ነው። <em>ኤቤኔዘር</em> ማለት &ldquo;የእርዳታ ድንጋይ&rdquo; ማለት ነው (1 ሳሙኤል 7፥12) — &ldquo;እስከዚህ ድረስ እግዚአብሔር ረድቶናል&rdquo; የሚል ዘላቂ ማስታወሻ።</p>
-      </div>
 
-      <div class="about-block">
-        <span class="eyebrow" data-en>What We Believe</span>
-        <span class="eyebrow amh" data-am>የምናምነው</span>
-        <h3 data-en>Our Statement of Faith</h3>
-        <h3 data-am class="amh">የእምነት መግለጫችን</h3>
-        <ul class="belief-list">
-          <li><i class="fa-solid fa-check"></i><span data-en>The Bible is the inspired, infallible Word of God — our sufficient guide for life.</span><span data-am class="amh">መጽሐፍ ቅዱስ በእግዚአብሔር መንፈስ የተጻፈ፣ የማይሳሳት የእግዚአብሔር ቃል ነው — ለሕይወታችን በቂ መመሪያ።</span></li>
-          <li><i class="fa-solid fa-check"></i><span data-en>There is one God, eternally existent in three Persons: Father, Son, and Holy Spirit.</span><span data-am class="amh">አንድ አምላክ አለ፣ በሦስት አካላት የሚኖር፦ አብ፣ ወልድ እና መንፈስ ቅዱስ።</span></li>
-          <li><i class="fa-solid fa-check"></i><span data-en>In the deity of Jesus Christ, His virgin birth, sinless life, atoning death, resurrection, and return.</span><span data-am class="amh">በኢየሱስ ክርስቶስ አምላክነት፣ በድንግል መወለዱ፣ ኃጢአት በሌለው ሕይወቱ፣ በማስተስረይ ሞቱ፣ በትንሣኤውና በዳግም ምጽአቱ።</span></li>
-          <li><i class="fa-solid fa-check"></i><span data-en>Salvation comes through repentance and faith in the death and resurrection of Jesus Christ.</span><span data-am class="amh">መዳን የሚገኘው በንስሐና በኢየሱስ ክርስቶስ ሞትና ትንሣኤ በማመን ነው።</span></li>
-          <li><i class="fa-solid fa-check"></i><span data-en>In the regenerating and empowering work of the Holy Spirit in every believer.</span><span data-am class="amh">በእያንዳንዱ አማኝ ውስጥ በመንፈስ ቅዱስ የዳግም ልደትና የማብቃት ሥራ።</span></li>
-          <li><i class="fa-solid fa-check"></i><span data-en>In baptism by immersion and the resurrection to eternal life for all who believe.</span><span data-am class="amh">በመጥለቅ ጥምቀትና ለሚያምኑ ሁሉ ወደ ዘላለም ሕይወት በሚሆን ትንሣኤ።</span></li>
-        </ul>
-      </div>
-
-      <div class="about-block">
-        <span class="eyebrow" data-en>Our Purpose</span>
-        <span class="eyebrow amh" data-am>ዓላማችን</span>
-        <h3 data-en>Believe · Belong · Be an Ambassador</h3>
-        <h3 data-am class="amh">እመኑ · የማህበሩ አካል ሁኑ · አምባሳደር ሁኑ</h3>
-        <p data-en>Our purpose is to be disciples of the Lord Jesus Christ ourselves, and then to make disciples in obedience to His commission (Matthew 28:18-20). We emphasize new birth, holiness of heart, mutual love, moral purity, and sharing God's truth — grounding every part of life on God's Word.</p>
-        <p data-am class="amh">ዓላማችን በመጀመሪያ እኛ ራሳችን የጌታ የኢየሱስ ክርስቶስ ደቀ መዛሙርት መሆን፣ ከዚያም በትእዛዙ መሠረት ደቀ መዛሙርትን ማድረግ ነው (ማቴዎስ 28፥18-20)። ዳግም ልደትን፣ የልብ ቅድስናን፣ የእርስ በርስ ፍቅርን፣ የሥነ ምግባር ንጽሕናንና የእግዚአብሔርን እውነት ማካፈልን እናሳስባለን።</p>
-      </div>
-
-      <div class="about-block">
-        <span class="eyebrow" data-en>Our Meetings</span>
-        <span class="eyebrow amh" data-am>ስብሰባዎቻችን</span>
-        <h3 data-en>Gathering together as a family</h3>
-        <h3 data-am class="amh">እንደ ቤተሰብ አብሮ መሰብሰብ</h3>
-        <p data-en>We gather every <strong>Sunday at 10:00 AM</strong> for worship, teaching from the Word, prayer, and fellowship. We believe in meeting regularly to encourage one another (Hebrews 10:25), and our fellowship continues throughout the week in homes and small groups.</p>
-        <p data-am class="amh">በየ<strong>እሁዱ ጠዋት 10፡00 ሰዓት</strong> ለአምልኮ፣ ከቃሉ ለመማር፣ ለጸሎትና ለኅብረት እንሰበሰባለን። አንዳችን ሌላውን ለማበረታታት አዘውትሮ መሰብሰብ አስፈላጊ እንደሆነ እናምናለን (ዕብራውያን 10፥25)።</p>
-        <div class="about-callout">
-          <p data-en>💛 All visitors are warmly welcome — come just as you are, and join us for fellowship after the service.</p>
-          <p data-am class="amh">💛 ሁሉም ጎብኚዎች እንኳን ደህና መጡ — እንዳሉ ይምጡ፣ ከአገልግሎቱ በኋላም በኅብረታችን ይሳተፉ።</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 
 <!-- BELIEFS -->
-<section class="section beliefs" id="beliefs">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" data-en>What We Believe</span>
-      <span class="eyebrow amh" data-am>የምናምነው</span>
-      <h2 data-en>Believe · Belong · Be an Ambassador</h2>
-      <h2 data-am class="amh">እመኑ · የማህበሩ አካል ሁኑ · አምባሳደር ሁኑ</h2>
-      <p data-en>By the grace of God, we live out our faith in Jesus Christ and build one another up.</p>
-      <p data-am class="amh">በእግዚአብሔር ጸጋ በኢየሱስ ክርስቶስ ያለንን እምነት እየኖርን አንዳችን ሌላውን እናንጻለን።</p>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <div class="ic"><i class="fa-solid fa-book-bible"></i></div>
-        <h3 data-en>Believe in Christ</h3><h3 data-am class="amh">በክርስቶስ እመኑ</h3>
-        <p data-en>We trust, feed on, and obey God's Word as it molds and shapes us into mature, Christ-centered followers.</p>
-        <p data-am class="amh">የእግዚአብሔርን ቃል እናምናለን፣ እንመገባለን እናም እንታዘዛለን — ብስለት ወዳላቸው የክርስቶስ ተከታዮች ይቀርፀናል።</p>
-      </div>
-      <div class="card">
-        <div class="ic"><i class="fa-solid fa-people-group"></i></div>
-        <h3 data-en>Belong to Community</h3><h3 data-am class="amh">የማህበሩ አካል ሁኑ</h3>
-        <p data-en>Called out of the world, we live in mutual love, care, and accountability within the Body of Christ.</p>
-        <p data-am class="amh">ከዓለም ተጠርተን በክርስቶስ አካል ውስጥ በፍቅር፣ በእንክብካቤ እና በተጠያቂነት እንኖራለን።</p>
-      </div>
-      <div class="card">
-        <div class="ic"><i class="fa-solid fa-hand-holding-heart"></i></div>
-        <h3 data-en>Be an Ambassador</h3><h3 data-am class="amh">አምባሳደር ሁኑ</h3>
-        <p data-en>We represent Christ and make His love known in our community and the world through our witness and work.</p>
-        <p data-am class="amh">ክርስቶስን እንወክላለን እናም በምስክርነትና በሥራ ፍቅሩን በአካባቢያችንና በዓለም እናሳውቃለን።</p>
-      </div>
-    </div>
 
-    <div class="section-head" style="margin-top:72px">
-      <span class="eyebrow" data-en>Our Missions</span>
-      <span class="eyebrow amh" data-am>ተልእኮዎቻችን</span>
-      <h2 data-en>Making disciples of all nations</h2>
-      <h2 data-am class="amh">ሁሉንም አሕዛብ ደቀ መዛሙርት ማድረግ</h2>
-      <p data-en>Locally and globally, Ebenezer participates in missions down the street and around the world.</p>
-      <p data-am class="amh">ኤቤኔዘር በአካባቢውና በዓለም ዙሪያ በተልእኮዎች ይሳተፋል።</p>
-    </div>
-    <div class="missions-grid">
-      <div class="mission"><i class="fa-solid fa-children"></i><div><strong data-en>Addis Ababa Orphan Kids</strong><strong data-am class="amh">የአዲስ አበባ ወላጅ አልባ ህጻናት</strong><span data-en>Project support</span><span data-am class="amh">የፕሮጀክት ድጋፍ</span></div></div>
-      <div class="mission"><i class="fa-solid fa-church"></i><div><strong data-en>Support Dessie Church</strong><strong data-am class="amh">የደሴ ቤተክርስቲያን ድጋፍ</strong><span data-en>Ongoing partnership</span><span data-am class="amh">ቀጣይ አጋርነት</span></div></div>
-      <div class="mission"><i class="fa-solid fa-house-chimney-crack"></i><div><strong data-en>Haiti Earthquake Relief</strong><strong data-am class="amh">የሃይቲ የመሬት መንቀጥቀጥ እርዳታ</strong><span data-en>Disaster response</span><span data-am class="amh">የአደጋ ምላሽ</span></div></div>
-      <div class="mission"><i class="fa-solid fa-seedling"></i><div><strong data-en>Hamer &amp; Benna Tribes</strong><strong data-am class="amh">የሃመር እና ቤና ጎሳዎች</strong><span data-en>Evangelization</span><span data-am class="amh">ወንጌል ስርጭት</span></div></div>
-      <div class="mission"><i class="fa-solid fa-hands-holding-circle"></i><div><strong data-en>Western Ethiopia Outreach</strong><strong data-am class="amh">የምዕራብ ኢትዮጵያ ተደራሽነት</strong><span data-en>Community support</span><span data-am class="amh">የማህበረሰብ ድጋፍ</span></div></div>
+
+<!-- ABOUT / BELIEFS / MISSION -->
+<section class="section" id="welcome">
+  <div class="wrap">
+    <div class="three-col">
+
+      <!-- Column 1: About Us -->
+      <div class="three-col-item">
+        <span class="eyebrow" data-en>About Us</span>
+        <span class="eyebrow amh" data-am>ስለ እኛ</span>
+        <h3 data-en>Who We Are</h3>
+        <h3 data-am class="amh">እኛ እነማን ነን</h3>
+        <p data-en>We are a welcoming church family rooted in Scripture and the example of Jesus — here to encourage one another through a life-changing Christian journey.</p>
+        <p data-am class="amh">በቅዱሳት መጻሕፍትና በኢየሱስ ምሳሌ ላይ የተመሰረተ — በሕይወት ለዋጭ የክርስቲያን ጉዞ አንዳችን ሌላውን የምናበረታታ ወዳጃዊ የቤተክርስቲያን ቤተሰብ ነን።</p>
+        <p data-en>The name <em>Ebenezer</em> means "stone of help" (1 Samuel 7:12) — a lasting reminder that, thus far, the Lord has helped us.</p>
+        <p data-am class="amh"><em>ኤቤኔዘር</em> ማለት "የእርዳታ ድንጋይ" ማለት ነው (1 ሳሙኤል 7፥12) — "እስከዚህ ድረስ እግዚአብሔር ረድቶናል" የሚል ዘላቂ ማስታወሻ።</p>
+      </div>
+
+      <!-- Column 2: Our Beliefs -->
+      <div class="three-col-item">
+        <span class="eyebrow" data-en>What We Believe</span>
+        <span class="eyebrow amh" data-am>የምናምነው</span>
+        <h3 data-en>Our Beliefs</h3>
+        <h3 data-am class="amh">እምነታችን</h3>
+        <p data-en>We believe in The Triune God and we proclaim the Good News that sin and death have been overcome by the death and resurrection of Jesus Christ.</p>
+        <p data-am class="amh">በሥላሴ አምላክ እናምናለን፣ ኃጢአትና ሞት በኢየሱስ ክርስቶስ ሞትና ትንሣኤ ድል መነሣታቸውን እናውጃለን።</p>
+        <ul class="pillar-list">
+          <li data-en><strong>Believe in Christ</strong></li>
+          <li data-en><strong>Belong to the Community of Christ</strong></li>
+          <li data-en><strong>Be Ambassador for Christ</strong></li>
+          <li data-am class="amh"><strong>በክርስቶስ እመኑ</strong></li>
+          <li data-am class="amh"><strong>የክርስቶስ ማህበረሰብ አካል ሁኑ</strong></li>
+          <li data-am class="amh"><strong>የክርስቶስ አምባሳደር ሁኑ</strong></li>
+        </ul>
+        <button class="expand-btn" onclick="this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'Show less ▲':'Read more ▼'" data-en>Read more ▼</button>
+        <button class="expand-btn amh" onclick="this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'ያንሱ ▲':'ተጨማሪ ▼'" data-am>ተጨማሪ ▼</button>
+        <div class="beliefs-expanded">
+          <p data-en><strong>Believe in Christ:</strong> we trust, feed and obey God's Word as it molds, grows and shapes us into mature Christ-centered followers.</p>
+          <p data-am class="amh"><strong>በክርስቶስ እመኑ፦</strong> የእግዚአብሔርን ቃል እናምናለን፣ እንመገባለን እናም እንታዘዛለን — ወደ ብስለት ያደረሱ የክርስቶስ ተከታዮች ይቀርፀናል።</p>
+          <p data-en><strong>Belong to the Community of Christ:</strong> we are called out of the world, sinners in need of grace expressed through God's Word and Sacrament, our mutual love, care, and accountability in the Body of Christ, the Church.</p>
+          <p data-am class="amh"><strong>የክርስቶስ ማህበረሰብ አካል ሁኑ፦</strong> ከዓለም ተጠርተናል፣ ጸጋ የሚያስፈልጋቸው ኃጢአተኞች — በእግዚአብሔር ቃልና ቁርባን፣ በእርስ በርስ ፍቅር፣ እንክብካቤና ተጠያቂነት በክርስቶስ አካል ውስጥ።</p>
+          <p data-en><strong>Be Ambassador for Christ:</strong> we represent Christ and make His love known in our community and in the world through our witness and work.</p>
+          <p data-am class="amh"><strong>የክርስቶስ አምባሳደር ሁኑ፦</strong> ክርስቶስን እንወክላለን እናም በምስክርነትና በሥራ ፍቅሩን በማህበረሰባችንና በዓለም እናሳውቃለን።</p>
+        </div>
+      </div>
+
+      <!-- Column 3: Our Mission -->
+      <div class="three-col-item">
+        <span class="eyebrow" data-en>Our Mission</span>
+        <span class="eyebrow amh" data-am>ተልእኮአችን</span>
+        <h3 data-en>The Great Commission</h3>
+        <h3 data-am class="amh">ታላቁ ተልእኮ</h3>
+        <p class="mission-quote" data-en>&ldquo;Go therefore and make disciples of all the nations, baptizing them in the name of the Father and the Son and the Holy Spirit, teaching them to observe all that I commanded you; and lo, I am with you always, even to the end of the age.&rdquo;</p>
+        <p class="mission-quote amh" data-am>&ldquo;እንግዲህ ሂዱና አሕዛብን ሁሉ በአብ በወልድና በመንፈስ ቅዱስ ስም እያጠመቃችኋቸው ያዘዝኋችሁን ሁሉ እንዲጠብቁ እያስተማራችኋቸው ደቀ መዛሙርት አድርጓቸው፤ እነሆም እኔ እስከ ዓለም ፍጻሜ ድረስ ሁልጊዜ ከእናንተ ጋር ነኝ።&rdquo;</p>
+        <cite data-en>— Matthew 28:19-20 (NASB 1995)</cite>
+        <cite data-am class="amh">— ማቴዎስ 28:19-20</cite>
+      </div>
+
     </div>
   </div>
 </section>
 
+
+
 <section class="section leadership" id="leadership">
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow" data-en>Our Team</span>
-      <span class="eyebrow amh" data-am>የእኛ ቡድን</span>
+    <div class="section-head" style="text-align:center">
       <h2 data-en>Meet Our Leadership</h2>
       <h2 data-am class="amh">አመራራችንን ይተዋወቁ</h2>
       <p data-en>Our pastor and elders shepherd the congregation, teach the Word, and care for the Ebenezer family.</p>
@@ -761,23 +739,57 @@
 <!-- EVENTS -->
 <section class="section events" id="events">
   <div class="wrap">
-    <div class="section-head" style="text-align:center;max-width:680px;margin-left:auto;margin-right:auto">
-      <span class="eyebrow" data-en>Church Calendar</span>
-      <span class="eyebrow amh" data-am>የቤተክርስቲያን የቀን መቁጠሪያ</span>
-      <h2 data-en>Events &amp; Gatherings</h2>
-      <h2 data-am class="amh">ዝግጅቶች እና ስብሰባዎች</h2>
-      <p data-en>See what's happening this week and beyond. Managed live in Google Calendar.</p>
-      <p data-am class="amh">በዚህ ሳምንትና ከዚያ በኋላ ያለውን ይመልከቱ። በGoogle Calendar በቀጥታ ይተዳደራል።</p>
-    </div>
+    <div class="cal-layout">
 
-    <div class="gcal-embed">
-      <iframe
-        src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID%40group.calendar.google.com&ctz=America%2FNew_York&mode=MONTH&showTitle=0&showPrint=0&showTabs=1&showCalendars=0&showTz=0&bgcolor=%23ffffff"
-        style="border:0" width="100%" height="620" frameborder="0" scrolling="no"
-        title="Ebenezer Church Events Calendar"></iframe>
+      <!-- Column 1: Sunday Meeting -->
+      <div class="cal-col">
+        <h3 class="cal-col-title" data-en>Sunday Meeting</h3>
+        <h3 class="cal-col-title amh" data-am>የእሁድ ስብሰባ</h3>
+        <p class="cal-desc" data-en>We meet as a church each Sunday morning at 10:00 AM for a time of singing, preaching, and encouragement followed by coffee.</p>
+        <p class="cal-desc amh" data-am>በየእሁዱ ጠዋት 10:00 ሰዓት ለመዝሙር፣ ለስብከትና ለማበረታቻ እንሰበሰባለን — ከዚያም በቡና ጊዜ እንቆያለን።</p>
+        <div class="cal-links">
+          <a href="#visit" class="cal-link"><i class="fa-solid fa-location-dot"></i> <span data-en>Details & Location</span><span data-am class="amh">ዝርዝር እና አድራሻ</span></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Upcoming Meetings -->
+      <div class="cal-col">
+        <h3 class="cal-col-title" data-en>Upcoming Meetings</h3>
+        <h3 class="cal-col-title amh" data-am>የሚመጡ ስብሰባዎች</h3>
+        <div class="cal-events">
+          <div class="cal-event">
+            <div class="cal-date"><span class="cal-month">Aug</span><span class="cal-day">22</span></div>
+            <div class="cal-detail"><strong data-en>Virtual Bible Study</strong><strong data-am class="amh">የመስመር ላይ የመጽሐፍ ቅዱስ ጥናት</strong><span data-en>Friday, 6:00 PM – 7:00 PM</span><span data-am class="amh">ዓርብ፣ 6:00 PM – 7:00 PM</span></div>
+          </div>
+          <div class="cal-event">
+            <div class="cal-date"><span class="cal-month">Aug</span><span class="cal-day">24</span></div>
+            <div class="cal-detail"><strong data-en>Sunday Meeting</strong><strong data-am class="amh">የእሁድ ስብሰባ</strong><span data-en>Sunday, 10:00 AM</span><span data-am class="amh">እሁድ፣ 10:00 AM</span></div>
+          </div>
+          <div class="cal-event">
+            <div class="cal-date"><span class="cal-month">Aug</span><span class="cal-day">24</span></div>
+            <div class="cal-detail"><strong data-en>Kunama Sunday Service</strong><strong data-am class="amh">የኩናማ የእሁድ አገልግሎት</strong><span data-en>Sunday, 2:00 PM</span><span data-am class="amh">እሁድ፣ 2:00 PM</span></div>
+          </div>
+          <div class="cal-event">
+            <div class="cal-date"><span class="cal-month">Aug</span><span class="cal-day">29</span></div>
+            <div class="cal-detail"><strong data-en>Virtual Bible Study</strong><strong data-am class="amh">የመስመር ላይ የመጽሐፍ ቅዱስ ጥናት</strong><span data-en>Friday, 6:00 PM – 7:00 PM</span><span data-am class="amh">ዓርብ፣ 6:00 PM – 7:00 PM</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 3: Special Events -->
+      <div class="cal-col">
+        <h3 class="cal-col-title" data-en>Special Events</h3>
+        <h3 class="cal-col-title amh" data-am>ልዩ ዝግጅቶች</h3>
+        <p class="cal-empty" data-en>There are no upcoming special events scheduled.</p>
+        <p class="cal-empty amh" data-am>የታቀዱ ልዩ ዝግጅቶች በአሁኑ ጊዜ የሉም።</p>
+        <a href="#" class="cal-link" style="margin-top:16px"><span data-en>See All</span><span data-am class="amh">ሁሉንም ይመልከቱ</span> <i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+
     </div>
-    <p class="gcal-note" data-en>📅 Events are managed in Google Calendar — add or change an event there and it updates here automatically. <em>[Replace YOUR_CALENDAR_ID with the church's public calendar ID.]</em></p>
-    <p class="gcal-note amh" data-am>📅 ዝግጅቶች በGoogle Calendar ይተዳደራሉ — እዚያ ላይ ሲጨምሩ ወይም ሲቀይሩ እዚህ በራሱ ይዘመናል።</p>
+    <div class="cal-footer">
+      <a href="#" class="cal-link cal-full" id="fullCalLink"><span data-en>See Full Calendar</span><span data-am class="amh">ሙሉ የቀን መቁጠሪያ ይመልከቱ</span> <i class="fa-solid fa-chevron-right"></i></a>
+      <p class="cal-footer-note" data-en style="font-size:.8rem;color:var(--ink-mute);margin-top:8px"><em>[Link will open Google Calendar once connected]</em></p>
+    </div>
   </div>
 </section>
 
@@ -809,8 +821,8 @@
     <div class="podcast-cta">
       <div>
         <h3 data-en>🎧 Listen to Our Podcast</h3><h3 data-am class="amh">🎧 ፖድካስታችንን ያዳምጡ</h3>
-        <p data-en>Stream every episode on your favorite platform.</p>
-        <p data-am class="amh">እያንዳንዱን ክፍል በሚወዱት መድረክ ላይ ያዳምጡ።</p>
+        <p data-en>Stream every episode on Spotify.</p>
+        <p data-am class="amh">እያንዳንዱን ክፍል በSpotify ላይ ያዳምጡ።</p>
       </div>
       <div class="podcast-links">
         <a href="#" title="Listen on Spotify"><i class="fa-brands fa-spotify"></i></a>
@@ -963,10 +975,10 @@
 <!-- CTA BAND -->
 <section class="band">
   <div class="wrap">
-    <h2 data-en>Jesus loves you — so do we.</h2>
-    <h2 data-am class="amh">ኢየሱስ ይወዳችኋል — እኛም እንዲሁ።</h2>
-    <p data-en>Whoever you are, wherever you've been, there's a seat for you this Sunday.</p>
-    <p data-am class="amh">ማንም ብትሆኑ፣ ከየትም ብትመጡ፣ በዚህ እሁድ ወንበር አለልዎት።</p>
+    <h2 data-en>Thus far, the Lord has helped us.</h2>
+    <h2 data-am class="amh">እስከዚህ ድረስ እግዚአብሔር ረድቶናል።</h2>
+    <p data-en>Whoever you are, wherever you're from — there's a seat for you this Sunday.</p>
+    <p data-am class="amh">ማንም ብትሆኑ፣ ከየትም ብትመጡ — በዚህ እሁድ ለእርስዎ ቦታ አለ።</p>
     <a href="#visit" class="btn btn-primary"><i class="fa-solid fa-location-dot"></i><span data-en>Plan Your Visit</span><span data-am class="amh">ጉብኝት ያቅዱ</span></a>
   </div>
 </section>
@@ -1009,7 +1021,7 @@
     </div>
     <div class="foot-bottom">
       <span>© <span id="year"></span> Ebenezer Ethiopian Evangelical Church. All rights reserved.</span>
-      <span data-en>Come just as you are.</span><span data-am class="amh">እንዳሉ ይምጡ።</span>
+      <span data-en>Thus far, the Lord has helped us. — 1 Samuel 7:12</span><span data-am class="amh">እስከዚህ ድረስ እግዚአብሔር ረድቶናል። — 1 ሳሙኤል 7፥12</span>
     </div>
   </div>
 </footer>
