@@ -578,6 +578,32 @@
     .subscribe-btn{justify-content:center}
   }
   
+  /* ---------- Hero Next Event ---------- */
+  .hero-next-event{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:28px}
+  .hero-today{font-size:.85rem;color:rgba(255,255,255,.7);font-weight:500;letter-spacing:.03em}
+  .hero-event-card{background:rgba(255,255,255,.12);backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:18px 32px;
+    text-align:center;min-width:280px}
+  .hero-event-label{font-size:.72rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.08em;color:rgba(255,255,255,.6);margin-bottom:6px}
+  .hero-event-name{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:4px}
+  .hero-event-when{font-size:.9rem;color:rgba(255,255,255,.85);margin-bottom:10px}
+  .hero-countdown{display:flex;justify-content:center;gap:14px}
+  .hero-countdown .cd-unit{display:flex;flex-direction:column;align-items:center}
+  .hero-countdown .cd-num{font-size:1.5rem;font-weight:800;color:#f0d9a0;line-height:1}
+  .hero-countdown .cd-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.06em;
+    color:rgba(255,255,255,.6);margin-top:3px}
+  .hero-location-pill{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;
+    color:rgba(255,255,255,.8);text-decoration:none;padding:8px 16px;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+    border-radius:30px;transition:all .2s}
+  .hero-location-pill:hover{background:rgba(255,255,255,.15);color:#fff}
+  .hero-location-pill i{color:#f0d9a0;font-size:.75rem}
+  @media(max-width:600px){
+    .hero-event-card{padding:14px 20px;min-width:auto;width:90%}
+    .hero-countdown .cd-num{font-size:1.2rem}
+  }
+  
   /* ---------- Daily Devotional ---------- */
   .devotional-card{margin-top:48px;display:flex;align-items:flex-start;gap:24px;
     padding:36px 32px;background:linear-gradient(135deg,#f8f6f0,#fff);
@@ -720,9 +746,16 @@
         <span data-am class="amh">&ldquo;እስከዚህ ድረስ እግዚአብሔር ረድቶናል።&rdquo; — 1 ሳሙኤል 7፥12</span>
         <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.7rem;opacity:.7"></i>
       </a>
-      <div class="hero-meta">
-        <a href="#events" class="hero-meta-link"><i class="fa-solid fa-clock"></i><span><small data-en>Sundays</small><small data-am class="amh">እሁድ</small><strong>10:00 AM</strong></span></a>
-        <a href="#visit" class="hero-meta-link"><i class="fa-solid fa-location-dot"></i><span><small data-en>Gather at</small><small data-am class="amh">አድራሻ</small><strong>700 Bernhard Rd, Whitehall</strong></span></a>
+      <div class="hero-next-event">
+        <div class="hero-today" id="heroToday"></div>
+        <div class="hero-event-card">
+          <div class="hero-event-label" data-en>Next Gathering</div>
+          <div class="hero-event-label" data-am>ቀጣይ ስብሰባ</div>
+          <div class="hero-event-name" id="heroEventName"></div>
+          <div class="hero-event-when" id="heroEventWhen"></div>
+          <div class="hero-countdown" id="heroCountdown"></div>
+        </div>
+        <a href="#visit" class="hero-location-pill"><i class="fa-solid fa-location-dot"></i>700 Bernhard Rd, Whitehall</a>
       </div>
       
     </div>
@@ -1582,6 +1615,83 @@
     var today = new Date();
     var options = {weekday:'long', year:'numeric', month:'long', day:'numeric'};
     el.textContent = today.toLocaleDateString('en-US', options);
+  })();
+</script>
+<script>
+  // Hero — dynamic next event + countdown
+  (function(){
+    // Recurring weekly events (day: 0=Sun, 5=Fri)
+    var events = [
+      {day: 5, hour: 18, min: 0, nameEn: 'Virtual Bible Study', nameAm: 'የመጽሐፍ ቅዱስ ጥናት', timeLabel: '6:00 PM'},
+      {day: 0, hour: 10, min: 0, nameEn: 'Sunday Meeting', nameAm: 'የእሁድ ስብሰባ', timeLabel: '10:00 AM'},
+      {day: 0, hour: 14, min: 0, nameEn: 'Kunama Sunday Service', nameAm: 'የኩናማ እሁድ አገልግሎት', timeLabel: '2:00 PM'}
+    ];
+
+    function getNextEvent(){
+      var now = new Date();
+      var candidates = [];
+      events.forEach(function(ev){
+        // Check this week and next week
+        for(var w = 0; w < 2; w++){
+          var d = new Date(now);
+          var diff = ev.day - d.getDay() + (w * 7);
+          if(diff < 0) diff += 7;
+          d.setDate(d.getDate() + diff);
+          d.setHours(ev.hour, ev.min, 0, 0);
+          if(d > now) candidates.push({date: d, event: ev});
+        }
+      });
+      candidates.sort(function(a,b){ return a.date - b.date; });
+      return candidates[0] || null;
+    }
+
+    function formatDate(d){
+      var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+      var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      return days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate();
+    }
+
+    function updateCountdown(){
+      var next = getNextEvent();
+      if(!next) return;
+
+      var now = new Date();
+      var diff = next.date - now;
+      var days = Math.floor(diff / 86400000);
+      var hours = Math.floor((diff % 86400000) / 3600000);
+      var mins = Math.floor((diff % 3600000) / 60000);
+      var secs = Math.floor((diff % 60000) / 1000);
+
+      // Today's date
+      var todayEl = document.getElementById('heroToday');
+      if(todayEl){
+        var opts = {weekday:'long', month:'long', day:'numeric', year:'numeric'};
+        todayEl.textContent = now.toLocaleDateString('en-US', opts);
+      }
+
+      // Event name
+      var nameEl = document.getElementById('heroEventName');
+      var isAm = document.body.classList.contains('am');
+      if(nameEl) nameEl.textContent = isAm ? next.event.nameAm : next.event.nameEn;
+
+      // Event date/time
+      var whenEl = document.getElementById('heroEventWhen');
+      if(whenEl) whenEl.textContent = formatDate(next.date) + ' at ' + next.event.timeLabel;
+
+      // Countdown
+      var cdEl = document.getElementById('heroCountdown');
+      if(cdEl){
+        var html = '';
+        if(days > 0) html += '<div class="cd-unit"><span class="cd-num">' + days + '</span><span class="cd-label">days</span></div>';
+        html += '<div class="cd-unit"><span class="cd-num">' + hours + '</span><span class="cd-label">hrs</span></div>';
+        html += '<div class="cd-unit"><span class="cd-num">' + mins + '</span><span class="cd-label">min</span></div>';
+        html += '<div class="cd-unit"><span class="cd-num">' + secs + '</span><span class="cd-label">sec</span></div>';
+        cdEl.innerHTML = html;
+      }
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
   })();
 </script>
 </body>
