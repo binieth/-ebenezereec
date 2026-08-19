@@ -1459,24 +1459,6 @@
   // Memory Verse Plan — add more weeks here as needed (NASB 1995)
   var VERSES = [
     {
-      week: '2026-08-09',
-      teen_en: '\u201cFor whoever will call on the name of the Lord will be saved.\u201d',
-      teen_am: '\u201cየእግዚአብሔርን ስም የሚጠራ ሁሉ ይድናልና።\u201d',
-      teen_ref: 'Romans 10:13',
-      toddler_en: '\u201cCall upon Me and I will answer you.\u201d',
-      toddler_am: '\u201cወደ እኔ ጩኽ፣ እመልስልሃለሁም።\u201d',
-      toddler_ref: 'Jeremiah 33:3'
-    },
-    {
-      week: '2026-08-16',
-      teen_en: '\u201cFor the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord.\u201d',
-      teen_am: '\u201cየኃጢአት ደመወዝ ሞት ነውና፤ የእግዚአብሔር ጸጋ ስጦታ ግን በክርስቶስ ኢየሱስ በጌታችን የዘላለም ሕይወት ነው።\u201d',
-      teen_ref: 'Romans 6:23',
-      toddler_en: '\u201cFor God so loved the world, that He gave His only begotten Son.\u201d',
-      toddler_am: '\u201cእግዚአብሔር አንድ ልጁን እስኪሰጥ ድረስ ዓለሙን እንዲሁ ወዶአልና።\u201d',
-      toddler_ref: 'John 3:16a'
-    },
-    {
       week: '2026-08-23',
       teen_en: '\u201cFor by grace you have been saved through faith; and that not of yourselves, it is the gift of God; not as a result of works, so that no one may boast.\u201d',
       teen_am: '\u201cበጸጋ በእምነት ድናችኋልና፤ ይህም ከእናንተ አይደለም የእግዚአብሔር ስጦታ ነው እንጂ፤ ማንም እንዳይመካ ከሥራ አይደለም።\u201d',
@@ -1498,11 +1480,17 @@
 
   function getWeekVerse(){
     var today = new Date();
-    var todayStr = today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
-    // Find the most recent week that has started (week date <= today)
+    today.setHours(0,0,0,0);
+    // Find the upcoming Sunday (or today if it's Sunday)
+    var day = today.getDay(); // 0=Sun
+    var nextSun = new Date(today);
+    if(day !== 0) nextSun.setDate(today.getDate() + (7 - day));
+    var sunStr = nextSun.getFullYear()+'-'+String(nextSun.getMonth()+1).padStart(2,'0')+'-'+String(nextSun.getDate()).padStart(2,'0');
+    // Find verse matching the upcoming Sunday
     var current = VERSES[VERSES.length-1]; // fallback to last
-    for(var i=VERSES.length-1; i>=0; i--){
-      if(VERSES[i].week <= todayStr){ current = VERSES[i]; break; }
+    for(var i=0; i<VERSES.length; i++){
+      if(VERSES[i].week === sunStr){ current = VERSES[i]; break; }
+      if(VERSES[i].week > sunStr){ current = VERSES[i > 0 ? i-1 : 0]; break; }
     }
     return current;
   }
