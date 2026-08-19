@@ -559,6 +559,25 @@
     font-weight:600;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.25);transition:all .2s;z-index:2}
   .map-link:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.3)}
   .map-link i{font-size:.9rem}
+  /* ---------- Subscribe ---------- */
+  .subscribe-section{background:var(--bg)}
+  .subscribe-desc{color:var(--ink-soft);font-size:1.05rem;line-height:1.6;margin:0 auto 28px;max-width:480px}
+  .subscribe-form{margin:0 auto;max-width:500px}
+  .subscribe-fields{display:flex;gap:10px;align-items:stretch}
+  .subscribe-fields input{flex:1;padding:14px 18px;border:1.5px solid var(--border);border-radius:10px;
+    font-size:.95rem;font-family:var(--sans);background:#fff;transition:border-color .2s}
+  .subscribe-fields input:focus{outline:none;border-color:var(--primary)}
+  .subscribe-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;
+    background:var(--primary);color:#fff;border:none;border-radius:10px;font-size:.9rem;
+    font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap}
+  .subscribe-btn:hover{background:var(--accent);transform:translateY(-1px);box-shadow:0 4px 12px rgba(168,132,44,.25)}
+  .subscribe-btn i{font-size:.85rem}
+  .subscribe-note{margin-top:14px;font-size:.82rem;color:var(--ink-mute)}
+  @media(max-width:580px){
+    .subscribe-fields{flex-direction:column}
+    .subscribe-btn{justify-content:center}
+  }
+  
   /* ---------- Teacher Schedule ---------- */
   .teach-schedule{display:flex;flex-direction:column;gap:12px;max-width:780px;margin:2rem auto 0}
   .teach-card{display:flex;align-items:center;gap:16px;padding:18px 22px;
@@ -1176,6 +1195,30 @@
         <p class="form-note amh" data-am>ፎርሙን ለመክፈት ጠቅ ያድርጉ — ብዙውን ጊዜ በአንድ ቀን ውስጥ እንመልሳለን። መልእክቶች ወደ ቤተክርስቲያኑ ኢሜይል ይላካሉ።</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- STAY CONNECTED -->
+<section class="section subscribe-section" id="subscribe">
+  <div class="wrap" style="max-width:600px;text-align:center">
+    <span class="eyebrow" data-en>Stay Connected</span>
+    <span class="eyebrow" data-am>ተገናኝተን እንቆይ</span>
+    <h2 data-en>Stay in the Loop</h2>
+    <h2 data-am class="amh">መረጃ ያግኙ</h2>
+    <p class="subscribe-desc" data-en>Please subscribe to our announcements if you would like to be informed about upcoming events, new articles, or special gatherings.</p>
+    <p class="subscribe-desc" data-am class="amh">ስለ መጪ ዝግጅቶች፣ አዲስ ጽሑፎች ወይም ልዩ ስብሰባዎች መረጃ ማግኘት ከፈለጉ እባክዎ ይመዝገቡ።</p>
+    <form class="subscribe-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New Subscriber — Ebenezer Church">
+      <input type="hidden" name="from_name" value="Ebenezer Website Subscriber">
+      <div class="subscribe-fields">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Email address" required>
+        <button type="submit" class="subscribe-btn"><i class="fa-solid fa-bell"></i><span data-en>Subscribe</span><span data-am class="amh">ይመዝገቡ</span></button>
+      </div>
+    </form>
+    <p class="subscribe-note" data-en>We only reach out when there's something worth sharing. You can unsubscribe at any time by replying to any email.</p>
+    <p class="subscribe-note" data-am class="amh">የሚጋራ ነገር ሲኖር ብቻ እንልካለን። በማንኛውም ጊዜ መመዝገብዎን ማቋረጥ ይችላሉ።</p>
   </div>
 </section>
 
