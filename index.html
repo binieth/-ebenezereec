@@ -216,7 +216,7 @@
   .info-block .lab{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
   .info-block .val{font-size:18px;font-weight:500;display:flex;align-items:center;gap:11px}
   .info-block .val i{color:var(--primary);width:22px}
-  .map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-soft);min-height:340px;height:100%}
+  .map{border-radius:var(--radius);overflow:hidden;position:relative;min-height:340px;height:100%;position:relative}
   .map iframe{width:100%;height:100%;border:0}
   form{display:grid;gap:16px}
   .field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--ink-soft)}
@@ -249,9 +249,9 @@
   .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:rgba(255,255,255,.5)}
 
   /* lang visibility */
-  [data-am]{display:none}
-  body.am [data-en]{display:none}
-  body.am [data-am]{display:revert}
+  [data-am]{display:none!important}
+  body.am [data-en]{display:none!important}
+  body.am [data-am]{display:revert!important}
   body.am h1,body.am h2,body.am h3,body.am .brand,body.am .foot-brand{font-family:var(--amh)}
 
   @media(max-width:900px){
@@ -542,7 +542,80 @@
     .back-to-top{bottom:20px;right:20px;width:44px;height:44px;font-size:16px}
   }
 
-</style>
+
+  /* ---------- Coming Soon sections ---------- */
+  .coming-soon{max-width:640px;margin:0 auto;text-align:center}
+  .coming-soon h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:10px 0 18px}
+  .coming-soon p{font-size:1.05rem;line-height:1.75;color:var(--ink-soft);margin:0 0 12px}
+  .coming-badge{display:inline-flex;align-items:center;gap:10px;background:var(--primary-soft);
+    color:var(--primary);font-weight:700;font-size:.9rem;letter-spacing:.04em;
+    padding:10px 22px;border-radius:100px;margin-bottom:22px}
+  .coming-badge i{font-size:1.1rem}
+
+
+  
+  .map-link{position:absolute;bottom:16px;right:16px;display:inline-flex;align-items:center;gap:8px;
+    background:var(--primary);color:#fff;padding:10px 20px;border-radius:30px;font-size:.85rem;
+    font-weight:600;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.25);transition:all .2s;z-index:2}
+  .map-link:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.3)}
+  .map-link i{font-size:.9rem}
+  /* ---------- Teacher Schedule ---------- */
+  .teach-schedule{display:flex;flex-direction:column;gap:12px;max-width:780px;margin:2rem auto 0}
+  .teach-card{display:flex;align-items:center;gap:16px;padding:18px 22px;
+    background:#fff;border-radius:14px;border:1px solid var(--border);
+    box-shadow:0 2px 8px rgba(30,70,50,.04);transition:all .25s ease;position:relative;overflow:hidden}
+  .teach-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+    background:var(--primary);border-radius:4px 0 0 4px;opacity:0;transition:opacity .2s}
+  .teach-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(30,70,50,.1);border-color:var(--primary-soft)}
+  .teach-card:hover::before{opacity:1}
+  .teach-card.current{background:linear-gradient(135deg,#f0f8f2,#fff);border-color:var(--primary);box-shadow:0 4px 16px rgba(30,70,50,.12)}
+  .teach-card.current::before{opacity:1;width:5px;background:var(--grad)}
+  .teach-card.celebration{background:linear-gradient(135deg,#fdf8ed,#fff);border-color:var(--accent)}
+  .teach-card.celebration::before{opacity:1;background:var(--accent)}
+  .teach-card.hidden-card{display:none}
+  .teach-date{min-width:56px;text-align:center;flex-shrink:0}
+  .teach-day{display:block;font-size:1.6rem;font-weight:800;color:var(--primary);line-height:1}
+  .teach-month{display:block;font-size:.72rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.08em;color:var(--ink-soft);margin-top:3px}
+  .teach-card.current .teach-day{color:var(--primary-dark)}
+  .teach-card.celebration .teach-day{color:var(--accent)}
+  .teach-groups{display:flex;gap:12px;flex:1;flex-wrap:wrap}
+  .teach-group{display:flex;flex-direction:column;gap:2px;padding:8px 14px;
+    background:var(--bg);border-radius:10px;min-width:140px;flex:1}
+  .teach-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-mute)}
+  .teach-label small{font-weight:500;opacity:.7}
+  .teach-group.exodus .teach-label{color:#2c6a49}
+  .teach-group.revelation .teach-label{color:#8a2b23}
+  .teach-group.youth .teach-label{color:var(--accent)}
+  .teach-names{font-size:.9rem;font-weight:600;color:var(--ink)}
+  .teach-lesson{min-width:90px;text-align:right;flex-shrink:0}
+  .teach-lesson a{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;
+    font-weight:700;color:var(--accent);text-decoration:none;padding:6px 14px;
+    background:rgba(168,132,44,.08);border-radius:20px;transition:all .2s}
+  .teach-lesson a:hover{background:var(--accent);color:#fff}
+  .teach-lesson a i{font-size:.75rem}
+  .teach-special{font-size:.85rem;font-weight:700;color:var(--accent)}
+  .schedule-toggle{display:block;margin:24px auto 0;background:#fff;
+    border:1.5px solid var(--border);color:var(--primary);padding:11px 32px;
+    border-radius:30px;font-size:.88rem;font-weight:600;cursor:pointer;
+    transition:all .2s;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+  .schedule-toggle:hover{background:var(--primary);color:#fff;border-color:var(--primary);
+    box-shadow:0 4px 12px rgba(30,70,50,.15)}
+  .schedule-toggle.expanded{border-color:var(--accent);color:var(--accent)}
+  .schedule-toggle.expanded:hover{background:var(--accent);color:#fff}
+  .schedule-note{max-width:700px;margin:18px auto 0;text-align:center;font-size:.88rem;color:var(--ink-soft)}
+  .schedule-note a{color:var(--accent);font-weight:600;text-decoration:none}
+  .schedule-note a:hover{text-decoration:underline}
+  @media(max-width:680px){
+    .teach-card{flex-direction:column;align-items:flex-start;gap:12px;padding:16px 18px}
+    .teach-date{display:flex;align-items:baseline;gap:8px;min-width:auto}
+    .teach-day{font-size:1.3rem}
+    .teach-month{margin-top:0}
+    .teach-groups{width:100%}
+    .teach-group{min-width:auto}
+    .teach-lesson{text-align:left}
+  }
+  </style>
 </head>
 <body>
 
@@ -562,6 +635,7 @@
       <a href="#articles"><span data-en>Articles</span><span data-am class="amh">ጽሑፎች</span></a>
       <a href="#leadership"><span data-en>Leadership</span><span data-am class="amh">አመራር</span></a>
       <a href="#visit"><span data-en>Visit</span><span data-am class="amh">ይጎብኙን</span></a>
+      <a href="#teachers"><span data-en>Teachers</span><span data-am class="amh">መምህራን</span></a>
       <a href="#welcome"><span data-en>About</span><span data-am class="amh">ስለ እኛ</span></a>
     </nav>
     <div class="nav-cta">
@@ -715,6 +789,221 @@
   </div>
 </section>
 
+
+<!-- TEACHER SCHEDULE -->
+<section class="section" id="teachers">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center">
+      <span class="eyebrow" data-en>Children's Ministry</span>
+      <span class="eyebrow" data-am>የልጆች አገልግሎት</span>
+      <h2 data-en>Teacher Schedule</h2>
+      <h2 data-am class="amh">የመምህራን መርሐ ግብር</h2>
+            <p data-en style="max-width:640px;margin:0 auto;color:var(--ink-soft)">We believe children aren't just the church of tomorrow — they're the church of today. Every Sunday, kids worship alongside family, then break into age-based classes for interactive Bible study, hands-on activities, and guided prayer — all in a safe space where they can seek God genuinely and flourish in community.</p>
+      <p data-am class="amh" style="max-width:640px;margin:0 auto;color:var(--ink-soft)">ልጆች የነገ ብቻ ሳይሆን የዛሬ ቤተክርስቲያን ናቸው ብለን እናምናለን። በየሰንበቱ ልጆች ከቤተሰብ ጋር ያመልካሉ፣ ከዚያ በዕድሜ ተመድበው የመጽሐፍ ቅዱስ ጥናት፣ ተግባራዊ እንቅስቃሴዎች እና የጸሎት ጊዜ ያገኛሉ — በደህንነት ያለው አካባቢ።</p>
+    </div>
+
+    <div class="teach-schedule" id="teacherSchedule">
+      <div class="teach-card" data-date="2026-08-23">
+        <div class="teach-date"><span class="teach-day">23</span><span class="teach-month">Aug</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Samri, Zed</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Ayantu, Adane</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Tilish</span></div>
+        </div>
+        <div class="teach-lesson"><a href="https://www.bible.com/bible/100/LUK.19.NASB1995" target="_blank"><i class="fa-solid fa-book-bible"></i> Luke 19</a></div>
+      </div>
+
+      <div class="teach-card" data-date="2026-08-30">
+        <div class="teach-date"><span class="teach-day">30</span><span class="teach-month">Aug</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Frazer, Kebe</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Ruth, Addis</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Hailish</span></div>
+        </div>
+        <div class="teach-lesson"><a href="https://www.bible.com/bible/100/LUK.20.NASB1995" target="_blank"><i class="fa-solid fa-book-bible"></i> Luke 20</a></div>
+      </div>
+
+      <div class="teach-card" data-date="2026-09-06">
+        <div class="teach-date"><span class="teach-day">6</span><span class="teach-month">Sep</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Yordi, Lensi</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Biruk, Wale</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Tilish</span></div>
+        </div>
+        <div class="teach-lesson"><a href="https://www.bible.com/bible/100/LUK.21.NASB1995" target="_blank"><i class="fa-solid fa-book-bible"></i> Luke 21</a></div>
+      </div>
+
+      <div class="teach-card" data-date="2026-09-13">
+        <div class="teach-date"><span class="teach-day">13</span><span class="teach-month">Sep</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Dadimos, Hiwot</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Damme, Samuel</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Mati</span></div>
+        </div>
+        <div class="teach-lesson"><a href="https://www.bible.com/bible/100/LUK.22.NASB1995" target="_blank"><i class="fa-solid fa-book-bible"></i> Luke 22</a></div>
+      </div>
+
+      <div class="teach-card" data-date="2026-09-20">
+        <div class="teach-date"><span class="teach-day">20</span><span class="teach-month">Sep</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Samri, Zed</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Ayantu, Gugsa</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Nazri</span></div>
+        </div>
+        <div class="teach-lesson"><a href="https://www.bible.com/bible/100/LUK.23.NASB1995" target="_blank"><i class="fa-solid fa-book-bible"></i> Luke 23</a></div>
+      </div>
+
+      <div class="teach-card" data-date="2026-09-27">
+        <div class="teach-date"><span class="teach-day">27</span><span class="teach-month">Sep</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Frazer, Kibinesh</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Ruth, Adane</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Dr. Kefyalew</span></div>
+        </div>
+        <div class="teach-lesson"><a href="https://www.bible.com/bible/100/LUK.24.NASB1995" target="_blank"><i class="fa-solid fa-book-bible"></i> Luke 24</a></div>
+      </div>
+
+      <div class="teach-card" data-date="2026-10-04">
+        <div class="teach-date"><span class="teach-day">4</span><span class="teach-month">Oct</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Yordi, Hiwot</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Biruk, Samuel</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Hailish</span></div>
+        </div>
+        <div class="teach-lesson"></div>
+      </div>
+
+      <div class="teach-card celebration" data-date="2026-10-11">
+        <div class="teach-date"><span class="teach-day">11</span><span class="teach-month">Oct</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Dadimos, Elfinesh</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Damme, Gugsa</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Tilish</span></div>
+        </div>
+        <div class="teach-lesson teach-special">🎉 Luke Celebration</div>
+      </div>
+
+      <div class="teach-card" data-date="2026-10-18">
+        <div class="teach-date"><span class="teach-day">18</span><span class="teach-month">Oct</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Samri, Worship Team</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Ayantu, Teens</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Mati</span></div>
+        </div>
+        <div class="teach-lesson"></div>
+      </div>
+
+      <div class="teach-card" data-date="2026-10-25">
+        <div class="teach-date"><span class="teach-day">25</span><span class="teach-month">Oct</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Frazer, Zed</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Ruth, Adane</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Nazri</span></div>
+        </div>
+        <div class="teach-lesson"></div>
+      </div>
+
+      <div class="teach-card" data-date="2026-11-01">
+        <div class="teach-date"><span class="teach-day">1</span><span class="teach-month">Nov</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Yordi, Hiwot</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Biruk, Kebe</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Dr. Kefyalew</span></div>
+        </div>
+        <div class="teach-lesson"></div>
+      </div>
+
+      <div class="teach-card" data-date="2026-11-08">
+        <div class="teach-date"><span class="teach-day">8</span><span class="teach-month">Nov</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Dadimos, Adwf</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Damme, Mandy</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Hailish</span></div>
+        </div>
+        <div class="teach-lesson"></div>
+      </div>
+
+      <div class="teach-card" data-date="2026-11-15">
+        <div class="teach-date"><span class="teach-day">15</span><span class="teach-month">Nov</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Samri, Lensi</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Ayantu, Lensi</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Tilish</span></div>
+        </div>
+        <div class="teach-lesson"></div>
+      </div>
+
+      <div class="teach-card" data-date="2026-11-22">
+        <div class="teach-date"><span class="teach-day">22</span><span class="teach-month">Nov</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Frazer, Wale</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Ruth, Biruk</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Mati</span></div>
+        </div>
+        <div class="teach-lesson"></div>
+      </div>
+
+      <div class="teach-card" data-date="2026-11-29">
+        <div class="teach-date"><span class="teach-day">29</span><span class="teach-month">Nov</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Yordi, Hiwot</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Biruk, Samuel</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Nazri</span></div>
+        </div>
+        <div class="teach-lesson"></div>
+      </div>
+
+      <div class="teach-card" data-date="2026-12-06">
+        <div class="teach-date"><span class="teach-day">6</span><span class="teach-month">Dec</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Dadimos, Elfinesh</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Damme, Gugsa</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Dr. Kefyalew</span></div>
+        </div>
+        <div class="teach-lesson"></div>
+      </div>
+
+      <div class="teach-card" data-date="2026-12-13">
+        <div class="teach-date"><span class="teach-day">13</span><span class="teach-month">Dec</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Samri, Zed</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Ayantu, Adane</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Hailish</span></div>
+        </div>
+        <div class="teach-lesson"></div>
+      </div>
+
+      <div class="teach-card" data-date="2026-12-20">
+        <div class="teach-date"><span class="teach-day">20</span><span class="teach-month">Dec</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Frazer, Hiwot</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Ruth, Kebe</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Tilish</span></div>
+        </div>
+        <div class="teach-lesson"></div>
+      </div>
+
+      <div class="teach-card" data-date="2026-12-27">
+        <div class="teach-date"><span class="teach-day">27</span><span class="teach-month">Dec</span></div>
+        <div class="teach-groups">
+          <div class="teach-group exodus"><span class="teach-label">Exodus <small>5–7</small></span><span class="teach-names">Yordi, Adwf</span></div>
+          <div class="teach-group revelation"><span class="teach-label">Revelation <small>8–11</small></span><span class="teach-names">Biruk, Mandy</span></div>
+          <div class="teach-group youth"><span class="teach-label">Youth <small>12–18</small></span><span class="teach-names">Mati</span></div>
+        </div>
+        <div class="teach-lesson"></div>
+      </div>
+    </div>
+
+    <button class="schedule-toggle" id="scheduleToggle" data-en>Show Full Schedule ▼</button>
+    <button class="schedule-toggle" id="scheduleToggleAm" data-am>ሙሉ መርሐ ግብር ▼</button>
+
+    <p class="schedule-note" data-en>📖 Lesson series: <a href="https://www.bible.com/bible/100/LUK.1.NASB1995" target="_blank">Book of Luke</a> (NASB 1995) · Opening worship 10–11 AM · Classes 11 AM–12 PM</p>
+    <p class="schedule-note" data-am class="amh">📖 የትምህርት ተከታታይ፦ <a href="https://www.bible.com/bible/100/LUK.1.NASB1995" target="_blank">የሉቃስ ወንጌል</a> · ክፍት አምልኮ 10–11 ጠዋት · ክፍሎች 11–12</p>
+  </div>
+</section>
+
+
+
 <!-- MEMORY VERSES -->
 <section class="section verses" id="verses">
   <div class="wrap">
@@ -723,8 +1012,8 @@
       <span class="eyebrow amh" data-am>በቃሉ አድጉ</span>
       <h2 data-en>This Week's Memory Verse</h2>
       <h2 data-am class="amh">የዚህ ሳምንት የቃል ጥቅስ</h2>
-      <p data-en>A verse to learn by heart together at home — with a version for our teens and a simpler one for our little ones. <em>(NASB 1995)</em></p>
-      <p data-am class="amh">በቤት ውስጥ አብረን የምንሸመድደው ጥቅስ — ለወጣቶቻችን እና ለታናናሾቻችን።</p>
+      <p data-en>Each week there's a verse for our teens and a simpler one for little ones. Memorize it at home together, then come ready to recite it during fellowship hour. (NASB 1995)</p>
+      <p data-am class="amh">በየሳምንቱ ለወጣቶች እና ለታናናሾች ጥቅስ አለ። በቤት ውስጥ አብራችሁ ሸምድዱት፣ ከዚያ በኅብረት ሰዓት ለአዋቂ ተናገሩት። ወጣቶች ጥቅሶቻቸውን በካርድ ይከታተላሉ — ሩብ ዓመቱን ጨርሱ የ$5 ስጦታ ካርድ ያግኙ!</p>
     </div>
     <div class="verse-grid">
       <div class="verse-card teens">
@@ -801,7 +1090,7 @@
     </div>
     <div class="cal-footer">
       <a href="#" class="cal-link cal-full" id="fullCalLink"><span data-en>See Full Calendar</span><span data-am class="amh">ሙሉ የቀን መቁጠሪያ ይመልከቱ</span> <i class="fa-solid fa-chevron-right"></i></a>
-      <p class="cal-footer-note" data-en style="font-size:.8rem;color:var(--ink-mute);margin-top:8px"><em>[Link will open Google Calendar once connected]</em></p>
+      <p class="cal-footer-note" data-en style="font-size:.8rem;color:var(--ink-mute);margin-top:8px">[Link will open Google Calendar once connected]</p>
     </div>
   </div>
 </section>
@@ -809,37 +1098,14 @@
 <!-- SERMONS -->
 <section class="section" id="sermons">
   <div class="wrap">
-    <div class="section-head">
+    <div class="coming-soon">
       <span class="eyebrow" data-en>Listen</span>
       <span class="eyebrow amh" data-am>ያዳምጡ</span>
-      <h2 data-en>Sermons &amp; Podcast</h2>
+      <h2 data-en>Sermons & Podcast</h2>
       <h2 data-am class="amh">ስብከቶች እና ፖድካስት</h2>
-      <p data-en>Missed a Sunday? Listen to past messages and podcast episodes anytime on Spotify.</p>
-      <p data-am class="amh">እሁድ አምልጦዎታል? ያለፉ ስብከቶችን በማንኛውም ጊዜ በSpotify ያዳምጡ።</p>
-    </div>
-    <div class="sermon-grid">
-      <div class="sermon">
-        <div class="thumb"><span class="tag">Latest</span><i class="fa-solid fa-headphones"></i></div>
-        <div class="info"><small>July 27, 2026</small><h3 data-en>The Transforming Message</h3><h3 data-am class="amh">የሚለውጥ መልእክት</h3><p data-en>Living out the Gospel in words and actions.</p><p data-am class="amh">ወንጌልን በቃልና በተግባር መኖር።</p></div>
-      </div>
-      <div class="sermon">
-        <div class="thumb"><i class="fa-solid fa-headphones"></i></div>
-        <div class="info"><small>July 20, 2026</small><h3 data-en>Belonging to Community</h3><h3 data-am class="amh">የማህበሩ አካል መሆን</h3><p data-en>Called together into the Body of Christ.</p><p data-am class="amh">ወደ ክርስቶስ አካል አብረን ተጠርተናል።</p></div>
-      </div>
-      <div class="sermon">
-        <div class="thumb"><i class="fa-solid fa-headphones"></i></div>
-        <div class="info"><small>July 13, 2026</small><h3 data-en>Ambassadors for Christ</h3><h3 data-am class="amh">የክርስቶስ አምባሳደሮች</h3><p data-en>Making His love known in the world.</p><p data-am class="amh">ፍቅሩን በዓለም ማሳወቅ።</p></div>
-      </div>
-    </div>
-    <div class="podcast-cta">
-      <div>
-        <h3 data-en>🎧 Listen to Our Podcast</h3><h3 data-am class="amh">🎧 ፖድካስታችንን ያዳምጡ</h3>
-        <p data-en>Stream every episode on Spotify.</p>
-        <p data-am class="amh">እያንዳንዱን ክፍል በSpotify ላይ ያዳምጡ።</p>
-      </div>
-      <div class="podcast-links">
-        <a href="#" title="Listen on Spotify"><i class="fa-brands fa-spotify"></i></a>
-      </div>
+      <div class="coming-badge"><i class="fa-solid fa-headphones"></i><span data-en>Coming Soon</span><span data-am class="amh">በቅርቡ ይመጣል</span></div>
+      <p data-en>We're working on bringing you past sermons and podcast episodes right here. Stay tuned — our audio archive will be available soon so you can listen anytime, anywhere.</p>
+      <p data-am class="amh">ያለፉ ስብከቶችንና የፖድካስት ክፍሎችን ወደዚህ ለማምጣት እየሰራን ነው። ይጠብቁን — የድምጽ ማዕቀፋችን በቅርቡ ይገኛል።</p>
     </div>
   </div>
 </section>
@@ -847,90 +1113,14 @@
 <!-- ARTICLES -->
 <section class="section articles" id="articles">
   <div class="wrap">
-    <div class="section-head">
+    <div class="coming-soon">
       <span class="eyebrow" data-en>From Our Blog</span>
       <span class="eyebrow amh" data-am>ከብሎጋችን</span>
-      <h2 data-en>Articles &amp; Reflections</h2>
+      <h2 data-en>Articles & Reflections</h2>
       <h2 data-am class="amh">ጽሑፎች እና አሰላሰሎች</h2>
-      <p data-en>Encouragement, devotionals, and news from our church family. <em>[Replace with your own articles.]</em></p>
-      <p data-am class="amh">ማበረታቻ፣ የጸሎት ማሰላሰያዎች እና ከቤተክርስቲያናችን ዜናዎች። <em>[በራስዎ ጽሑፎች ይተኩ]</em></p>
-    </div>
-    <div class="article-grid">
-      <div class="article">
-        <div class="cover"><div class="motif-panel" role="img" aria-label="Ebenezer stones — stone of help">
-        <div class="motif-dots"></div>
-        <svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g stroke="#e9d29a" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round">
-            <path d="M70 185 V95 a40 40 0 0 1 80 0 V185 Z"/>
-            <path d="M150 185 V120 a30 30 0 0 1 60 0 V185 Z"/>
-            <path d="M20 185 V132 a24 24 0 0 1 48 0 V185 Z"/>
-            <line x1="8" y1="185" x2="224" y2="185"/>
-            <line x1="110" y1="70" x2="110" y2="120"/>
-            <line x1="92" y1="90" x2="128" y2="90"/>
-          </g>
-          <circle cx="185" cy="60" r="7" fill="#e9d29a" opacity=".85"/>
-        </svg>
-      </div></div>
-        <div class="info">
-          <span class="cat" data-en>Devotional</span><span class="cat amh" data-am>የጸሎት ማሰላሰያ</span>
-          <h3 data-en>Walking in Grace Each Day</h3><h3 data-am class="amh">በየቀኑ በጸጋ መመላለስ</h3>
-          <p data-en>A short reflection on living out God's grace in our everyday moments and relationships.</p>
-          <p data-am class="amh">የእግዚአብሔርን ጸጋ በዕለት ተዕለት ኑሮአችን ስለ መኖር አጭር ማሰላሰያ።</p>
-          <div class="meta"><span>[Author]</span><span class="dot"></span><span>Jul 25, 2026</span><span class="dot"></span><span>4 min</span></div>
-          <a href="#" class="readmore"><span data-en>Read more</span><span data-am class="amh">ተጨማሪ ያንብቡ</span> <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="article">
-        <div class="cover"><div class="motif-panel" role="img" aria-label="Ebenezer stones — stone of help">
-        <div class="motif-dots"></div>
-        <svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g stroke="#e9d29a" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round">
-            <path d="M70 185 V95 a40 40 0 0 1 80 0 V185 Z"/>
-            <path d="M150 185 V120 a30 30 0 0 1 60 0 V185 Z"/>
-            <path d="M20 185 V132 a24 24 0 0 1 48 0 V185 Z"/>
-            <line x1="8" y1="185" x2="224" y2="185"/>
-            <line x1="110" y1="70" x2="110" y2="120"/>
-            <line x1="92" y1="90" x2="128" y2="90"/>
-          </g>
-          <circle cx="185" cy="60" r="7" fill="#e9d29a" opacity=".85"/>
-        </svg>
-      </div></div>
-        <div class="info">
-          <span class="cat" data-en>Missions</span><span class="cat amh" data-am>ተልእኮ</span>
-          <h3 data-en>Stories from Our Mission Field</h3><h3 data-am class="amh">ከተልእኮ ሜዳችን ታሪኮች</h3>
-          <p data-en>Updates from our partners in Ethiopia, Haiti, and beyond — see how God is at work.</p>
-          <p data-am class="amh">በኢትዮጵያ፣ በሃይቲ እና ከዚያም ባሻገር ካሉ አጋሮቻችን ዝማኔዎች — እግዚአብሔር እንዴት እየሰራ እንደሆነ ይመልከቱ።</p>
-          <div class="meta"><span>[Author]</span><span class="dot"></span><span>Jul 18, 2026</span><span class="dot"></span><span>6 min</span></div>
-          <a href="#" class="readmore"><span data-en>Read more</span><span data-am class="amh">ተጨማሪ ያንብቡ</span> <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="article">
-        <div class="cover"><div class="motif-panel" role="img" aria-label="Ebenezer stones — stone of help">
-        <div class="motif-dots"></div>
-        <svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g stroke="#e9d29a" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round">
-            <path d="M70 185 V95 a40 40 0 0 1 80 0 V185 Z"/>
-            <path d="M150 185 V120 a30 30 0 0 1 60 0 V185 Z"/>
-            <path d="M20 185 V132 a24 24 0 0 1 48 0 V185 Z"/>
-            <line x1="8" y1="185" x2="224" y2="185"/>
-            <line x1="110" y1="70" x2="110" y2="120"/>
-            <line x1="92" y1="90" x2="128" y2="90"/>
-          </g>
-          <circle cx="185" cy="60" r="7" fill="#e9d29a" opacity=".85"/>
-        </svg>
-      </div></div>
-        <div class="info">
-          <span class="cat" data-en>Community</span><span class="cat amh" data-am>ማህበረሰብ</span>
-          <h3 data-en>Growing Together in Fellowship</h3><h3 data-am class="amh">በኅብረት አብረን ማደግ</h3>
-          <p data-en>Why gathering as a church family matters, and how you can get more involved this season.</p>
-          <p data-am class="amh">እንደ ቤተክርስቲያን ቤተሰብ መሰብሰብ ለምን አስፈላጊ እንደሆነ እና እንዴት የበለጠ መሳተፍ እንደሚችሉ።</p>
-          <div class="meta"><span>[Author]</span><span class="dot"></span><span>Jul 11, 2026</span><span class="dot"></span><span>3 min</span></div>
-          <a href="#" class="readmore"><span data-en>Read more</span><span data-am class="amh">ተጨማሪ ያንብቡ</span> <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:44px">
-      <a href="#" class="btn btn-outline"><span data-en>View All Articles</span><span data-am class="amh">ሁሉንም ጽሑፎች ይመልከቱ</span> <i class="fa-solid fa-arrow-right"></i></a>
+      <div class="coming-badge"><i class="fa-solid fa-pen-nib"></i><span data-en>Coming Soon</span><span data-am class="amh">በቅርቡ ይመጣል</span></div>
+      <p data-en>Encouragement, devotionals, and news from our church family are on the way. We look forward to sharing stories of faith, hope, and community with you here.</p>
+      <p data-am class="amh">ማበረታቻ፣ የጸሎት ማሰላሰያዎች እና ከቤተክርስቲያናችን ዜናዎች እየመጡ ነው። የእምነት፣ የተስፋ እና የማህበረሰብ ታሪኮችን ከእርስዎ ጋር ለማካፈል በጉጉት እንጠብቃለን።</p>
     </div>
   </div>
 </section>
@@ -955,14 +1145,18 @@
         </div>
         <div class="info-block">
           <div class="lab" data-en>Contact</div><div class="lab amh" data-am>ያግኙን</div>
-          <div class="val"><i class="fa-solid fa-envelope"></i>[email@placeholder.com]</div>
-          <div class="val" style="margin-top:10px"><i class="fa-solid fa-phone"></i>[(614) 000-0000]</div>
+          <div class="val"><i class="fa-solid fa-envelope"></i>arsseber@gmail.com</div>
+          <div class="val" style="margin-top:10px"><i class="fa-solid fa-phone"></i>(614) 377-8350</div>
         </div>
       </div>
       <div class="map">
-        <iframe loading="lazy" allowfullscreen title="Map to Ebenezer Ethiopian Evangelical Church"
+        <iframe loading="lazy" allowfullscreen title="Street View of Ebenezer Ethiopian Evangelical Church"
           referrerpolicy="no-referrer-when-downgrade"
-          src="https://maps.google.com/maps?q=39.9605686,-82.8799424&z=17&t=m&output=embed"></iframe>
+          src="https://www.google.com/maps/embed?pb=!4v1!6m8!1m7!1sWsuBpZdJlLxbPcCOyt_oow!2m2!1d39.9605686!2d-82.8799424!3f342.91!4f0!5f0.7820865974627469"></iframe>
+        <a class="map-link" href="https://www.google.com/maps/dir//700+Bernhard+Rd,+Whitehall,+OH+43213" target="_blank">
+          <i class="fa-solid fa-diamond-turn-right"></i>
+          <span data-en>Get Directions</span><span data-am class="amh">አቅጣጫ ያግኙ</span>
+        </a>
       </div>
     </div>
 
@@ -1028,7 +1222,7 @@
           <li>700 Bernhard Rd</li>
           <li>Whitehall, OH 43213</li>
           <li>Sundays · 10:00 AM</li>
-          <li>[email@placeholder.com]</li>
+          <li>arsseber@gmail.com</li>
         </ul>
       </div>
     </div>
@@ -1222,5 +1416,66 @@
 })();
 </script>
 
+
+<script>
+  // Teacher Schedule — collapsible cards + highlight current week
+  (function(){
+    var cards = document.querySelectorAll('.teach-card[data-date]');
+    if(!cards.length) return;
+    var today = new Date(); today.setHours(0,0,0,0);
+    var visibleCount = 0;
+    var currentFound = false;
+
+    cards.forEach(function(card){
+      var d = new Date(card.getAttribute('data-date') + 'T00:00:00');
+      if(d < today){
+        card.classList.add('hidden-card');
+      } else if(visibleCount < 4){
+        visibleCount++;
+        if(!currentFound){ card.classList.add('current'); currentFound = true; }
+      } else {
+        card.classList.add('hidden-card');
+      }
+    });
+
+    // If all past, show last 4
+    if(visibleCount === 0){
+      cards.forEach(function(c){ c.classList.remove('hidden-card'); });
+      Array.from(cards).slice(0, -4).forEach(function(c){ c.classList.add('hidden-card'); });
+    }
+
+    var expanded = false;
+    function toggle(){
+      expanded = !expanded;
+      cards.forEach(function(card){
+        if(expanded){
+          card.classList.remove('hidden-card');
+        } else {
+          var d = new Date(card.getAttribute('data-date') + 'T00:00:00');
+          if(d < today){ card.classList.add('hidden-card'); return; }
+          var upcoming = Array.from(cards).filter(function(c){
+            return new Date(c.getAttribute('data-date')+'T00:00:00') >= today;
+          });
+          if(upcoming.indexOf(card) >= 4) card.classList.add('hidden-card');
+        }
+      });
+      var btnEn = document.getElementById('scheduleToggle');
+      var btnAm = document.getElementById('scheduleToggleAm');
+      if(expanded){
+        btnEn.textContent = 'Show Less \u25B2';
+        btnAm.textContent = '\u12A0\u1233\u1325\u122D \u25B2';
+        btnEn.classList.add('expanded');
+        btnAm.classList.add('expanded');
+      } else {
+        btnEn.textContent = 'Show Full Schedule \u25BC';
+        btnAm.textContent = '\u1219\u1209 \u1218\u122D\u1210 \u130D\u1265\u122D \u25BC';
+        btnEn.classList.remove('expanded');
+        btnAm.classList.remove('expanded');
+      }
+    }
+    document.getElementById('scheduleToggle').addEventListener('click', toggle);
+    document.getElementById('scheduleToggleAm').addEventListener('click', toggle);
+  })();
+</script>
 </body>
 </html>
