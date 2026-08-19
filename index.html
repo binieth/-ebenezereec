@@ -578,6 +578,38 @@
     .subscribe-btn{justify-content:center}
   }
   
+  /* ---------- Daily Devotional ---------- */
+  .devotional-card{margin-top:48px;display:flex;align-items:flex-start;gap:24px;
+    padding:36px 32px;background:linear-gradient(135deg,#f8f6f0,#fff);
+    border-radius:var(--radius);border:1px solid var(--border);
+    box-shadow:0 2px 12px rgba(30,70,50,.05);position:relative;overflow:hidden}
+  .devotional-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;
+    background:var(--grad)}
+  .devotional-icon{width:52px;height:52px;border-radius:50%;
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    box-shadow:0 4px 12px rgba(30,70,50,.15)}
+  .devotional-icon i{color:#fff;font-size:1.2rem}
+  .devotional-content{flex:1}
+  .devotional-content h3{margin:4px 0 8px;font-size:1.3rem}
+  .devotional-date{font-size:.85rem;color:var(--accent);font-weight:600;margin-bottom:12px}
+  .devotional-desc{color:var(--ink-soft);font-size:.95rem;line-height:1.6;margin-bottom:18px}
+  .devotional-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;
+    background:var(--primary);color:#fff;border-radius:30px;font-size:.9rem;
+    font-weight:600;text-decoration:none;transition:all .2s;
+    box-shadow:0 2px 8px rgba(30,70,50,.15)}
+  .devotional-btn:hover{background:var(--accent);transform:translateY(-1px);
+    box-shadow:0 4px 14px rgba(168,132,44,.25)}
+  .devotional-btn i{font-size:.8rem}
+  .devotional-credit{margin-top:14px;font-size:.78rem;color:var(--ink-mute)}
+  .devotional-credit a{color:var(--accent);text-decoration:none}
+  .devotional-credit a:hover{text-decoration:underline}
+  @media(max-width:600px){
+    .devotional-card{flex-direction:column;gap:16px;padding:28px 22px}
+    .devotional-icon{width:44px;height:44px}
+    .devotional-icon i{font-size:1rem}
+  }
+  
   /* ---------- Teacher Schedule ---------- */
   .teach-schedule{display:flex;flex-direction:column;gap:12px;max-width:780px;margin:2rem auto 0}
   .teach-card{display:flex;align-items:center;gap:16px;padding:18px 22px;
@@ -763,6 +795,28 @@
       </div>
 
     </div>
+
+    <!-- Daily Devotional -->
+    <div class="devotional-card">
+      <div class="devotional-icon"><i class="fa-solid fa-book-open"></i></div>
+      <div class="devotional-content">
+        <span class="eyebrow" data-en>Daily Devotional</span>
+        <span class="eyebrow" data-am>ዕለታዊ ቃለ ምዕዳን</span>
+        <h3 data-en>Today's Reading</h3>
+        <h3 data-am class="amh">የዛሬ ንባብ</h3>
+        <p class="devotional-date" id="devotionalDate"></p>
+        <p class="devotional-desc" data-en>Start your day with a short reflection from <strong>My Utmost for His Highest</strong> by Oswald Chambers — a timeless daily devotional that has encouraged believers for over 90 years.</p>
+        <p class="devotional-desc" data-am class="amh">ቀንዎን ከኦስዋልድ ቻምበርስ <strong>My Utmost for His Highest</strong> አጭር ነጸብራቅ ጋር ይጀምሩ — ከ90 ዓመታት በላይ አማኞችን ያበረታታ ዕለታዊ ቃለ ምዕዳን።</p>
+        <a href="https://utmost.org/updated/today/" target="_blank" class="devotional-btn">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span data-en>Read Today's Devotional</span>
+          <span data-am class="amh">የዛሬውን ያንብቡ</span>
+        </a>
+        <p class="devotional-credit" data-en>Content by <a href="https://utmost.org" target="_blank">utmost.org</a> — used with attribution.</p>
+        <p class="devotional-credit" data-am class="amh">ይዘት ከ <a href="https://utmost.org" target="_blank">utmost.org</a> — በማመሳከሪያ ጥቅም ላይ ውሏል።</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1265,7 +1319,7 @@
           <li>700 Bernhard Rd</li>
           <li>Whitehall, OH 43213</li>
           <li>Sundays · 10:00 AM</li>
-          <li>arsseber@gmail.com</li>
+          <li>ebenezereec@gmail.com</li>
         </ul>
       </div>
     </div>
@@ -1518,6 +1572,16 @@
     }
     document.getElementById('scheduleToggle').addEventListener('click', toggle);
     document.getElementById('scheduleToggleAm').addEventListener('click', toggle);
+  })();
+</script>
+<script>
+  // Daily Devotional — show today's date
+  (function(){
+    var el = document.getElementById('devotionalDate');
+    if(!el) return;
+    var today = new Date();
+    var options = {weekday:'long', year:'numeric', month:'long', day:'numeric'};
+    el.textContent = today.toLocaleDateString('en-US', options);
   })();
 </script>
 </body>
