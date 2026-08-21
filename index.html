@@ -495,7 +495,7 @@
   .mission-verse h2{color:#fff;font-size:clamp(1.8rem,4vw,2.6rem);margin:12px 0 20px}
 
   /* ---------- Three-column (About / Beliefs / Mission) ---------- */
-  .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-items:start}
+  .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-items:stretch}
   .three-col-item h3{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--ink);margin:10px 0 16px}
   .three-col-item p{font-size:1.12rem;line-height:1.8;color:var(--ink-soft);margin:0 0 14px}
   .three-col-item p:last-of-type{margin-bottom:0}
@@ -604,6 +604,120 @@
     .hero-countdown .cd-num{font-size:1.2rem}
   }
   
+  /* ---------- About Feature ---------- */
+  
+  .about-aim-inline{font-weight:700;color:var(--primary);font-style:italic}
+  .about-feature{margin-bottom:48px}
+  .about-feature-inner{max-width:720px;margin:0 auto;text-align:center}
+  .about-badge{display:inline-flex;align-items:center;gap:8px;background:var(--primary-soft);
+    color:var(--primary);padding:8px 18px;border-radius:30px;font-size:.8rem;font-weight:700;
+    text-transform:uppercase;letter-spacing:.06em;margin-bottom:20px}
+  .about-badge i{font-size:.9rem}
+  .about-headline{font-size:clamp(1.6rem,3.5vw,2.2rem);line-height:1.25;margin:0 0 28px;
+    color:var(--primary-dark)}
+  .about-body{text-align:left;font-size:1.02rem;line-height:1.75;color:var(--ink)}
+  .about-body p{margin-bottom:16px}
+  .about-body a{color:var(--accent);font-weight:600;text-decoration:none}
+  .about-body a:hover{text-decoration:underline}
+  .about-aim{font-size:1.1rem;font-weight:700;color:var(--primary);font-style:italic;
+    text-align:center;margin:24px 0;padding:16px 0;border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border)}
+  .about-cta-block{margin-top:32px;padding:28px 32px;background:linear-gradient(135deg,#f0f8f2,#fdf8ed);
+    border-radius:var(--radius);border:1px solid var(--border);text-align:center}
+  .about-invite{font-size:1rem;line-height:1.7;color:var(--ink)}
+  .about-invite strong{color:var(--primary-dark)}
+  .about-closing{margin-top:16px;font-size:1.2rem;font-weight:800;color:var(--accent);
+    font-family:var(--serif);letter-spacing:.02em}
+  
+  @media(max-width:760px){
+    .three-col.two-items{grid-template-columns:1fr}
+    .about-cta-block{padding:22px 20px}
+  }
+  
+  /* ---------- Beliefs & Mission Feature ---------- */
+  .beliefs-feature{margin-top:48px}
+  .mission-feature{margin-top:48px}
+  .beliefs-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+  .pillar-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px 20px;
+    text-align:center;box-shadow:0 2px 8px rgba(30,70,50,.04);transition:all .25s}
+  .pillar-card:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(30,70,50,.1);border-color:var(--primary-soft)}
+  .pillar-icon{width:48px;height:48px;border-radius:50%;background:var(--primary-soft);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+  .pillar-icon i{color:var(--primary);font-size:1.1rem}
+  .pillar-card h4{font-size:.95rem;margin:0 0 8px;color:var(--primary-dark)}
+  .pillar-card p{font-size:.88rem;line-height:1.6;color:var(--ink-soft);margin:0}
+  .mission-badge{background:rgba(168,132,44,.12);color:var(--accent)}
+  .mission-quote-block{position:relative;padding:32px 24px;background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+    border-radius:var(--radius);margin-top:24px;text-align:center;overflow:hidden}
+  .mission-quote-block::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 80% 15%,rgba(168,132,44,.25),transparent 50%)}
+  .mission-mark{position:absolute;top:-10px;left:20px;font-size:120px;opacity:.12;color:#fff;font-family:var(--serif);line-height:1}
+  .mission-text{font-family:var(--serif);font-size:clamp(1rem,2.2vw,1.2rem);line-height:1.7;
+    color:#fff;position:relative;z-index:1;font-style:italic;margin:0 auto;max-width:640px}
+  .mission-text strong{font-style:normal;color:#f0d9a0}
+  .mission-quote-block cite{display:block;margin-top:18px;font-size:.85rem;font-weight:700;
+    color:rgba(255,255,255,.75);position:relative;z-index:1}
+  @media(max-width:760px){
+    .beliefs-pillars{grid-template-columns:1fr}
+  }
+  
+  /* ---------- 3-Col Enhanced Cards ---------- */
+  .three-col{align-items:stretch}
+  .col-card{display:flex;flex-direction:column}
+  .col-card .mission-blockquote{flex:1;display:flex;flex-direction:column;justify-content:center}
+  .col-card{background:#fff;border:1px solid var(--border);border-radius:16px;
+    padding:32px 26px;box-shadow:0 2px 12px rgba(30,70,50,.05);position:relative;
+    transition:all .25s;overflow:hidden}
+  .col-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad);border-radius:16px 16px 0 0}
+  .col-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(30,70,50,.1)}
+  .col-badge{width:44px;height:44px;border-radius:50%;background:var(--primary-soft);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .col-badge i{color:var(--primary);font-size:1rem}
+  .col-badge-green{background:var(--primary-soft)}
+  .col-badge-green i{color:var(--primary)}
+  .col-badge-gold{background:rgba(168,132,44,.12)}
+  .col-badge-gold i{color:var(--accent)}
+  .col-card h3{margin:6px 0 14px}
+  .col-card p{font-size:.92rem;line-height:1.7}
+  .col-card a{color:var(--accent);font-weight:600;text-decoration:none}
+  .col-card a:hover{text-decoration:underline}
+  .col-highlight{font-weight:700;color:var(--primary);font-style:italic;padding:12px 0;
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:12px 0}
+  .expandable-content{display:none}
+  .col-card.expanded .expandable-content{display:block;margin-top:14px;
+    padding-top:14px;border-top:1px solid var(--border)}
+  .expand-btn-v2{display:block;margin:16px auto 0;background:none;border:1.5px solid var(--border);
+    color:var(--primary);padding:8px 20px;border-radius:20px;font-size:.82rem;font-weight:600;
+    cursor:pointer;transition:all .2s;text-align:center;width:fit-content}
+  .expand-btn-v2:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+  .col-card.expanded .expand-btn-v2{border-color:var(--accent);color:var(--accent)}
+  .col-card.expanded .expand-btn-v2:hover{background:var(--accent);color:#fff}
+  .pillar-list-v2{list-style:none;padding:0;margin:16px 0 0}
+  .pillar-list-v2 li{display:flex;align-items:center;gap:10px;padding:10px 0;
+    border-bottom:1px solid rgba(0,0,0,.05);font-size:.9rem}
+  .pillar-list-v2 li:last-child{border-bottom:none}
+  .pillar-list-v2 i{display:none}
+  .mission-card{background:linear-gradient(135deg,var(--primary-dark),var(--primary));overflow:hidden}
+  .mission-card::before{background:radial-gradient(circle at 80% 15%,rgba(168,132,44,.3),transparent 50%)}
+  .mission-card .col-badge-gold{background:rgba(255,255,255,.15)}
+  .mission-card .col-badge-gold i{color:#f0d9a0}
+  .mission-card .eyebrow{color:#f0d9a0}
+  .mission-card h3{color:#fff}
+  .mission-blockquote{margin:0;padding:0}
+  .mission-blockquote p{font-family:var(--serif);font-size:clamp(.9rem,1.8vw,1.02rem);
+    line-height:1.7;color:rgba(255,255,255,.92);font-style:italic}
+  .mission-blockquote strong{color:#f0d9a0;font-style:normal}
+  .mission-blockquote cite{display:block;margin-top:14px;font-size:.82rem;font-weight:700;
+    color:rgba(255,255,255,.7);font-style:normal}
+  
+  
+  .col-card .mission-blockquote{padding:20px;background:var(--bg);border-radius:12px;
+    border-left:4px solid var(--accent);margin-top:14px}
+  .col-card .mission-blockquote p{font-family:var(--serif);font-size:.92rem;line-height:1.7;
+    color:var(--ink);font-style:italic}
+  .col-card .mission-blockquote strong{color:var(--accent);font-style:normal}
+  .col-card .mission-blockquote cite{display:block;margin-top:12px;font-size:.82rem;
+    font-weight:700;color:var(--ink-soft);font-style:normal}
   /* ---------- Daily Devotional ---------- */
   .devotional-card{margin-top:48px;display:flex;align-items:flex-start;gap:24px;
     padding:36px 32px;background:linear-gradient(135deg,#f8f6f0,#fff);
@@ -773,29 +887,45 @@
 <!-- ABOUT / BELIEFS / MISSION -->
 <section class="section" id="welcome">
   <div class="wrap">
+    
+    <!-- 3-Column: About | Beliefs | Mission -->
     <div class="three-col">
 
       <!-- Column 1: About Us -->
-      <div class="three-col-item">
+      <div class="three-col-item col-card">
         <span class="eyebrow" data-en>About Us</span>
-        <span class="eyebrow amh" data-am>ስለ እኛ</span>
+        <span class="eyebrow" data-am>ስለ እኛ</span>
         <h3 data-en>Who We Are</h3>
         <h3 data-am class="amh">እኛ እነማን ነን</h3>
-        <p data-en>We are a welcoming church family rooted in Scripture and the example of Jesus — here to encourage one another through a life-changing Christian journey.</p>
-        <p data-am class="amh">በቅዱሳት መጻሕፍትና በኢየሱስ ምሳሌ ላይ የተመሰረተ — በሕይወት ለዋጭ የክርስቲያን ጉዞ አንዳችን ሌላውን የምናበረታታ ወዳጃዊ የቤተክርስቲያን ቤተሰብ ነን።</p>
-        <p data-en>The name <em>Ebenezer</em> means "stone of help" (1 Samuel 7:12) — a lasting reminder that, thus far, the Lord has helped us.</p>
-        <p data-am class="amh"><em>ኤቤኔዘር</em> ማለት "የእርዳታ ድንጋይ" ማለት ነው (1 ሳሙኤል 7፥12) — "እስከዚህ ድረስ እግዚአብሔር ረድቶናል" የሚል ዘላቂ ማስታወሻ።</p>
+        <p data-en>Ebenezer Ethiopian Evangelical Church is a Christ-centered community in Columbus, Ohio. Our services are in Amharic, and our doors are open to anyone.</p>
+        <p data-am class="amh">ኤቤኔዘር የኢትዮጵያ ወንጌላዊት ቤተክርስቲያን በኮሎምበስ ኦሃዮ ያለ ክርስቶስ-ተኮር ማህበረሰብ ነው። አገልግሎታችን በአማርኛ ነው፣ በራችን ለማንም ክፍት ነው።</p>
+        <p data-en>Our purpose is straightforward: to know God through His Word, to follow the example of Jesus, and to encourage one another along the way.</p>
+        <p data-am class="amh">ዓላማችን ቀጥተኛ ነው፦ እግዚአብሔርን በቃሉ ማወቅ፣ የኢየሱስን ምሳሌ መከተል፣ እና በመንገዱ ላይ አንዳችን ሌላውን ማበረታታት።</p>
+        <div class="expandable-content">
+          <p data-en>We believe the Bible is true, that it speaks to real life, and that it's meant to be lived out — not just talked about.</p>
+          <p data-am class="amh">መጽሐፍ ቅዱስ እውነት ነው፣ ለእውነተኛ ሕይወት ይናገራል፣ ሊኖሩበት እንጂ ሊነገርበት ብቻ አይደለም ብለን እናምናለን።</p>
+          <p data-en>We gather every Sunday to worship God, to hear the Bible taught plainly, and to grow together toward one goal: becoming more like Jesus Christ — the one who began our faith and the one who will complete it.</p>
+          <p data-am class="amh">በየሰንበቱ እግዚአብሔርን ለማምለክ፣ መጽሐፍ ቅዱስ በግልጽ ሲሰበክ ለመስማት፣ እና ወደ አንድ ግብ አብረን ለማደግ እንሰበሰባለን — የኢየሱስ ክርስቶስን መምሰል።</p>
+          <p data-en class="col-highlight">That's our aim — not perfection, but Christ as our direction.</p>
+          <p data-am class="amh col-highlight">ዓላማችን ፍጹምነት ሳይሆን ክርስቶስ አቅጣጫችን መሆኑ ነው።</p>
+          <p data-en>Our name — <strong>Ebenezer</strong> — means "stone of help" (<a href="https://www.bible.com/bible/100/1SA.7.12.NASB1995" target="_blank">1 Samuel 7:12</a>). It was a marker placed to declare: "God has helped us to this point." That is our confession. Week after week, it remains true.</p>
+          <p data-am class="amh"><strong>ኤቤኔዘር</strong> ማለት "የእርዳታ ድንጋይ" ማለት ነው (<a href="https://www.bible.com/bible/100/1SA.7.12.NASB1995" target="_blank">1 ሳሙኤል 7:12</a>)። "እግዚአብሔር እስከዚህ ድረስ ረድቶናል" ለማወጅ የተቀመጠ ምልክት ነው። ሳምንት በሳምንት እውነት ሆኖ ይቀጥላል።</p>
+          <p data-en><strong>Looking for a church in Columbus?</strong> You're welcome here — whether you've walked with God for years or you're just starting to look. Our community is open, our teaching is clear, and our Christ is worth knowing. Come and see.</p>
+          <p data-am class="amh"><strong>በኮሎምበስ ቤተክርስቲያን ይፈልጋሉ?</strong> እንኳን ደህና መጡ — ከእግዚአብሔር ጋር ለዓመታት ቢኖሩ ወይም አሁን መፈለግ ቢጀምሩ። ማህበረሰባችን ክፍት ነው። ኑ እዩ።</p>
+        </div>
+        <button class="expand-btn-v2" data-en onclick="toggleExpand(this)">Read more ▼</button>
+        <button class="expand-btn-v2" data-am onclick="toggleExpand(this)">ተጨማሪ ▼</button>
       </div>
 
       <!-- Column 2: Our Beliefs -->
-      <div class="three-col-item">
+      <div class="three-col-item col-card">
         <span class="eyebrow" data-en>What We Believe</span>
-        <span class="eyebrow amh" data-am>የምናምነው</span>
+        <span class="eyebrow" data-am>የምናምነው</span>
         <h3 data-en>Our Beliefs</h3>
         <h3 data-am class="amh">እምነታችን</h3>
         <p data-en>We believe in The Triune God and we proclaim the Good News that sin and death have been overcome by the death and resurrection of Jesus Christ.</p>
         <p data-am class="amh">በሥላሴ አምላክ እናምናለን፣ ኃጢአትና ሞት በኢየሱስ ክርስቶስ ሞትና ትንሣኤ ድል መነሣታቸውን እናውጃለን።</p>
-        <ul class="pillar-list">
+        <ul class="pillar-list-v2">
           <li data-en><strong>Believe in Christ</strong></li>
           <li data-en><strong>Belong to the Community of Christ</strong></li>
           <li data-en><strong>Be Ambassador for Christ</strong></li>
@@ -803,9 +933,7 @@
           <li data-am class="amh"><strong>የክርስቶስ ማህበረሰብ አካል ሁኑ</strong></li>
           <li data-am class="amh"><strong>የክርስቶስ አምባሳደር ሁኑ</strong></li>
         </ul>
-        <button class="expand-btn" onclick="this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'Show less ▲':'Read more ▼'" data-en>Read more ▼</button>
-        <button class="expand-btn amh" onclick="this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'ያንሱ ▲':'ተጨማሪ ▼'" data-am>ተጨማሪ ▼</button>
-        <div class="beliefs-expanded">
+        <div class="expandable-content">
           <p data-en><strong>Believe in Christ:</strong> we trust, feed and obey God's Word as it molds, grows and shapes us into mature Christ-centered followers.</p>
           <p data-am class="amh"><strong>በክርስቶስ እመኑ፦</strong> የእግዚአብሔርን ቃል እናምናለን፣ እንመገባለን እናም እንታዘዛለን — ወደ ብስለት ያደረሱ የክርስቶስ ተከታዮች ይቀርፀናል።</p>
           <p data-en><strong>Belong to the Community of Christ:</strong> we are called out of the world, sinners in need of grace expressed through God's Word and Sacrament, our mutual love, care, and accountability in the Body of Christ, the Church.</p>
@@ -813,18 +941,22 @@
           <p data-en><strong>Be Ambassador for Christ:</strong> we represent Christ and make His love known in our community and in the world through our witness and work.</p>
           <p data-am class="amh"><strong>የክርስቶስ አምባሳደር ሁኑ፦</strong> ክርስቶስን እንወክላለን እናም በምስክርነትና በሥራ ፍቅሩን በማህበረሰባችንና በዓለም እናሳውቃለን።</p>
         </div>
+        <button class="expand-btn-v2" data-en onclick="toggleExpand(this)">Read more ▼</button>
+        <button class="expand-btn-v2" data-am onclick="toggleExpand(this)">ተጨማሪ ▼</button>
       </div>
 
       <!-- Column 3: Our Mission -->
-      <div class="three-col-item">
+      <div class="three-col-item col-card">
         <span class="eyebrow" data-en>Our Mission</span>
-        <span class="eyebrow amh" data-am>ተልእኮአችን</span>
+        <span class="eyebrow" data-am>ተልእኮአችን</span>
         <h3 data-en>The Great Commission</h3>
         <h3 data-am class="amh">ታላቁ ተልእኮ</h3>
-        <p class="mission-quote" data-en>&ldquo;Go therefore and make disciples of all the nations, baptizing them in the name of the Father and the Son and the Holy Spirit, teaching them to observe all that I commanded you; and lo, I am with you always, even to the end of the age.&rdquo;</p>
-        <p class="mission-quote amh" data-am>&ldquo;እንግዲህ ሂዱና አሕዛብን ሁሉ በአብ በወልድና በመንፈስ ቅዱስ ስም እያጠመቃችኋቸው ያዘዝኋችሁን ሁሉ እንዲጠብቁ እያስተማራችኋቸው ደቀ መዛሙርት አድርጓቸው፤ እነሆም እኔ እስከ ዓለም ፍጻሜ ድረስ ሁልጊዜ ከእናንተ ጋር ነኝ።&rdquo;</p>
-        <cite data-en>— Matthew 28:19-20 (NASB 1995)</cite>
-        <cite data-am class="amh">— ማቴዎስ 28:19-20</cite>
+        <blockquote class="mission-blockquote">
+          <p data-en>&ldquo;Go therefore and make disciples of all the nations, baptizing them in the name of the Father and the Son and the Holy Spirit, <strong>teaching them to observe all that I commanded you</strong>; and lo, I am with you always, even to the end of the age.&rdquo;</p>
+          <p data-am class="amh">&ldquo;እንግዲህ ሂዱና አሕዛብን ሁሉ በአብ በወልድና በመንፈስ ቅዱስ ስም እያጠመቃችኋቸው <strong>ያዘዝኋችሁን ሁሉ እንዲጠብቁ እያስተማራችኋቸው</strong> ደቀ መዛሙርት አድርጓቸው፤ እነሆም እኔ እስከ ዓለም ፍጻሜ ድረስ ሁልጊዜ ከእናንተ ጋር ነኝ።&rdquo;</p>
+          <cite data-en>— Matthew 28:19-20 (NASB 1995)</cite>
+          <cite data-am class="amh">— ማቴዎስ 28:19-20</cite>
+        </blockquote>
       </div>
 
     </div>
@@ -1681,6 +1813,19 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
   })();
+</script>
+<script>
+  // Expand/collapse for 3-col cards
+  function toggleExpand(btn){
+    var card = btn.closest('.col-card');
+    var isExpanded = card.classList.toggle('expanded');
+    var isAm = document.body.classList.contains('am');
+    if(isExpanded){
+      btn.textContent = isAm ? 'ያንሱ \u25B2' : 'Show less \u25B2';
+    } else {
+      btn.textContent = isAm ? '\u1270\u1328\u121B\u122A \u25BC' : 'Read more \u25BC';
+    }
+  }
 </script>
 </body>
 </html>
