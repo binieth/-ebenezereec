@@ -718,7 +718,43 @@
   .col-card .mission-blockquote strong{color:var(--accent);font-style:normal}
   .col-card .mission-blockquote cite{display:block;margin-top:12px;font-size:.82rem;
     font-weight:700;color:var(--ink-soft);font-style:normal}
-  /* ---------- Daily Devotional ---------- */
+  /* ---------- 3-Col Blended (no card) ---------- */
+  .col-card{background:transparent!important;border:none!important;box-shadow:none!important;
+    padding:20px 16px!important;border-radius:0!important;text-align:center;
+    transform:none!important;transition:none!important}
+  .col-card::before{display:none!important}
+  .col-card:hover{transform:none!important;box-shadow:none!important}
+  .col-card h3{font-family:var(--serif);font-size:1.4rem;color:var(--primary-dark);margin:8px 0 18px;
+    text-align:center}
+  .col-card .eyebrow{display:block;text-align:center}
+  .col-card p{text-align:left;font-size:.93rem;line-height:1.75;color:var(--ink)}
+  .col-card .col-highlight{text-align:center;font-size:1.05rem;font-family:var(--serif);
+    font-weight:600;color:var(--primary);font-style:italic;padding:16px 0;
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:16px 0}
+  .col-card .mission-blockquote{background:transparent;border-left:3px solid var(--accent);
+    padding:16px 20px;border-radius:0;text-align:left;margin-top:16px}
+  .col-card .mission-blockquote p{font-family:var(--serif);font-size:.95rem;line-height:1.8;
+    color:var(--ink);font-style:italic}
+  .col-card .mission-blockquote strong{color:var(--accent);font-style:normal;font-weight:700}
+  .col-card .mission-blockquote cite{margin-top:14px;font-size:.82rem;color:var(--ink-soft);
+    font-style:normal;font-weight:700}
+  .pillar-list-v2{text-align:left}
+  .pillar-list-v2 li{padding:8px 0;font-size:.9rem;border-bottom:none;gap:0}
+  .pillar-list-v2 li strong{font-family:var(--serif);font-size:.95rem;color:var(--primary-dark)}
+  .expandable-content{text-align:left}
+  .col-card.expanded .expandable-content{border-top:none;padding-top:8px}
+  .expand-btn-v2{background:transparent!important;border:none!important;color:var(--accent)!important;
+    font-size:.85rem;font-weight:700;padding:8px 0!important;text-decoration:underline;
+    text-underline-offset:3px}
+  .expand-btn-v2:hover{color:var(--primary)!important;background:transparent!important}
+  .col-card.expanded .expand-btn-v2{color:var(--ink-mute)!important;border:none!important}
+  .col-card.expanded .expand-btn-v2:hover{color:var(--primary)!important;background:transparent!important}
+  
+  
+  @media(min-width:761px){
+    .three-col .col-card + .col-card{border-left:1px solid var(--border)!important;border-radius:0!important}
+  }
+    /* ---------- Daily Devotional ---------- */
   .devotional-card{margin-top:48px;display:flex;align-items:flex-start;gap:24px;
     padding:36px 32px;background:linear-gradient(135deg,#f8f6f0,#fff);
     border-radius:var(--radius);border:1px solid var(--border);
@@ -910,8 +946,8 @@
           <p data-am class="amh col-highlight">ዓላማችን ፍጹምነት ሳይሆን ክርስቶስ አቅጣጫችን መሆኑ ነው።</p>
           <p data-en>Our name — <strong>Ebenezer</strong> — means "stone of help" (<a href="https://www.bible.com/bible/100/1SA.7.12.NASB1995" target="_blank">1 Samuel 7:12</a>). It was a marker placed to declare: "God has helped us to this point." That is our confession. Week after week, it remains true.</p>
           <p data-am class="amh"><strong>ኤቤኔዘር</strong> ማለት "የእርዳታ ድንጋይ" ማለት ነው (<a href="https://www.bible.com/bible/100/1SA.7.12.NASB1995" target="_blank">1 ሳሙኤል 7:12</a>)። "እግዚአብሔር እስከዚህ ድረስ ረድቶናል" ለማወጅ የተቀመጠ ምልክት ነው። ሳምንት በሳምንት እውነት ሆኖ ይቀጥላል።</p>
-          <p data-en><strong>Looking for a church in Columbus?</strong> You're welcome here — whether you've walked with God for years or you're just starting to look. Our community is open, our teaching is clear, and our Christ is worth knowing. Come and see.</p>
-          <p data-am class="amh"><strong>በኮሎምበስ ቤተክርስቲያን ይፈልጋሉ?</strong> እንኳን ደህና መጡ — ከእግዚአብሔር ጋር ለዓመታት ቢኖሩ ወይም አሁን መፈለግ ቢጀምሩ። ማህበረሰባችን ክፍት ነው። ኑ እዩ።</p>
+          <p data-en><strong>New to Columbus — or looking for a church to call home?</strong> You're welcome here. Our community is open, our teaching is clear, and our Christ is worth knowing. Come and see.</p>
+          <p data-am class="amh"><strong>ኮሎምበስ አዲስ ነዎት — ወይም የቤተክርስቲያን ቤት ይፈልጋሉ?</strong> እንኳን ደህና መጡ። ማህበረሰባችን ክፍት ነው፣ ትምህርታችን ግልጽ ነው፣ ክርስቶሳችንም ለማወቅ ይገባል። ኑ እዩ።</p>
         </div>
         <button class="expand-btn-v2" data-en onclick="toggleExpand(this)">Read more ▼</button>
         <button class="expand-btn-v2" data-am onclick="toggleExpand(this)">ተጨማሪ ▼</button>
@@ -923,23 +959,19 @@
         <span class="eyebrow" data-am>የምናምነው</span>
         <h3 data-en>Our Beliefs</h3>
         <h3 data-am class="amh">እምነታችን</h3>
-        <p data-en>We believe in The Triune God and we proclaim the Good News that sin and death have been overcome by the death and resurrection of Jesus Christ.</p>
-        <p data-am class="amh">በሥላሴ አምላክ እናምናለን፣ ኃጢአትና ሞት በኢየሱስ ክርስቶስ ሞትና ትንሣኤ ድል መነሣታቸውን እናውጃለን።</p>
-        <ul class="pillar-list-v2">
-          <li data-en><strong>Believe in Christ</strong></li>
-          <li data-en><strong>Belong to the Community of Christ</strong></li>
-          <li data-en><strong>Be Ambassador for Christ</strong></li>
-          <li data-am class="amh"><strong>በክርስቶስ እመኑ</strong></li>
-          <li data-am class="amh"><strong>የክርስቶስ ማህበረሰብ አካል ሁኑ</strong></li>
-          <li data-am class="amh"><strong>የክርስቶስ አምባሳደር ሁኑ</strong></li>
-        </ul>
+        <p data-en>We believe in the Triune God and we proclaim the Good News: that sin and death have been overcome by the death and resurrection of Jesus Christ. Empowered by the Holy Spirit, we strive to reach every generation with the saving message of the Gospel and to make disciples wherever God has placed us.</p>
+        <p data-am class="amh">በሥላሴ አምላክ እናምናለን፤ ኃጢአትና ሞት በኢየሱስ ክርስቶስ ሞትና ትንሣኤ ድል መነሣታቸውን እናውጃለን። በመንፈስ ቅዱስ ተጎልብተን እግዚአብሔር ባስቀመጠን ቦታ ሁሉ እያንዳንዱን ትውልድ በወንጌል አዳኝ መልእክት ለመድረስና ደቀ መዛሙርት ለማድረግ እንጥራለን።</p>
+        <p data-en>Our services are in Amharic, and we provide live translation to the best of our ability. Our doors are open to anyone — regardless of nationality or background.</p>
+        <p data-am class="amh">አገልግሎታችን በአማርኛ ነው፣ በተቻለን መጠን የቀጥታ ትርጉም እናቀርባለን። በራችን ለማንም ክፍት ነው — ዜግነትም ሆነ ዳራ ሳይለይ።</p>
         <div class="expandable-content">
-          <p data-en><strong>Believe in Christ:</strong> we trust, feed and obey God's Word as it molds, grows and shapes us into mature Christ-centered followers.</p>
+          <p data-en>By the grace of God, we live out our faith in Jesus Christ and build each other up as we:</p>
+          <p data-am class="amh">በእግዚአብሔር ጸጋ፣ በኢየሱስ ክርስቶስ ያለንን እምነት እንኖራለን አንዳችን ሌላውን እየገነባን፦</p>
+          <p data-en><strong>Believe in Christ:</strong> We trust, feed on, and obey God's Word as it molds, grows, and shapes us into mature, Christ-centered followers.</p>
           <p data-am class="amh"><strong>በክርስቶስ እመኑ፦</strong> የእግዚአብሔርን ቃል እናምናለን፣ እንመገባለን እናም እንታዘዛለን — ወደ ብስለት ያደረሱ የክርስቶስ ተከታዮች ይቀርፀናል።</p>
-          <p data-en><strong>Belong to the Community of Christ:</strong> we are called out of the world, sinners in need of grace expressed through God's Word and Sacrament, our mutual love, care, and accountability in the Body of Christ, the Church.</p>
-          <p data-am class="amh"><strong>የክርስቶስ ማህበረሰብ አካል ሁኑ፦</strong> ከዓለም ተጠርተናል፣ ጸጋ የሚያስፈልጋቸው ኃጢአተኞች — በእግዚአብሔር ቃልና ቁርባን፣ በእርስ በርስ ፍቅር፣ እንክብካቤና ተጠያቂነት በክርስቶስ አካል ውስጥ።</p>
-          <p data-en><strong>Be Ambassador for Christ:</strong> we represent Christ and make His love known in our community and in the world through our witness and work.</p>
-          <p data-am class="amh"><strong>የክርስቶስ አምባሳደር ሁኑ፦</strong> ክርስቶስን እንወክላለን እናም በምስክርነትና በሥራ ፍቅሩን በማህበረሰባችንና በዓለም እናሳውቃለን።</p>
+          <p data-en><strong>Belong to the Community of Christ:</strong> Called out of the world — sinners in need of grace — we gather around God's Word and Sacrament, bound together by mutual love, care, and accountability in the Body of Christ, the Church.</p>
+          <p data-am class="amh"><strong>የክርስቶስ ማህበረሰብ አካል ሁኑ፦</strong> ከዓለም ተጠርተናል — ጸጋ የሚያስፈልጋቸው ኃጢአተኞች — በእግዚአብሔር ቃልና ቁርባን ዙሪያ እንሰበሰባለን፣ በእርስ በርስ ፍቅር፣ እንክብካቤና ተጠያቂነት በክርስቶስ አካል ውስጥ ተሳስረን።</p>
+          <p data-en><strong>Be Ambassadors for Christ:</strong> We represent Christ and make His love known in our community and in the world through our witness and work.</p>
+          <p data-am class="amh"><strong>የክርስቶስ አምባሳደሮች ሁኑ፦</strong> ክርስቶስን እንወክላለን እናም በምስክርነትና በሥራ ፍቅሩን በማህበረሰባችንና በዓለም እናሳውቃለን።</p>
         </div>
         <button class="expand-btn-v2" data-en onclick="toggleExpand(this)">Read more ▼</button>
         <button class="expand-btn-v2" data-am onclick="toggleExpand(this)">ተጨማሪ ▼</button>
@@ -949,14 +981,28 @@
       <div class="three-col-item col-card">
         <span class="eyebrow" data-en>Our Mission</span>
         <span class="eyebrow" data-am>ተልእኮአችን</span>
-        <h3 data-en>The Great Commission</h3>
-        <h3 data-am class="amh">ታላቁ ተልእኮ</h3>
+        <h3 data-en>A City on a Hill</h3>
+        <h3 data-am class="amh">በተራራ ላይ ያለች ከተማ</h3>
         <blockquote class="mission-blockquote">
-          <p data-en>&ldquo;Go therefore and make disciples of all the nations, baptizing them in the name of the Father and the Son and the Holy Spirit, <strong>teaching them to observe all that I commanded you</strong>; and lo, I am with you always, even to the end of the age.&rdquo;</p>
-          <p data-am class="amh">&ldquo;እንግዲህ ሂዱና አሕዛብን ሁሉ በአብ በወልድና በመንፈስ ቅዱስ ስም እያጠመቃችኋቸው <strong>ያዘዝኋችሁን ሁሉ እንዲጠብቁ እያስተማራችኋቸው</strong> ደቀ መዛሙርት አድርጓቸው፤ እነሆም እኔ እስከ ዓለም ፍጻሜ ድረስ ሁልጊዜ ከእናንተ ጋር ነኝ።&rdquo;</p>
-          <cite data-en>— Matthew 28:19-20 (NASB 1995)</cite>
-          <cite data-am class="amh">— ማቴዎስ 28:19-20</cite>
+          <p data-en><em>"A city set on a hill cannot be hidden."</em> — Matthew 5:14</p>
+          <p data-am class="amh"><em>"በተራራ ላይ ያለች ከተማ ልትሰወር አትችልም።"</em> — ማቴዎስ 5:14</p>
         </blockquote>
+        <p data-en>He was not speaking of ambition. He was speaking of visibility — that when God places His people somewhere, they cannot help but be seen. Not because they seek attention, but because light, by its nature, shines.</p>
+        <p data-am class="amh">ስለ ምኞት አይደለም የተናገረው። ስለ ታይነት ነው — እግዚአብሔር ሕዝቡን በአንድ ቦታ ሲያስቀምጥ፣ መታየታቸው አይቀርም። ትኩረት ስለሚፈልጉ ሳይሆን ብርሃን በባሕርዩ ስለሚያበራ።</p>
+        <div class="expandable-content">
+          <p data-en>This is who we are. Planted in Columbus, serving in Amharic, open to all — we are a community that refuses to hide the Gospel. We preserve it like salt preserves what would otherwise decay. We proclaim it like light exposes what darkness conceals.</p>
+          <p data-am class="amh">ይህ እኛ ነን። በኮሎምበስ ተተክለን፣ በአማርኛ እያገለገልን፣ ለሁሉም ክፍት — ወንጌልን ለመደበቅ የማንፈቅድ ማህበረሰብ ነን። ጨው ሳይበሰብስ እንደሚጠብቅ ቃሉን እንጠብቃለን። ብርሃን ጨለማን እንደሚያጋልጥ ወንጌልን እናውጃለን።</p>
+          <p data-en>But being salt and light is not a posture alone — it is an action. Christ commissioned us: <em>"Go therefore and make disciples… teaching them to observe all that I commanded you"</em> (Matthew 28:19-20). We obey this not as a program, but as a way of life. We disciple in our homes. We teach in our gatherings. We reach our neighbors by living among them as people transformed by Jesus.</p>
+          <p data-am class="amh">ነገር ግን ጨውና ብርሃን መሆን አቋም ብቻ ሳይሆን ተግባር ነው። ክርስቶስ አዘዘን፦ <em>"ሂዱና ደቀ መዛሙርት አድርጓቸው… ያዘዝኋችሁን ሁሉ እንዲጠብቁ አስተምሯቸው"</em> (ማቴዎስ 28:19-20)። ይህን እንታዘዛለን — እንደ ፕሮግራም ሳይሆን እንደ ኑሮ። በቤታችን ደቀ መዝሙር እናደርጋለን። በስብሰባችን እናስተምራለን። ለጎረቤቶቻችን በኢየሱስ የተለወጡ ሰዎች ሆነን በመኖር እንደርሳለን።</p>
+          <p data-en>We do not aim to be impressive. We aim to be faithful — and to let the light of Christ in us do what only it can do.</p>
+          <p data-am class="amh">አስደናቂ ለመሆን አንጥርም። ታማኝ ለመሆን እንጥራለን — የክርስቶስ ብርሃን በእኛ ውስጥ እርሱ ብቻ ሊያደርገው የሚችለውን እንዲያደርግ።</p>
+          <blockquote class="mission-blockquote" style="margin-top:16px">
+            <p data-en><em>"Let your light shine before others, that they may see your good works and glorify your Father in heaven."</em> — Matthew 5:16</p>
+            <p data-am class="amh"><em>"ብርሃናችሁ በሰው ፊት ይብራ፣ መልካም ሥራችሁን አይተው በሰማይ ያለውን አባታችሁን ያከብሩ ዘንድ።"</em> — ማቴዎስ 5:16</p>
+          </blockquote>
+        </div>
+        <button class="expand-btn-v2" data-en onclick="toggleExpand(this)">Read more ▼</button>
+        <button class="expand-btn-v2" data-am onclick="toggleExpand(this)">ተጨማሪ ▼</button>
       </div>
 
     </div>
