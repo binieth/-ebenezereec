@@ -10,8 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-  :root{
+<style>  :root{
     --bg:#f6f3ec;              /* warm cream */
     --bg-alt:#efeadd;          /* deeper cream */
     --surface:#ffffff;
@@ -35,7 +34,6 @@
     --amh:'Noto Sans Ethiopic','Inter',sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
   html{overflow-x:hidden}
   body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100vw}
   .amh{font-family:var(--amh)}
@@ -58,11 +56,8 @@
 
   /* NAV */
   header{position:sticky;top:0;z-index:50;background:rgba(250,248,243,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:600;font-size:19px}
   .brand .mark{width:42px;height:42px;border-radius:13px;background:var(--grad);color:#fff;display:grid;place-items:center;flex:none;box-shadow:0 4px 14px -4px rgba(21,53,36,.45)}
   .logo-mark{width:24px;height:24px}
-  .brand small{display:block;font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute)}
   .nav-links{display:flex;align-items:center;gap:30px}
   .nav-links a{font-size:15px;font-weight:500;color:var(--ink-soft);transition:color .15s}
   .nav-links a:hover{color:var(--primary)}
@@ -76,10 +71,7 @@
   /* HERO */
   /* fine dotted grid */
   /* faint line-art memorial stones, bottom-right */
-  
-  .hero .eyebrow{color:var(--accent)}
-  .hero h1{font-size:clamp(42px,7vw,74px);line-height:1.04;margin:18px 0 22px}
-  .hero p{font-size:clamp(17px,2.2vw,21px);max-width:560px;color:var(--ink-soft);margin-bottom:34px}
+
   .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
 
   /* WELCOME */
@@ -118,7 +110,7 @@
   .agenda-item p{font-size:13px;color:var(--ink-soft)}
   .agenda-item .at{font-size:12px;color:var(--primary);font-weight:600;margin-top:3px}
   .agenda-empty{color:var(--ink-mute);font-size:14px;text-align:center;padding:30px 0}
-  
+
   .podcast-cta{display:flex;align-items:center;justify-content:space-between;gap:24px;background:var(--accent-soft);border:1px solid var(--border);border-radius:var(--radius);padding:30px 34px;margin-top:32px;flex-wrap:wrap}
   .podcast-cta h3{font-size:22px}
   .podcast-cta p{color:var(--ink-soft);font-size:15px;margin-top:4px}
@@ -141,7 +133,6 @@
   .verse-help{text-align:center;margin-top:30px;color:var(--ink-soft);font-size:14px}
   @media(max-width:760px){.verse-grid{grid-template-columns:1fr}}
 
-  
   .articles{background:var(--bg-alt)}
   .article{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
   .article:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
@@ -226,12 +217,10 @@
     .verse-card{padding:30px 24px}
     .hero h1{font-size:clamp(34px,9vw,46px);margin:14px 0 16px}
     .hero p{font-size:16px;max-width:100%;margin-bottom:26px}
-    
-    
+
   }
   @media(max-width:400px){
   }
-
   /* ---------- Leadership / Staff ---------- */
   .leadership{background:var(--bg-alt);}
   .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:34px;}
@@ -248,7 +237,7 @@
   .team-role{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
     color:var(--primary);background:var(--primary-soft);padding:4px 12px;border-radius:999px;margin-bottom:10px;}
   .team-body p{margin:0;color:var(--ink-soft);font-size:.94rem;line-height:1.5;}
-  
+
   @media(max-width:680px){}
 
   /* ---------- About Us (merged from About page) ---------- */
@@ -284,26 +273,12 @@
 
   @media(max-width:900px){.nav-hello span[data-en]{font-size:13px;}}
   @media(max-width:680px){.nav-hello{display:none;}}
-  
-  
-  
-  
-  
-  
-  
-  
-  .hero-verse{display:inline-flex;align-items:center;gap:10px;margin-top:30px;
-    background:rgba(255,255,255,.14);backdrop-filter:blur(6px);
-    border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:10px 18px;
-    font-size:.86rem;font-weight:600;color:#fff;font-style:italic;}
-  .hero-verse i{color:#f0d9a0;font-style:normal;}
 
   @media(max-width:680px){
     .hero{min-height:88vh;}
     .hero-inner{padding:80px 0;}
     .hero-verse{font-size:.78rem;padding:9px 15px;}
   }
-
   /* ---------- Branded motif panel (replaces stock photos) ---------- */
 
   .contact-cta .btn{width:100%;margin-bottom:12px;}
@@ -315,21 +290,12 @@
   .brand small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
 
   .brand-name{font-family:var(--serif);font-weight:600;font-size:20px;line-height:1;color:var(--ink)}
-  
-  
-  
-  
-  .sched-worship 
-  
-  
-  
-  
-  
-  
+
+  .sched-worship
+
   @media(max-width:900px){}
   @media(max-width:600px){}
 
-  
   /* ---------- Hero (full-cover rock background) ---------- */
   .hero{position:relative;min-height:92vh;display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--primary-dark)}
   .hero-bg{position:absolute;inset:0;overflow:hidden;z-index:0}
@@ -360,7 +326,6 @@
     .hero-verse{font-size:.78rem;padding:9px 15px}
     .hero-overlay{background:linear-gradient(180deg,rgba(21,53,36,.72) 0%,rgba(21,53,36,.55) 55%,rgba(21,53,36,.72) 100%)}
   }
-
   /* ---------- Calendar layout (3-column) ---------- */
   .cal-layout{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;padding:48px 0 32px;border-top:3px solid var(--primary)}
   .cal-col-title{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--ink);margin:0 0 14px}
@@ -386,11 +351,9 @@
   /* ---------- Mission verse (Great Commission) ---------- */
   @media(max-width:680px){
   }
-
   /* ---------- Beliefs prose ---------- */
 
   /* ---------- Three-column (About / Beliefs / Mission) ---------- */
-  .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-items:stretch}
   .three-col-item h3{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--ink);margin:10px 0 16px}
   .three-col-item p{font-size:1.12rem;line-height:1.8;color:var(--ink-soft);margin:0 0 14px}
   .three-col-item p:last-of-type{margin-bottom:0}
@@ -415,7 +378,6 @@
   @media(max-width:680px){
     .hero-cross{left:2%;height:70%;width:auto;opacity:.35}
   }
-
   /* ---------- Back to top button ---------- */
   .back-to-top{position:fixed;bottom:28px;right:28px;width:48px;height:48px;border-radius:50%;
     background:var(--primary);color:#fff;display:grid;place-items:center;font-size:18px;
@@ -427,14 +389,12 @@
   @media(max-width:680px){
     .back-to-top{bottom:20px;right:20px;width:44px;height:44px;font-size:16px}
   }
-
   /* ---------- Coming Soon sections ---------- */
   .coming-badge{display:inline-flex;align-items:center;gap:10px;background:var(--primary-soft);
     color:var(--primary);font-weight:700;font-size:.9rem;letter-spacing:.04em;
     padding:10px 22px;border-radius:100px;margin-bottom:22px}
   .coming-badge i{font-size:1.1rem}
 
-  
   .map-link{position:absolute;bottom:16px;right:16px;display:inline-flex;align-items:center;gap:8px;
     background:var(--primary);color:#fff;padding:10px 20px;border-radius:30px;font-size:.85rem;
     font-weight:600;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.25);transition:all .2s;z-index:2}
@@ -458,20 +418,13 @@
     .subscribe-fields{flex-direction:column}
     .subscribe-btn{justify-content:center}
   }
-  
-  
   .hero-welcome-dual{display:inline-block!important;color:rgba(255,255,255,.85);
     font-size:.88rem;font-weight:600;letter-spacing:.04em}
-  
-  
+
   .hero-amharic-welcome{font-family:var(--amh);font-size:clamp(2rem,5vw,3.2rem);
     color:#fff;font-weight:700;letter-spacing:.02em;margin-bottom:8px;
     text-shadow:0 2px 20px rgba(0,0,0,.3);opacity:.95;line-height:1.2}
-  
-  
-  
-  
-  
+
   /* ---------- Hero Church Name ---------- */
   .hero-name-block{display:inline-flex;flex-direction:column;align-items:center;gap:0}
   .hero-church-name{font-family:'Abril Fatface',serif;font-weight:400;
@@ -480,8 +433,7 @@
   .hero-church-subtitle{display:block;font-size:clamp(.5rem,.9vw,.62rem);
     font-weight:400;color:rgba(255,255,255,.85);text-transform:uppercase;
     text-align:center;margin:-0.6em 0 0;padding:0;line-height:1;padding:0;letter-spacing:.06em}
-  
-  
+
   @media(max-width:768px){
     .hero-church-name{font-size:13vw!important;letter-spacing:.1em!important}
     .hero-church-subtitle{font-size:3.2vw!important;letter-spacing:.08em!important;margin-top:-0.6em!important}
@@ -490,7 +442,6 @@
     .hero-church-name{font-size:14vw!important;letter-spacing:.08em!important}
     .hero-church-subtitle{font-size:3.5vw!important;letter-spacing:.06em!important;margin-top:-0.6em!important}
   }
-  
   /* ---------- Hero Next Event ---------- */
   .hero-next-event{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:28px}
   .hero-today{font-size:.85rem;color:rgba(255,255,255,.7);font-weight:500;letter-spacing:.03em}
@@ -516,51 +467,27 @@
     .hero-event-card{padding:14px 20px;min-width:auto;width:90%}
     .hero-countdown .cd-num{font-size:1.2rem}
   }
-  
   /* ---------- About Feature ---------- */
-  
+
   .about-cta-block{margin-top:32px;padding:28px 32px;background:linear-gradient(135deg,#f0f8f2,#fdf8ed);
     border-radius:var(--radius);border:1px solid var(--border);text-align:center}
   .about-invite{font-size:1rem;line-height:1.7;color:var(--ink)}
   .about-invite strong{color:var(--primary-dark)}
   .about-closing{margin-top:16px;font-size:1.2rem;font-weight:800;color:var(--accent);
     font-family:var(--serif);letter-spacing:.02em}
-  
+
   @media(max-width:760px){
     .about-cta-block{padding:22px 20px}
   }
-  
   /* ---------- Beliefs & Mission Feature ---------- */
   @media(max-width:760px){
   }
-  
   /* ---------- 3-Col Enhanced Cards ---------- */
   .three-col{align-items:stretch}
-  .col-card{display:flex;flex-direction:column}
-  .col-card .mission-blockquote{flex:1;display:flex;flex-direction:column;justify-content:center}
-  .col-card{background:#fff;border:1px solid var(--border);border-radius:16px;
-    padding:32px 26px;box-shadow:0 2px 12px rgba(30,70,50,.05);position:relative;
-    transition:all .25s;overflow:hidden}
-  .col-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad);border-radius:16px 16px 0 0}
-  .col-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(30,70,50,.1)}
-  .col-card h3{margin:6px 0 14px}
-  .col-card p{font-size:.92rem;line-height:1.7}
   .col-card a{color:var(--accent);font-weight:600;text-decoration:none}
   .col-card a:hover{text-decoration:underline}
   .col-highlight{font-weight:700;color:var(--primary);font-style:italic;padding:12px 0;
     border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:12px 0}
-  .expandable-content{display:none}
-  .col-card.expanded .expandable-content{display:block;margin-top:14px;
-    padding-top:14px;border-top:1px solid var(--border)}
-  .expand-btn-v2{display:block;margin:16px auto 0;background:none;border:1.5px solid var(--border);
-    color:var(--primary);padding:8px 20px;border-radius:20px;font-size:.82rem;font-weight:600;
-    cursor:pointer;transition:all .2s;text-align:center;width:fit-content}
-  .expand-btn-v2:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
-  .col-card.expanded .expand-btn-v2{border-color:var(--accent);color:var(--accent)}
-  .col-card.expanded .expand-btn-v2:hover{background:var(--accent);color:#fff}
-  .pillar-list-v2{list-style:none;padding:0;margin:16px 0 0}
-  .pillar-list-v2 li{display:flex;align-items:center;gap:10px;padding:10px 0;
-    border-bottom:1px solid rgba(0,0,0,.05);font-size:.9rem}
   .pillar-list-v2 li:last-child{border-bottom:none}
   .pillar-list-v2 i{display:none}
   .mission-blockquote{margin:0;padding:0}
@@ -569,16 +496,7 @@
   .mission-blockquote strong{color:#f0d9a0;font-style:normal}
   .mission-blockquote cite{display:block;margin-top:14px;font-size:.82rem;font-weight:700;
     color:rgba(255,255,255,.7);font-style:normal}
-  
-  
-  .col-card .mission-blockquote{padding:20px;background:var(--bg);border-radius:12px;
-    border-left:4px solid var(--accent);margin-top:14px}
-  .col-card .mission-blockquote p{font-family:var(--serif);font-size:.92rem;line-height:1.7;
-    color:var(--ink);font-style:italic}
-  .col-card .mission-blockquote strong{color:var(--accent);font-style:normal}
-  .col-card .mission-blockquote cite{display:block;margin-top:12px;font-size:.82rem;
-    font-weight:700;color:var(--ink-soft);font-style:normal}
-  /* ---------- 3-Col Blended (no card) ---------- */
+
   .col-card{background:transparent!important;border:none!important;box-shadow:none!important;
     padding:20px 16px!important;border-radius:0!important;text-align:center;
     transform:none!important;transition:none!important}
@@ -609,8 +527,7 @@
   .expand-btn-v2:hover{color:var(--primary)!important;background:transparent!important}
   .col-card.expanded .expand-btn-v2{color:var(--ink-mute)!important;border:none!important}
   .col-card.expanded .expand-btn-v2:hover{color:var(--primary)!important;background:transparent!important}
-  
-  
+
   @media(min-width:761px){
     .three-col .col-card + .col-card{border-left:1px solid var(--border)!important;border-radius:0!important}
   }
@@ -634,18 +551,16 @@
   @media(max-width:480px){
     .visit-grid{grid-template-columns:1fr}
   }
-  
-  
   .contact-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
   .btn.btn-prayer{background:transparent;border:2px solid var(--primary);color:var(--primary)}
   .btn.btn-prayer:hover{background:var(--primary);color:#fff}
   .btn.btn-prayer i{color:var(--accent)}
   .btn.btn-prayer:hover i{color:#f0d9a0}
-  
+
   .whatsapp-link{color:#25D366!important;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:opacity .2s}
   .whatsapp-link:hover{opacity:.8}
   .whatsapp-link i{font-size:1.1rem}
-  
+
   .anon-toggle{margin-bottom:8px}
   .anon-label{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:.9rem;font-weight:600;color:var(--primary)}
   .anon-label input[type="checkbox"]{display:none}
@@ -655,7 +570,7 @@
   .anon-label input:checked + .anon-check-box::after{content:"✓";color:#fff;font-size:.75rem;font-weight:700}
   #prayerNameField,#prayerEmailField{transition:opacity .2s}
   #prayerSuccess{flex-direction:column;align-items:center;gap:12px;text-align:center;padding:40px 20px}
-  
+
   /* ---------- Daily Devotional ---------- */
   .devotional-card{margin-top:48px;display:flex;align-items:flex-start;gap:24px;
     padding:36px 32px;background:linear-gradient(135deg,#f8f6f0,#fff);
@@ -687,7 +602,6 @@
     .devotional-icon{width:44px;height:44px}
     .devotional-icon i{font-size:1rem}
   }
-  
   /* ---------- Teacher Schedule ---------- */
   .teach-schedule{display:flex;flex-direction:column;gap:12px;max-width:780px;margin:2rem auto 0}
   .teach-card{display:flex;align-items:center;gap:16px;padding:18px 22px;
@@ -716,7 +630,6 @@
   .teach-group.exodus .teach-label{color:#2c6a49}
   .teach-group.revelation .teach-label{color:#8a2b23}
   .teach-group.youth .teach-label{color:var(--accent)}
-  .teach-names{font-size:.9rem;font-weight:600;color:var(--ink)}
   .teach-lesson{min-width:90px;text-align:right;flex-shrink:0}
   .teach-lesson a{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;
     font-weight:700;color:var(--accent);text-decoration:none;padding:6px 14px;
@@ -724,7 +637,7 @@
   .teach-lesson a:hover{background:var(--accent);color:#fff}
   .teach-lesson a i{font-size:.75rem}
   .teach-special{font-size:.85rem;font-weight:700;color:var(--accent)}
-  
+
   .teach-names{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center}
   .teach-names i{color:var(--accent);font-size:.7rem;opacity:.7}
   .schedule-toggle{display:block;margin:24px auto 0;background:#fff;
@@ -747,8 +660,18 @@
     .teach-group{min-width:auto}
     .teach-lesson{text-align:left}
   }
+  /* ---------- Amharic Input Toggle ---------- */
+  .lang-input-toggle{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+  .lang-input-toggle span{font-size:.78rem;color:var(--ink-mute)}
+  .lang-input-btn{padding:4px 12px;border:1.5px solid var(--border);border-radius:6px;
+    font-size:.75rem;font-weight:600;cursor:pointer;background:transparent;transition:all .15s}
+  .lang-input-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+  .amharic-hint{display:none;font-size:.72rem;color:var(--accent);margin-bottom:6px;font-style:italic}
+  .amharic-hint.visible{display:block}
+
   </style>
-</head>
+    <link rel="preload" as="image" href="images/hero_rock.jpg">
+  </head>
 <body>
 
 <!-- NAV -->
@@ -806,18 +729,17 @@
         </div>
         <a href="https://www.google.com/maps/dir//700+Bernhard+Rd,+Whitehall,+OH+43213" target="_blank" class="hero-location-pill"><i class="fa-solid fa-location-dot"></i>700 Bernhard Rd, Whitehall</a>
       </div>
-      
+
     </div>
   </div>
 </section>
 
 <!-- BELIEFS -->
 
-
 <!-- ABOUT / BELIEFS / MISSION -->
 <section class="section" id="welcome">
   <div class="wrap">
-    
+
     <!-- 3-Column: About | Beliefs | Mission -->
     <div class="three-col">
 
@@ -1041,7 +963,7 @@
     </div>
     <div class="team-grid">
       <div class="team-card">
-        <div class="team-photo"><img src="images/pastor_berhanu.webp" alt="Pastor Berhanu Arsse"></div>
+        <div class="team-photo"><img src="images/pastor_berhanu.webp" loading="lazy" alt="Pastor Berhanu Arsse"></div>
         <div class="team-body">
           <h3>Berhanu Arsse</h3>
           <span class="team-role" data-en>Pastor</span><span class="team-role amh" data-am>ፓስተር</span>
@@ -1050,7 +972,7 @@
         </div>
       </div>
       <div class="team-card">
-        <div class="team-photo"><img src="images/elder_belay.webp" alt="Elder Belay Arega"></div>
+        <div class="team-photo"><img src="images/elder_belay.webp" loading="lazy" alt="Elder Belay Arega"></div>
         <div class="team-body">
           <h3>Belay Arega</h3>
           <span class="team-role" data-en>Elder</span><span class="team-role amh" data-am>ሽማግሌ</span>
@@ -1059,7 +981,7 @@
         </div>
       </div>
       <div class="team-card">
-        <div class="team-photo"><img src="images/elder_kebebe.webp" alt="Elder Kebebe Dema"></div>
+        <div class="team-photo"><img src="images/elder_kebebe.webp" loading="lazy" alt="Elder Kebebe Dema"></div>
         <div class="team-body">
           <h3>Kebebe Dema</h3>
           <span class="team-role" data-en>Elder</span><span class="team-role amh" data-am>ሽማግሌ</span>
@@ -1070,7 +992,6 @@
     </div>
   </div>
 </section>
-
 
 <!-- TEACHER SCHEDULE -->
 <section class="section" id="teachers">
@@ -1376,7 +1297,6 @@
 
 <!-- MEMORY VERSES -->
 
-
 <!-- STAY CONNECTED -->
 <section class="section subscribe-section" id="subscribe">
   <div class="wrap" style="max-width:600px;text-align:center">
@@ -1499,7 +1419,7 @@
         </div>
         <div class="field">
           <label data-en>Message</label><label data-am class="amh">መልእክት</label>
-          <textarea name="message" placeholder="Say hello and tell us anything you'd like us to know…"></textarea>
+          <textarea name="message" placeholder="Say hello and tell us anything you'd like us to know… (English or Amharic / በእንግሊዝኛ ወይም በአማርኛ)" spellcheck="false"></textarea>
         </div>
         <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i><span data-en>Send</span><span data-am class="amh">ላክ</span></button>
         <p class="modal-note" data-en>We'll never share your information. Expect a warm reply soon. 💛</p>
@@ -1552,7 +1472,7 @@
         </div>
         <div class="field">
           <label data-en>Your prayer request</label><label data-am class="amh">የጸሎት ጥያቄዎ</label>
-          <textarea name="message" required rows="5" placeholder="Share what you'd like us to pray about..."></textarea>
+          <textarea name="message" required rows="5" placeholder="Share what's on your heart... (English or Amharic / በእንግሊዝኛ ወይም በአማርኛ)" spellcheck="false"></textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center"><i class="fa-solid fa-hands-praying"></i><span data-en>Submit Prayer Request</span><span data-am class="amh">የጸሎት ጥያቄ ያቅርቡ</span></button>
       </form>
@@ -1575,7 +1495,6 @@ function setLang(l){
     document.documentElement.lang = l;
   }
   document.getElementById('year').textContent = new Date().getFullYear();
-
 (function(){
   var modal=document.getElementById('helloModal');
   var openers=document.querySelectorAll('[data-hello]');
@@ -1597,9 +1516,7 @@ function setLang(l){
       .catch(function(){form.style.display='none';success.style.display='block';});
   });
 })();
-
 (function(){
-  // Memory Verse Plan — add more weeks here as needed (NASB 1995)
   var VERSES = [
     {
       week: '2026-08-23',
@@ -1620,24 +1537,20 @@ function setLang(l){
       toddler_ref: 'Romans 10:9b'
     }
   ];
-
   function getWeekVerse(){
     var today = new Date();
     today.setHours(0,0,0,0);
-    // Find the upcoming Sunday (or today if it's Sunday)
-    var day = today.getDay(); // 0=Sun
+    var day = today.getDay();
     var nextSun = new Date(today);
     if(day !== 0) nextSun.setDate(today.getDate() + (7 - day));
     var sunStr = nextSun.getFullYear()+'-'+String(nextSun.getMonth()+1).padStart(2,'0')+'-'+String(nextSun.getDate()).padStart(2,'0');
-    // Find verse matching the upcoming Sunday
-    var current = VERSES[VERSES.length-1]; // fallback to last
+    var current = VERSES[VERSES.length-1];
     for(var i=0; i<VERSES.length; i++){
       if(VERSES[i].week === sunStr){ current = VERSES[i]; break; }
       if(VERSES[i].week > sunStr){ current = VERSES[i > 0 ? i-1 : 0]; break; }
     }
     return current;
   }
-
   function renderVerse(){
     var v = getWeekVerse();
     var isAm = document.body.classList.contains('am');
@@ -1647,7 +1560,6 @@ function setLang(l){
     document.getElementById('toddlerVerseEn').textContent = v.toddler_en;
     document.getElementById('toddlerVerseAm').textContent = v.toddler_am;
     document.getElementById('toddlerRef').textContent = v.toddler_ref;
-    // Week label
     var d = new Date(v.week+'T00:00:00');
     var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     var label = 'Week of '+months[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear();
@@ -1656,28 +1568,22 @@ function setLang(l){
     document.getElementById('verseWeekLabel').textContent = lbl;
     document.getElementById('verseWeekLabel2').textContent = lbl;
   }
-
   renderVerse();
-  // Re-render when language toggles
   var origSetLang = window.setLang;
   window.setLang = function(l){ origSetLang(l); renderVerse(); };
 })();
-
 (function(){
   var btn = document.getElementById('backToTop');
   window.addEventListener('scroll', function(){
     btn.classList.toggle('visible', window.scrollY > 400);
   });
 })();
-
-// Teacher Schedule — collapsible cards + highlight current week
   (function(){
     var cards = document.querySelectorAll('.teach-card[data-date]');
     if(!cards.length) return;
     var today = new Date(); today.setHours(0,0,0,0);
     var visibleCount = 0;
     var currentFound = false;
-
     cards.forEach(function(card){
       var d = new Date(card.getAttribute('data-date') + 'T00:00:00');
       if(d < today){
@@ -1689,13 +1595,10 @@ function setLang(l){
         card.classList.add('hidden-card');
       }
     });
-
-    // If all past, show last 4
     if(visibleCount === 0){
       cards.forEach(function(c){ c.classList.remove('hidden-card'); });
       Array.from(cards).slice(0, -4).forEach(function(c){ c.classList.add('hidden-card'); });
     }
-
     var expanded = false;
     function toggle(){
       expanded = !expanded;
@@ -1728,8 +1631,6 @@ function setLang(l){
     document.getElementById('scheduleToggle').addEventListener('click', toggle);
     document.getElementById('scheduleToggleAm').addEventListener('click', toggle);
   })();
-
-// Daily Devotional — show today's date
   (function(){
     var el = document.getElementById('devotionalDate');
     if(!el) return;
@@ -1737,21 +1638,16 @@ function setLang(l){
     var options = {weekday:'long', year:'numeric', month:'long', day:'numeric'};
     el.textContent = today.toLocaleDateString('en-US', options);
   })();
-
-// Hero — dynamic next event + countdown
   (function(){
-    // Recurring weekly events (day: 0=Sun, 5=Fri)
     var events = [
       {day: 5, hour: 18, min: 0, nameEn: 'Virtual Bible Study', nameAm: 'የመጽሐፍ ቅዱስ ጥናት', timeLabel: '6:00 PM'},
       {day: 0, hour: 10, min: 0, nameEn: 'Sunday Meeting', nameAm: 'የእሁድ ስብሰባ', timeLabel: '10:00 AM'},
       {day: 0, hour: 14, min: 0, nameEn: 'Kunama Sunday Service', nameAm: 'የኩናማ እሁድ አገልግሎት', timeLabel: '2:00 PM'}
     ];
-
     function getNextEvent(){
       var now = new Date();
       var candidates = [];
       events.forEach(function(ev){
-        // Check this week and next week
         for(var w = 0; w < 2; w++){
           var d = new Date(now);
           var diff = ev.day - d.getDay() + (w * 7);
@@ -1764,41 +1660,30 @@ function setLang(l){
       candidates.sort(function(a,b){ return a.date - b.date; });
       return candidates[0] || null;
     }
-
     function formatDate(d){
       var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
       var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
       return days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate();
     }
-
     function updateCountdown(){
       var next = getNextEvent();
       if(!next) return;
-
       var now = new Date();
       var diff = next.date - now;
       var days = Math.floor(diff / 86400000);
       var hours = Math.floor((diff % 86400000) / 3600000);
       var mins = Math.floor((diff % 3600000) / 60000);
       var secs = Math.floor((diff % 60000) / 1000);
-
-      // Today's date
       var todayEl = document.getElementById('heroToday');
       if(todayEl){
         var opts = {weekday:'long', month:'long', day:'numeric', year:'numeric'};
         todayEl.textContent = now.toLocaleDateString('en-US', opts);
       }
-
-      // Event name
       var nameEl = document.getElementById('heroEventName');
       var isAm = document.body.classList.contains('am');
       if(nameEl) nameEl.textContent = isAm ? next.event.nameAm : next.event.nameEn;
-
-      // Event date/time
       var whenEl = document.getElementById('heroEventWhen');
       if(whenEl) whenEl.textContent = formatDate(next.date) + ' at ' + next.event.timeLabel;
-
-      // Countdown
       var cdEl = document.getElementById('heroCountdown');
       if(cdEl){
         var html = '';
@@ -1809,12 +1694,9 @@ function setLang(l){
         cdEl.innerHTML = html;
       }
     }
-
     updateCountdown();
     setInterval(updateCountdown, 1000);
   })();
-
-// Expand/collapse for 3-col cards
   function toggleExpand(btn){
     var card = btn.closest('.col-card');
     var isExpanded = card.classList.toggle('expanded');
@@ -1825,23 +1707,17 @@ function setLang(l){
       btn.textContent = isAm ? '\u1270\u1328\u121B\u122A \u25BC' : 'Read more \u25BC';
     }
   }
-
-// Dynamic Upcoming Meetings — generates next 4 events from recurring schedule
   (function(){
     var container = document.getElementById('upcomingEvents');
     if(!container) return;
-
     var recurring = [
       {day: 5, hour: 18, min: 0, endHour: 19, endMin: 0, nameEn: 'Virtual Bible Study', nameAm: 'የመስመር ላይ የመጽሐፍ ቅዱስ ጥናት', dayEn: 'Friday', dayAm: 'ዓርብ'},
       {day: 0, hour: 10, min: 0, endHour: 12, endMin: 0, nameEn: 'Sunday Meeting', nameAm: 'የእሁድ ስብሰባ', dayEn: 'Sunday', dayAm: 'እሁድ'},
       {day: 0, hour: 14, min: 0, endHour: 16, endMin: 0, nameEn: 'Kunama Sunday Service', nameAm: 'የኩናማ እሁድ አገልግሎት', dayEn: 'Sunday', dayAm: 'እሁድ'}
     ];
-
     var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     var now = new Date();
     var events = [];
-
-    // Generate next 2 weeks of events
     recurring.forEach(function(ev){
       for(var w = 0; w < 2; w++){
         var d = new Date(now);
@@ -1854,10 +1730,8 @@ function setLang(l){
         }
       }
     });
-
     events.sort(function(a,b){ return a.date - b.date; });
     events = events.slice(0, 4);
-
     var html = '';
     events.forEach(function(item){
       var d = item.date;
@@ -1865,7 +1739,6 @@ function setLang(l){
       var timeStr = (d.getHours() > 12 ? d.getHours()-12 : d.getHours()) + ':' + String(d.getMinutes()).padStart(2,'0') + (d.getHours() >= 12 ? ' PM' : ' AM');
       var endH = ev.endHour > 12 ? ev.endHour - 12 : ev.endHour;
       var endStr = endH + ':' + String(ev.endMin).padStart(2,'0') + (ev.endHour >= 12 ? ' PM' : ' AM');
-      
       html += '<div class="cal-event">';
       html += '<div class="cal-date"><span class="cal-month">' + months[d.getMonth()] + '</span><span class="cal-day">' + d.getDate() + '</span></div>';
       html += '<div class="cal-detail"><strong data-en>' + ev.nameEn + '</strong><strong data-am class="amh">' + ev.nameAm + '</strong>';
@@ -1873,17 +1746,12 @@ function setLang(l){
       html += '<span data-am class="amh">' + ev.dayAm + '\u1363 ' + timeStr + ' – ' + endStr + '</span></div>';
       html += '</div>';
     });
-
     container.innerHTML = html;
   })();
-
-// Prayer Request Modal
   (function(){
     var modal = document.getElementById('prayerModal');
     var closeBtn = document.getElementById('prayerClose');
     if(!modal) return;
-
-    // Open modal
     document.querySelectorAll('[data-prayer]').forEach(function(btn){
       btn.addEventListener('click', function(e){
         e.preventDefault();
@@ -1891,8 +1759,6 @@ function setLang(l){
         document.body.style.overflow = 'hidden';
       });
     });
-
-    // Close modal
     function closeModal(){
       modal.classList.remove('open');
       document.body.style.overflow = '';
@@ -1904,13 +1770,10 @@ function setLang(l){
     document.addEventListener('keydown', function(e){
       if(e.key === 'Escape' && modal.classList.contains('open')) closeModal();
     });
-
-    // Form submission
     var form = document.getElementById('prayerForm');
     form.addEventListener('submit', function(e){
       e.preventDefault();
       var data = new FormData(form);
-      // If anonymous, replace name
       if(document.getElementById('anonCheck').checked){
         data.set('name', 'Anonymous');
         data.delete('email');
@@ -1923,8 +1786,6 @@ function setLang(l){
         });
     });
   })();
-
-  // Anonymous toggle — hide/show name and email fields
   function toggleAnon(checkbox){
     var nameField = document.getElementById('prayerNameField');
     var emailField = document.getElementById('prayerEmailField');
@@ -1942,8 +1803,6 @@ function setLang(l){
       emailField.style.pointerEvents = 'auto';
     }
   }
-
-// Subscribe form — JS submission
   (function(){
     var form = document.getElementById('subscribeForm');
     if(!form) return;
@@ -1965,6 +1824,142 @@ function setLang(l){
         });
     });
   })();
+(function(){
+  var map = {
+    'ha':'ሃ','hu':'ሁ','hi':'ሂ','he':'ሄ','hə':'ህ','ho':'ሆ','h':'ህ',
+    'la':'ላ','lu':'ሉ','li':'ሊ','le':'ሌ','lə':'ል','lo':'ሎ','l':'ል',
+    'ma':'ማ','mu':'ሙ','mi':'ሚ','me':'ሜ','mə':'ም','mo':'ሞ','m':'ም',
+    'ra':'ራ','ru':'ሩ','ri':'ሪ','re':'ሬ','rə':'ር','ro':'ሮ','r':'ር',
+    'sa':'ሳ','su':'ሱ','si':'ሲ','se':'ሴ','sə':'ስ','so':'ሶ','s':'ስ',
+    'sha':'ሻ','shu':'ሹ','shi':'ሺ','she':'ሼ','shə':'ሽ','sho':'ሾ','sh':'ሽ',
+    'qa':'ቃ','qu':'ቁ','qi':'ቂ','qe':'ቄ','qə':'ቅ','qo':'ቆ','q':'ቅ',
+    'ba':'ባ','bu':'ቡ','bi':'ቢ','be':'ቤ','bə':'ብ','bo':'ቦ','b':'ብ',
+    'ta':'ታ','tu':'ቱ','ti':'ቲ','te':'ቴ','tə':'ት','to':'ቶ','t':'ት',
+    'cha':'ቻ','chu':'ቹ','chi':'ቺ','che':'ቼ','chə':'ች','cho':'ቾ','ch':'ች',
+    'na':'ና','nu':'ኑ','ni':'ኒ','ne':'ኔ','nə':'ን','no':'ኖ','n':'ን',
+    'gna':'ኛ','gnu':'ኙ','gni':'ኚ','gne':'ኜ','gnə':'ኝ','gno':'ኞ','gn':'ኝ',
+    'aa':'ኣ','a':'አ',
+    'uu':'ዑ','u':'ኡ',
+    'ii':'ዒ','i':'ኢ',
+    'ee':'ኤ','e':'እ',
+    'oo':'ዖ','o':'ኦ',
+    'ka':'ካ','ku':'ኩ','ki':'ኪ','ke':'ኬ','kə':'ክ','ko':'ኮ','k':'ክ',
+    'wa':'ዋ','wu':'ዉ','wi':'ዊ','we':'ዌ','wə':'ው','wo':'ዎ','w':'ው',
+    'za':'ዛ','zu':'ዙ','zi':'ዚ','ze':'ዜ','zə':'ዝ','zo':'ዞ','z':'ዝ',
+    'zha':'ዣ','zhu':'ዡ','zhi':'ዢ','zhe':'ዤ','zhə':'ዥ','zho':'ዦ','zh':'ዥ',
+    'ya':'ያ','yu':'ዩ','yi':'ዪ','ye':'ዬ','yə':'ይ','yo':'ዮ','y':'ይ',
+    'da':'ዳ','du':'ዱ','di':'ዲ','de':'ዴ','də':'ድ','do':'ዶ','d':'ድ',
+    'ja':'ጃ','ju':'ጁ','ji':'ጂ','je':'ጄ','jə':'ጅ','jo':'ጆ','j':'ጅ',
+    'ga':'ጋ','gu':'ጉ','gi':'ጊ','ge':'ጌ','gə':'ግ','go':'ጎ','g':'ግ',
+    'Ta':'ጣ','Tu':'ጡ','Ti':'ጢ','Te':'ጤ','Tə':'ጥ','To':'ጦ','T':'ጥ',
+    'Ca':'ጫ','Cu':'ጩ','Ci':'ጪ','Ce':'ጬ','Cə':'ጭ','Co':'ጮ','C':'ጭ',
+    'Pa':'ጳ','Pu':'ጱ','Pi':'ጲ','Pe':'ጴ','Pə':'ጵ','Po':'ጶ','P':'ጵ',
+    'Sa':'ጻ','Su':'ጹ','Si':'ጺ','Se':'ጼ','Sə':'ጽ','So':'ጾ','S':'ጽ',
+    'fa':'ፋ','fu':'ፉ','fi':'ፊ','fe':'ፌ','fə':'ፍ','fo':'ፎ','f':'ፍ',
+    'pa':'ፓ','pu':'ፑ','pi':'ፒ','pe':'ፔ','pə':'ፕ','po':'ፖ','p':'ፕ',
+    'va':'ቫ','vu':'ቩ','vi':'ቪ','ve':'ቬ','və':'ቭ','vo':'ቮ','v':'ቭ',
+    '.':'።', ',':'፣', ';':'፤', ':':'፥', '?':'?', '!':'!'
+  };
+  var keys = Object.keys(map).sort(function(a,b){ return b.length - a.length; });
+  function transliterate(text){
+    var result = '';
+    var i = 0;
+    while(i < text.length){
+      var matched = false;
+      for(var k = 0; k < keys.length; k++){
+        var key = keys[k];
+        if(text.substring(i, i + key.length) === key){
+          result += map[key];
+          i += key.length;
+          matched = true;
+          break;
+        }
+      }
+      if(!matched){
+        result += text[i];
+        i++;
+      }
+    }
+    return result;
+  }
+  var amharicMode = {};
+  function setupTransliteration(textareaId){
+    var ta = document.getElementById(textareaId);
+    if(!ta) return;
+    var parent = ta.parentElement;
+    amharicMode[textareaId] = false;
+    var toggle = document.createElement('div');
+    toggle.className = 'lang-input-toggle';
+    toggle.innerHTML = '<span>Type in:</span>' +
+      '<button type="button" class="lang-input-btn active" data-lang="en">English</button>' +
+      '<button type="button" class="lang-input-btn" data-lang="am">አማርኛ</button>';
+    var hint = document.createElement('div');
+    hint.className = 'amharic-hint';
+    hint.textContent = 'Just type in English letters — they\'ll convert to Amharic automatically (e.g. "selam" → ሰላም)';
+    parent.insertBefore(toggle, ta);
+    parent.insertBefore(hint, ta);
+    var btns = toggle.querySelectorAll('.lang-input-btn');
+    btns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        btns.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        amharicMode[textareaId] = (btn.getAttribute('data-lang') === 'am');
+        if(amharicMode[textareaId]){
+          hint.classList.add('visible');
+        } else {
+          hint.classList.remove('visible');
+        }
+      });
+    });
+    var buffer = '';
+    var bufferStart = -1;
+    ta.addEventListener('keydown', function(ev){
+      if(!amharicMode[textareaId]) return;
+      if(ev.key === ' ' || ev.key === 'Enter' || ev.key === 'Tab'){
+        if(buffer.length > 0){
+          var converted = transliterate(buffer);
+          var val = ta.value;
+          ta.value = val.substring(0, bufferStart) + converted + val.substring(bufferStart + buffer.length);
+          ta.selectionStart = ta.selectionEnd = bufferStart + converted.length;
+          buffer = '';
+          bufferStart = -1;
+        }
+        return;
+      }
+      if(ev.key === 'Backspace'){
+        if(buffer.length > 0){
+          buffer = buffer.substring(0, buffer.length - 1);
+          if(buffer.length === 0) bufferStart = -1;
+        }
+        return;
+      }
+      if(ev.key.length === 1 && /[a-zA-Z.,;:]/.test(ev.key)){
+        ev.preventDefault();
+        if(bufferStart === -1) bufferStart = ta.selectionStart;
+        buffer += ev.key;
+        var val = ta.value;
+        var before = val.substring(0, bufferStart);
+        var after = val.substring(ta.selectionEnd);
+        var preview = transliterate(buffer);
+        ta.value = before + preview + after;
+        ta.selectionStart = ta.selectionEnd = bufferStart + preview.length;
+      }
+    });
+    ta.addEventListener('blur', function(){
+      if(buffer.length > 0 && amharicMode[textareaId]){
+        var converted = transliterate(buffer);
+        var val = ta.value;
+        ta.value = val.substring(0, bufferStart) + converted + val.substring(bufferStart + buffer.length);
+        buffer = '';
+        bufferStart = -1;
+      }
+    });
+  }
+  var helloTA = document.querySelector('#helloForm textarea[name="message"]');
+  if(helloTA){ helloTA.id = 'helloMessage'; setupTransliteration('helloMessage'); }
+  var prayerTA = document.querySelector('#prayerForm textarea[name="message"]');
+  if(prayerTA){ prayerTA.id = 'prayerMessage'; setupTransliteration('prayerMessage'); }
+})();
 </script>
 </body>
 </html>
