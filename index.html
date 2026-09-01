@@ -738,8 +738,9 @@
       <div class="hero-word">
         <span class="hero-word-label" data-en>Today's Word</span>
         <span class="hero-word-label" data-am>የዛሬ ቃል</span>
-        <p class="hero-word-text" id="heroDailyVerse"></p>
-        <a class="hero-word-ref" id="heroDailyRef" target="_blank"></a>
+        <p class="hero-word-text" data-en>“The Lord bless you, and keep you; The Lord make His face shine on you, and be gracious to you; The Lord lift up His countenance on you, and give you peace.”</p>
+        <p class="hero-word-text" data-am class="amh">“እግዚአብሔር ይባርክህ ይጠብቅህም፤ እግዚአብሔር ፊቱን ያብራልህ ይራራልህም፤ እግዚአብሔር ፊቱን ወደ አንተ ያንሣ ሰላมንም ይስጥህ።”</p>
+        <a class="hero-word-ref" href="https://www.bible.com/bible/100/NUM.6.24-26.NASB1995" target="_blank">Numbers 6:24-26 (NASB)</a>
       </div>
 
     </div>
@@ -1972,50 +1973,7 @@ function setLang(l){
   if(prayerTA){ prayerTA.id = 'prayerMessage'; setupTransliteration('prayerMessage'); }
 })();
 
-(function(){
-  var verses = [
-    {text:'Your word is a lamp to my feet and a light to my path.', ref:'Psalm 119:105', url:'https://www.bible.com/bible/100/PSA.119.105.NASB1995'},
-    {text:'This book of the law shall not depart from your mouth, but you shall meditate on it day and night.', ref:'Joshua 1:8', url:'https://www.bible.com/bible/100/JOS.1.8.NASB1995'},
-    {text:'All Scripture is inspired by God and profitable for teaching, for reproof, for correction, for training in righteousness.', ref:'2 Timothy 3:16', url:'https://www.bible.com/bible/100/2TI.3.16.NASB1995'},
-    {text:'Heaven and earth will pass away, but My words will not pass away.', ref:'Matthew 24:35', url:'https://www.bible.com/bible/100/MAT.24.35.NASB1995'},
-    {text:'The grass withers, the flower fades, but the word of our God stands forever.', ref:'Isaiah 40:8', url:'https://www.bible.com/bible/100/ISA.40.8.NASB1995'},
-    {text:'So faith comes from hearing, and hearing by the word of Christ.', ref:'Romans 10:17', url:'https://www.bible.com/bible/100/ROM.10.17.NASB1995'},
-    {text:'For the word of God is living and active and sharper than any two-edged sword.', ref:'Hebrews 4:12', url:'https://www.bible.com/bible/100/HEB.4.12.NASB1995'},
-    {text:'Man shall not live on bread alone, but on every word that proceeds out of the mouth of God.', ref:'Matthew 4:4', url:'https://www.bible.com/bible/100/MAT.4.4.NASB1995'},
-    {text:'The unfolding of Your words gives light; it gives understanding to the simple.', ref:'Psalm 119:130', url:'https://www.bible.com/bible/100/PSA.119.130.NASB1995'},
-    {text:'Be diligent to present yourself approved to God as a workman who does not need to be ashamed.', ref:'2 Timothy 2:15', url:'https://www.bible.com/bible/100/2TI.2.15.NASB1995'},
-    {text:'How blessed is the man whose delight is in the law of the Lord, and in His law he meditates day and night.', ref:'Psalm 1:1-2', url:'https://www.bible.com/bible/100/PSA.1.1-2.NASB1995'},
-    {text:'I have treasured Your word in my heart, that I may not sin against You.', ref:'Psalm 119:11', url:'https://www.bible.com/bible/100/PSA.119.11.NASB1995'},
-    {text:'Sanctify them in the truth; Your word is truth.', ref:'John 17:17', url:'https://www.bible.com/bible/100/JHN.17.17.NASB1995'},
-    {text:'For I am not ashamed of the gospel, for it is the power of God for salvation to everyone who believes.', ref:'Romans 1:16', url:'https://www.bible.com/bible/100/ROM.1.16.NASB1995'},
-    {text:'Let the word of Christ richly dwell within you, with all wisdom teaching and admonishing one another.', ref:'Colossians 3:16', url:'https://www.bible.com/bible/100/COL.3.16.NASB1995'},
-    {text:'Like newborn babies, long for the pure milk of the word, so that by it you may grow.', ref:'1 Peter 2:2', url:'https://www.bible.com/bible/100/1PE.2.2.NASB1995'},
-    {text:'In the beginning was the Word, and the Word was with God, and the Word was God.', ref:'John 1:1', url:'https://www.bible.com/bible/100/JHN.1.1.NASB1995'},
-    {text:'Open my eyes, that I may behold wonderful things from Your law.', ref:'Psalm 119:18', url:'https://www.bible.com/bible/100/PSA.119.18.NASB1995'},
-    {text:'The law of the Lord is perfect, restoring the soul; the testimony of the Lord is sure, making wise the simple.', ref:'Psalm 19:7', url:'https://www.bible.com/bible/100/PSA.19.7.NASB1995'},
-    {text:'But prove yourselves doers of the word, and not merely hearers who delude themselves.', ref:'James 1:22', url:'https://www.bible.com/bible/100/JAS.1.22.NASB1995'},
-    {text:'Your words were found and I ate them, and Your words became for me a joy and the delight of my heart.', ref:'Jeremiah 15:16', url:'https://www.bible.com/bible/100/JER.15.16.NASB1995'},
-    {text:'The word of the Lord is upright, and all His work is done in faithfulness.', ref:'Psalm 33:4', url:'https://www.bible.com/bible/100/PSA.33.4.NASB1995'},
-    {text:'He who has My commandments and keeps them is the one who loves Me.', ref:'John 14:21', url:'https://www.bible.com/bible/100/JHN.14.21.NASB1995'},
-    {text:'Do not let kindness and truth leave you; bind them around your neck, write them on the tablet of your heart.', ref:'Proverbs 3:3', url:'https://www.bible.com/bible/100/PRO.3.3.NASB1995'},
-    {text:'Forever, O Lord, Your word is settled in heaven.', ref:'Psalm 119:89', url:'https://www.bible.com/bible/100/PSA.119.89.NASB1995'},
-    {text:'My son, give attention to my words; incline your ear to my sayings.', ref:'Proverbs 4:20', url:'https://www.bible.com/bible/100/PRO.4.20.NASB1995'},
-    {text:'Blessed are those who hunger and thirst for righteousness, for they shall be satisfied.', ref:'Matthew 5:6', url:'https://www.bible.com/bible/100/MAT.5.6.NASB1995'},
-    {text:'Trust in the Lord with all your heart and do not lean on your own understanding.', ref:'Proverbs 3:5', url:'https://www.bible.com/bible/100/PRO.3.5.NASB1995'},
-    {text:'The Lord is near to all who call upon Him, to all who call upon Him in truth.', ref:'Psalm 145:18', url:'https://www.bible.com/bible/100/PSA.145.18.NASB1995'},
-    {text:'Be still, and know that I am God.', ref:'Psalm 46:10', url:'https://www.bible.com/bible/100/PSA.46.10.NASB1995'}
-  ];
-  var today = new Date();
-  var dayOfYear = Math.floor((today - new Date(today.getFullYear(),0,0)) / 86400000);
-  var v = verses[dayOfYear % verses.length];
-  var el = document.getElementById('heroDailyVerse');
-  var refEl = document.getElementById('heroDailyRef');
-  if(el) el.textContent = '\u201C' + v.text + '\u201D';
-  if(refEl){
-    refEl.textContent = v.ref + ' (NASB)';
-    refEl.href = v.url;
-  }
-})();
+
 
 </script>
 </body>
