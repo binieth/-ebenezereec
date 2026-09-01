@@ -455,6 +455,26 @@
   .hero-church-subtitle{font-size:3.5vw!important;letter-spacing:.06em!important;margin-top:-0.6em!important}
   }
 
+  
+  
+
+  
+  /* ---------- Hero Gold Thread ---------- */
+  .hero-thread{display:flex;flex-direction:column;align-items:center;margin:20px 0 12px;gap:0}
+  .hero-thread-line{width:1.5px;height:0;background:linear-gradient(to bottom,transparent,#f0d9a0);
+    animation:thread-draw 2s ease-out 0.5s forwards}
+  .hero-thread-dot{width:6px;height:6px;border-radius:50%;background:#f0d9a0;opacity:0;
+    animation:thread-dot 0.4s ease-out 2.3s forwards}
+  @keyframes thread-draw{
+    0%{height:0;opacity:0}
+    10%{opacity:1}
+    100%{height:48px;opacity:1}
+  }
+  @keyframes thread-dot{
+    0%{opacity:0;transform:scale(0)}
+    100%{opacity:1;transform:scale(1)}
+  }
+
   /* ---------- Hero Next Event ---------- */
   .hero-next-tag{font-size:.7rem;font-weight:800;text-transform:uppercase;
     letter-spacing:.18em;color:#f0d9a0;writing-mode:vertical-lr;text-orientation:mixed;
@@ -745,8 +765,10 @@
         <p class="hero-church-subtitle" data-en>Ethiopian Evangelical Church</p>
         <p class="hero-church-subtitle" data-am class="amh">የኢትዮጵያ ወንጌላዊት ቤተ ክርስቲያን</p>
       </div>
-
-
+      <div class="hero-thread">
+        <span class="hero-thread-line"></span>
+        <span class="hero-thread-dot"></span>
+      </div>
       <div class="hero-next">
         <span class="hero-next-tag" data-en>Next</span>
         <span class="hero-next-tag" data-am>ቀጣይ</span>
