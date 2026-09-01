@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- v2.0 deploy-ready -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -202,7 +203,6 @@
     .foot-grid{grid-template-columns:1fr 1fr}
   }
   @media(max-width:1024px){
-    .hero-text{max-width:640px}
     .nav-links{display:none}
     .burger{display:block}
     .nav-links a{padding:8px 0;font-size:17px}
@@ -275,7 +275,6 @@
 
   @media(max-width:680px){
     .hero{min-height:88vh;}
-    .hero-inner{padding:80px 0;}
     .hero-verse{font-size:.78rem;padding:9px 15px;}
   }
   /* ---------- Branded motif panel (replaces stock photos) ---------- */
@@ -305,8 +304,6 @@
       rgba(21,53,36,.64) 42%,
       rgba(21,53,36,.30) 72%,
       rgba(168,132,44,.18) 100%)}
-  .hero-inner{position:relative;z-index:2;padding:110px 0;max-width:1120px;width:100%;margin:0 auto}
-  .hero-text{max-width:680px;text-align:center;margin:0 auto}
   .hero .eyebrow{color:#f0d9a0}
   .hero h1{font-size:clamp(40px,7vw,72px);line-height:1.05;margin:18px 0 22px;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.35)}
   .hero p{font-size:clamp(17px,2.2vw,21px);max-width:560px;color:rgba(255,255,255,.92);margin-bottom:34px;text-shadow:0 1px 12px rgba(0,0,0,.3)}
@@ -318,8 +315,6 @@
 
   @media(max-width:680px){
     .hero{min-height:88vh}
-    .hero-inner{padding:80px 0}
-    .hero-text{max-width:100%}
     .hero h1{font-size:clamp(32px,9vw,46px)}
     .hero p{font-size:16px;max-width:100%}
     .hero-verse{font-size:.78rem;padding:9px 15px}
@@ -420,16 +415,16 @@
   .hero-welcome-dual{display:inline-block!important;color:rgba(255,255,255,.85);
     font-size:.88rem;font-weight:600;letter-spacing:.04em}
 
-  .hero-amharic-welcome{font-family:var(--amh);font-size:clamp(2rem,5vw,3.2rem);
+  .hero-amharic-welcome{font-family:var(--amh);font-size:clamp(2.2rem,6vw,3.8rem);
     color:#fff;font-weight:700;letter-spacing:.02em;margin-bottom:8px;
     text-shadow:0 2px 20px rgba(0,0,0,.3);opacity:.95;line-height:1.2}
 
   /* ---------- Hero Church Name ---------- */
   .hero-name-block{display:inline-flex;flex-direction:column;align-items:center;gap:0}
   .hero-church-name{font-family:'Abril Fatface',serif;font-weight:400;
-    font-size:clamp(5rem,16vw,10rem);letter-spacing:.15em;line-height:.55;
+    font-size:clamp(5.5rem,18vw,12rem);letter-spacing:.15em;line-height:.55;
     color:#fff;margin:0;padding:0;text-shadow:0 2px 30px rgba(0,0,0,.3)}
-  .hero-church-subtitle{display:block;font-size:clamp(.5rem,.9vw,.62rem);
+  .hero-church-subtitle{display:block;font-size:clamp(.6rem,1.2vw,.75rem);
     font-weight:400;color:rgba(255,255,255,.85);text-transform:uppercase;
     text-align:center;margin:-0.6em 0 0;padding:0;line-height:1;padding:0;letter-spacing:.06em}
 
@@ -441,20 +436,17 @@
     .hero-church-name{font-size:14vw!important;letter-spacing:.08em!important}
     .hero-church-subtitle{font-size:3.5vw!important;letter-spacing:.06em!important;margin-top:-0.6em!important}
   }
-  
+
   /* ---------- Hero Next Event ---------- */
-  .hero-next{display:inline-flex;align-items:center;gap:16px;margin-top:32px;
-    padding:14px 28px;border-left:3px solid #f0d9a0}
-  .hero-next-tag{font-size:.65rem;font-weight:800;text-transform:uppercase;
-    letter-spacing:.15em;color:#f0d9a0;writing-mode:vertical-lr;text-orientation:mixed;
+  .hero-next-tag{font-size:.7rem;font-weight:800;text-transform:uppercase;
+    letter-spacing:.18em;color:#f0d9a0;writing-mode:vertical-lr;text-orientation:mixed;
     transform:rotate(180deg)}
   .hero-next-details{display:flex;flex-direction:column;gap:2px}
-  .hero-next-name{font-size:clamp(1rem,2.5vw,1.2rem);font-weight:600;color:#fff}
-  .hero-next-when{font-size:clamp(.8rem,1.8vw,.9rem);color:rgba(255,255,255,.6);font-weight:400}
+  .hero-next-name{font-size:clamp(1.1rem,2.8vw,1.5rem);font-weight:700;color:#fff;font-family:var(--serif)}
+  .hero-next-when{font-size:clamp(.85rem,2vw,1rem);color:rgba(255,255,255,.55);font-weight:500}
   @media(max-width:480px){
-    .hero-next{padding:12px 20px;gap:12px}
   }
-  
+
   /* ---------- About Feature ---------- */
 
   .about-cta-block{margin-top:32px;padding:28px 32px;background:linear-gradient(135deg,#f0f8f2,#fdf8ed);
@@ -651,8 +643,8 @@
   .amharic-hint{display:none;font-size:.72rem;color:var(--accent);margin-bottom:6px;font-style:italic}
   .amharic-hint.visible{display:block}
 
-  
-  
+
+
   .expand-btn-v2{display:inline-flex;align-items:center;gap:6px;margin-top:18px;
     padding:10px 24px;background:var(--primary-soft);color:var(--primary);
     border:1.5px solid var(--primary);border-radius:30px;font-size:.82rem;font-weight:700;
@@ -667,7 +659,30 @@
   .col-card.expanded .expand-btn-v2::before{background:var(--accent)}
   .col-card.expanded .expand-btn-v2:hover{color:#fff;border-color:var(--accent);
     box-shadow:0 4px 14px rgba(168,132,44,.2)}
-</style>
+
+  .hero-text{max-width:680px;text-align:center;margin:0 auto}
+  .hero-inner{position:relative;z-index:2;padding:100px 0;max-width:1120px;width:100%;margin:0 auto;display:flex;justify-content:center}
+  .hero-next{display:flex;align-items:center;gap:16px;margin-top:28px;padding:14px 28px;border-left:4px solid #f0d9a0;justify-content:center}
+  @media(max-width:480px){.hero-next{padding:12px 20px;gap:12px}}
+  /* ---------- Hero Daily Word ---------- */
+  .hero-word{margin-top:24px;text-align:center;max-width:480px}
+  .hero-word-label{font-size:.65rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:.15em;color:#f0d9a0;display:inline-block;position:relative;padding:0 16px}
+  .hero-word-label::before,.hero-word-label::after{content:"";position:absolute;
+    top:50%;width:24px;height:1px;background:rgba(240,217,160,.4)}
+  .hero-word-label::before{right:100%}
+  .hero-word-label::after{left:100%}
+  .hero-word-text{font-family:var(--serif);font-style:italic;
+    font-size:clamp(.85rem,1.6vw,.95rem);color:rgba(255,255,255,.75);
+    line-height:1.65;margin:10px 0 8px}
+  .hero-word-ref{font-size:.78rem;font-weight:600;color:#f0d9a0;
+    text-decoration:none;letter-spacing:.03em;transition:all .2s;
+    display:inline-flex;align-items:center;gap:6px}
+  .hero-word-ref:hover{color:#fff}
+  .hero-word-ref::after{content:"\2192";font-size:.7rem;transition:transform .2s}
+  .hero-word-ref:hover::after{transform:translateX(3px)}
+
+  </style>
     <link rel="preload" as="image" href="images/hero_rock.jpg">
   </head>
 <body>
@@ -710,6 +725,8 @@
         <h1 class="hero-church-name">Ebenezer</h1>
         <p class="hero-church-subtitle">Ethiopian Evangelical Church</p>
       </div>
+
+
       <div class="hero-next">
         <span class="hero-next-tag" data-en>Next</span>
         <span class="hero-next-tag" data-am>ቀጣይ</span>
@@ -717,6 +734,12 @@
           <span class="hero-next-name" id="heroEventName"></span>
           <span class="hero-next-when" id="heroEventWhen"></span>
         </div>
+      </div>
+      <div class="hero-word">
+        <span class="hero-word-label" data-en>Today's Word</span>
+        <span class="hero-word-label" data-am>የዛሬ ቃል</span>
+        <p class="hero-word-text" id="heroDailyVerse"></p>
+        <a class="hero-word-ref" id="heroDailyRef" target="_blank"></a>
       </div>
 
     </div>
@@ -1948,6 +1971,52 @@ function setLang(l){
   var prayerTA = document.querySelector('#prayerForm textarea[name="message"]');
   if(prayerTA){ prayerTA.id = 'prayerMessage'; setupTransliteration('prayerMessage'); }
 })();
+
+(function(){
+  var verses = [
+    {text:'Your word is a lamp to my feet and a light to my path.', ref:'Psalm 119:105', url:'https://www.bible.com/bible/100/PSA.119.105.NASB1995'},
+    {text:'This book of the law shall not depart from your mouth, but you shall meditate on it day and night.', ref:'Joshua 1:8', url:'https://www.bible.com/bible/100/JOS.1.8.NASB1995'},
+    {text:'All Scripture is inspired by God and profitable for teaching, for reproof, for correction, for training in righteousness.', ref:'2 Timothy 3:16', url:'https://www.bible.com/bible/100/2TI.3.16.NASB1995'},
+    {text:'Heaven and earth will pass away, but My words will not pass away.', ref:'Matthew 24:35', url:'https://www.bible.com/bible/100/MAT.24.35.NASB1995'},
+    {text:'The grass withers, the flower fades, but the word of our God stands forever.', ref:'Isaiah 40:8', url:'https://www.bible.com/bible/100/ISA.40.8.NASB1995'},
+    {text:'So faith comes from hearing, and hearing by the word of Christ.', ref:'Romans 10:17', url:'https://www.bible.com/bible/100/ROM.10.17.NASB1995'},
+    {text:'For the word of God is living and active and sharper than any two-edged sword.', ref:'Hebrews 4:12', url:'https://www.bible.com/bible/100/HEB.4.12.NASB1995'},
+    {text:'Man shall not live on bread alone, but on every word that proceeds out of the mouth of God.', ref:'Matthew 4:4', url:'https://www.bible.com/bible/100/MAT.4.4.NASB1995'},
+    {text:'The unfolding of Your words gives light; it gives understanding to the simple.', ref:'Psalm 119:130', url:'https://www.bible.com/bible/100/PSA.119.130.NASB1995'},
+    {text:'Be diligent to present yourself approved to God as a workman who does not need to be ashamed.', ref:'2 Timothy 2:15', url:'https://www.bible.com/bible/100/2TI.2.15.NASB1995'},
+    {text:'How blessed is the man whose delight is in the law of the Lord, and in His law he meditates day and night.', ref:'Psalm 1:1-2', url:'https://www.bible.com/bible/100/PSA.1.1-2.NASB1995'},
+    {text:'I have treasured Your word in my heart, that I may not sin against You.', ref:'Psalm 119:11', url:'https://www.bible.com/bible/100/PSA.119.11.NASB1995'},
+    {text:'Sanctify them in the truth; Your word is truth.', ref:'John 17:17', url:'https://www.bible.com/bible/100/JHN.17.17.NASB1995'},
+    {text:'For I am not ashamed of the gospel, for it is the power of God for salvation to everyone who believes.', ref:'Romans 1:16', url:'https://www.bible.com/bible/100/ROM.1.16.NASB1995'},
+    {text:'Let the word of Christ richly dwell within you, with all wisdom teaching and admonishing one another.', ref:'Colossians 3:16', url:'https://www.bible.com/bible/100/COL.3.16.NASB1995'},
+    {text:'Like newborn babies, long for the pure milk of the word, so that by it you may grow.', ref:'1 Peter 2:2', url:'https://www.bible.com/bible/100/1PE.2.2.NASB1995'},
+    {text:'In the beginning was the Word, and the Word was with God, and the Word was God.', ref:'John 1:1', url:'https://www.bible.com/bible/100/JHN.1.1.NASB1995'},
+    {text:'Open my eyes, that I may behold wonderful things from Your law.', ref:'Psalm 119:18', url:'https://www.bible.com/bible/100/PSA.119.18.NASB1995'},
+    {text:'The law of the Lord is perfect, restoring the soul; the testimony of the Lord is sure, making wise the simple.', ref:'Psalm 19:7', url:'https://www.bible.com/bible/100/PSA.19.7.NASB1995'},
+    {text:'But prove yourselves doers of the word, and not merely hearers who delude themselves.', ref:'James 1:22', url:'https://www.bible.com/bible/100/JAS.1.22.NASB1995'},
+    {text:'Your words were found and I ate them, and Your words became for me a joy and the delight of my heart.', ref:'Jeremiah 15:16', url:'https://www.bible.com/bible/100/JER.15.16.NASB1995'},
+    {text:'The word of the Lord is upright, and all His work is done in faithfulness.', ref:'Psalm 33:4', url:'https://www.bible.com/bible/100/PSA.33.4.NASB1995'},
+    {text:'He who has My commandments and keeps them is the one who loves Me.', ref:'John 14:21', url:'https://www.bible.com/bible/100/JHN.14.21.NASB1995'},
+    {text:'Do not let kindness and truth leave you; bind them around your neck, write them on the tablet of your heart.', ref:'Proverbs 3:3', url:'https://www.bible.com/bible/100/PRO.3.3.NASB1995'},
+    {text:'Forever, O Lord, Your word is settled in heaven.', ref:'Psalm 119:89', url:'https://www.bible.com/bible/100/PSA.119.89.NASB1995'},
+    {text:'My son, give attention to my words; incline your ear to my sayings.', ref:'Proverbs 4:20', url:'https://www.bible.com/bible/100/PRO.4.20.NASB1995'},
+    {text:'Blessed are those who hunger and thirst for righteousness, for they shall be satisfied.', ref:'Matthew 5:6', url:'https://www.bible.com/bible/100/MAT.5.6.NASB1995'},
+    {text:'Trust in the Lord with all your heart and do not lean on your own understanding.', ref:'Proverbs 3:5', url:'https://www.bible.com/bible/100/PRO.3.5.NASB1995'},
+    {text:'The Lord is near to all who call upon Him, to all who call upon Him in truth.', ref:'Psalm 145:18', url:'https://www.bible.com/bible/100/PSA.145.18.NASB1995'},
+    {text:'Be still, and know that I am God.', ref:'Psalm 46:10', url:'https://www.bible.com/bible/100/PSA.46.10.NASB1995'}
+  ];
+  var today = new Date();
+  var dayOfYear = Math.floor((today - new Date(today.getFullYear(),0,0)) / 86400000);
+  var v = verses[dayOfYear % verses.length];
+  var el = document.getElementById('heroDailyVerse');
+  var refEl = document.getElementById('heroDailyRef');
+  if(el) el.textContent = '\u201C' + v.text + '\u201D';
+  if(refEl){
+    refEl.textContent = v.ref + ' (NASB)';
+    refEl.href = v.url;
+  }
+})();
+
 </script>
 </body>
 </html>
