@@ -518,16 +518,9 @@
   .pillar-list-v2{text-align:left}
   .pillar-list-v2 li{padding:8px 0;font-size:.9rem;border-bottom:none;gap:0}
   .pillar-list-v2 li strong{font-family:var(--serif);font-size:.95rem;color:var(--primary-dark)}
-  .expandable-content{text-align:left}
-  .col-card.expanded .expandable-content{border-top:none;padding-top:8px}
-  .expand-btn-v2{background:transparent!important;border:none!important;color:var(--accent)!important;
-    font-size:.85rem;font-weight:700;padding:8px 0!important;text-decoration:underline;
-    text-underline-offset:3px}
-  .expand-btn-v2:hover{color:var(--primary)!important;background:transparent!important}
-  .col-card.expanded .expand-btn-v2{color:var(--ink-mute)!important;border:none!important}
-  .col-card.expanded .expand-btn-v2:hover{color:var(--primary)!important;background:transparent!important}
-
-  @media(min-width:761px){
+  .expandable-content{display:none;text-align:left}
+  .col-card.expanded .expandable-content{display:block;border-top:none;padding-top:8px}
+  .col-card.expanded .col-card.expanded @media(min-width:761px){
     .three-col .col-card + .col-card{border-left:1px solid var(--border)!important;border-radius:0!important}
   }
     /* ---------- First Visit Guide ---------- */
@@ -670,7 +663,22 @@
   .amharic-hint.visible{display:block}
 
   
-  </style>
+  
+  .expand-btn-v2{display:inline-flex;align-items:center;gap:6px;margin-top:18px;
+    padding:10px 24px;background:var(--primary-soft);color:var(--primary);
+    border:1.5px solid var(--primary);border-radius:30px;font-size:.82rem;font-weight:700;
+    cursor:pointer;transition:all .3s ease;position:relative;overflow:hidden;letter-spacing:.02em}
+  .expand-btn-v2::before{content:"";position:absolute;inset:0;background:var(--primary);
+    transform:scaleX(0);transform-origin:right;transition:transform .3s ease;z-index:-1}
+  .expand-btn-v2:hover{color:#fff;border-color:var(--primary);box-shadow:0 4px 14px rgba(30,70,50,.2);
+    transform:translateY(-1px)}
+  .expand-btn-v2:hover::before{transform:scaleX(1);transform-origin:left}
+  .expand-btn-v2:active{transform:translateY(0);box-shadow:0 2px 6px rgba(30,70,50,.15)}
+  .col-card.expanded .expand-btn-v2{background:transparent;border-color:var(--accent);color:var(--accent)}
+  .col-card.expanded .expand-btn-v2::before{background:var(--accent)}
+  .col-card.expanded .expand-btn-v2:hover{color:#fff;border-color:var(--accent);
+    box-shadow:0 4px 14px rgba(168,132,44,.2)}
+</style>
     <link rel="preload" as="image" href="images/hero_rock.jpg">
   </head>
 <body>
