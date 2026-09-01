@@ -61,7 +61,7 @@
   .nav-links{display:flex;align-items:center;gap:30px}
   .nav-links a{font-size:15px;font-weight:500;color:var(--ink-soft);transition:color .15s}
   .nav-links a:hover{color:var(--primary)}
-  .nav-cta{display:flex;align-items:center;gap:16px}
+  .nav-cta{display:flex;align-items:center;gap:16px;flex-shrink:0}
   .lang-toggle{display:flex;background:var(--bg-alt);border-radius:100px;padding:3px;border:1px solid var(--border)}
   .lang-toggle button{border:none;background:transparent;font-family:var(--sans);font-weight:600;font-size:13px;padding:6px 13px;border-radius:100px;cursor:pointer;color:var(--ink-mute);transition:all .15s}
   .lang-toggle button.active{background:var(--surface);color:var(--primary);box-shadow:var(--shadow-soft)}
@@ -207,8 +207,7 @@
     .burger{display:block}
     .nav-links a{padding:8px 0;font-size:17px}
     .nav-links.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:var(--bg);padding:20px 24px;gap:16px;border-bottom:1px solid var(--border);box-shadow:var(--shadow);max-height:80vh;overflow:auto}
-    .brand{max-width:none}
-  }
+      }
   @media(max-width:680px){
     .btn{padding:15px 24px;font-size:16px}
     .section{padding:56px 0}
@@ -282,12 +281,12 @@
   /* ---------- Branded motif panel (replaces stock photos) ---------- */
 
   .contact-cta .btn{width:100%;margin-bottom:12px;}
-  .contact-cta{max-width:420px;margin:0 auto;}
+  .contact-cta{max-width:420px;margin:0 auto;text-align:center}
 
-  .nav{gap:18px}
-  .brand{margin-right:auto;flex:none;max-width:60%}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:18px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:600;font-size:19px;margin-right:auto;flex:none;max-width:60%}
   .brand > span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .brand small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  .brand small{display:block;font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
 
   .brand-name{font-family:var(--serif);font-weight:600;font-size:20px;line-height:1;color:var(--ink)}
 
@@ -552,6 +551,7 @@
     .visit-grid{grid-template-columns:1fr}
   }
   .contact-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .contact-btns .btn{width:auto;margin:0;justify-content:center}
   .btn.btn-prayer{background:transparent;border:2px solid var(--primary);color:var(--primary)}
   .btn.btn-prayer:hover{background:var(--primary);color:#fff}
   .btn.btn-prayer i{color:var(--accent)}
@@ -669,6 +669,7 @@
   .amharic-hint{display:none;font-size:.72rem;color:var(--accent);margin-bottom:6px;font-style:italic}
   .amharic-hint.visible{display:block}
 
+  
   </style>
     <link rel="preload" as="image" href="images/hero_rock.jpg">
   </head>
@@ -1257,7 +1258,6 @@
         </div>
         <div class="info-block">
           <div class="lab" data-en>Contact</div><div class="lab amh" data-am>ያግኙን</div>
-          <div class="val"><i class="fa-solid fa-envelope"></i>ebenezereec@gmail.com</div>
           <div class="val" style="margin-top:10px"><a href="tel:+16143778350" style="color:inherit;text-decoration:none"><i class="fa-solid fa-phone"></i>(614) 377-8350</a></div>
           <div class="val" style="margin-top:10px"><a href="https://wa.me/16143778350" target="_blank" class="whatsapp-link"><i class="fa-brands fa-whatsapp"></i><span data-en>Message on WhatsApp</span><span data-am class="amh">በWhatsApp ይላኩ</span></a></div>
         </div>
@@ -1895,7 +1895,7 @@ function setLang(l){
       '<button type="button" class="lang-input-btn" data-lang="am">አማርኛ</button>';
     var hint = document.createElement('div');
     hint.className = 'amharic-hint';
-    hint.textContent = 'Just type in English letters — they\'ll convert to Amharic automatically (e.g. "selam" → ሰላም)';
+    hint.textContent = 'Just type in English letters \u2014 they\'ll convert to Amharic automatically (e.g. "selam" \u2192 \u1230\u120B\u121D)';
     parent.insertBefore(toggle, ta);
     parent.insertBefore(hint, ta);
     var btns = toggle.querySelectorAll('.lang-input-btn');
@@ -1904,57 +1904,77 @@ function setLang(l){
         btns.forEach(function(b){ b.classList.remove('active'); });
         btn.classList.add('active');
         amharicMode[textareaId] = (btn.getAttribute('data-lang') === 'am');
-        if(amharicMode[textareaId]){
-          hint.classList.add('visible');
-        } else {
-          hint.classList.remove('visible');
-        }
+        hint.classList.toggle('visible', amharicMode[textareaId]);
       });
     });
-    var buffer = '';
-    var bufferStart = -1;
+    var latinBuffer = '';
+    var textBefore = '';
+    var textAfter = '';
+    var active = false;
+    function commitBuffer(){
+      if(latinBuffer.length > 0){
+        latinBuffer = '';
+        active = false;
+      }
+    }
+    function updatePreview(){
+      var converted = transliterate(latinBuffer);
+      ta.value = textBefore + converted + textAfter;
+      ta.selectionStart = ta.selectionEnd = textBefore.length + converted.length;
+    }
     ta.addEventListener('keydown', function(ev){
       if(!amharicMode[textareaId]) return;
       if(ev.key === ' ' || ev.key === 'Enter' || ev.key === 'Tab'){
-        if(buffer.length > 0){
-          var converted = transliterate(buffer);
-          var val = ta.value;
-          ta.value = val.substring(0, bufferStart) + converted + val.substring(bufferStart + buffer.length);
-          ta.selectionStart = ta.selectionEnd = bufferStart + converted.length;
-          buffer = '';
-          bufferStart = -1;
+        commitBuffer();
+        if(ev.key === ' '){
+          ev.preventDefault();
+          var pos = ta.selectionStart;
+          ta.value = ta.value.substring(0, pos) + ' ' + ta.value.substring(pos);
+          ta.selectionStart = ta.selectionEnd = pos + 1;
         }
         return;
       }
       if(ev.key === 'Backspace'){
-        if(buffer.length > 0){
-          buffer = buffer.substring(0, buffer.length - 1);
-          if(buffer.length === 0) bufferStart = -1;
+        ev.preventDefault();
+        if(latinBuffer.length > 0){
+          latinBuffer = latinBuffer.substring(0, latinBuffer.length - 1);
+          if(latinBuffer.length === 0){
+            active = false;
+            var converted = transliterate('');
+            ta.value = textBefore + textAfter;
+            ta.selectionStart = ta.selectionEnd = textBefore.length;
+          } else {
+            updatePreview();
+          }
+        } else {
+          var pos = ta.selectionStart;
+          if(pos > 0){
+            ta.value = ta.value.substring(0, pos - 1) + ta.value.substring(pos);
+            ta.selectionStart = ta.selectionEnd = pos - 1;
+          }
         }
         return;
       }
       if(ev.key.length === 1 && /[a-zA-Z.,;:]/.test(ev.key)){
         ev.preventDefault();
-        if(bufferStart === -1) bufferStart = ta.selectionStart;
-        buffer += ev.key;
-        var val = ta.value;
-        var before = val.substring(0, bufferStart);
-        var after = val.substring(ta.selectionEnd);
-        var preview = transliterate(buffer);
-        ta.value = before + preview + after;
-        ta.selectionStart = ta.selectionEnd = bufferStart + preview.length;
+        if(!active){
+          textBefore = ta.value.substring(0, ta.selectionStart);
+          textAfter = ta.value.substring(ta.selectionEnd);
+          latinBuffer = '';
+          active = true;
+        }
+        latinBuffer += ev.key;
+        updatePreview();
       }
     });
     ta.addEventListener('blur', function(){
-      if(buffer.length > 0 && amharicMode[textareaId]){
-        var converted = transliterate(buffer);
-        var val = ta.value;
-        ta.value = val.substring(0, bufferStart) + converted + val.substring(bufferStart + buffer.length);
-        buffer = '';
-        bufferStart = -1;
-      }
+      commitBuffer();
+    });
+    ta.addEventListener('click', function(){
+      commitBuffer();
     });
   }
+
   var helloTA = document.querySelector('#helloForm textarea[name="message"]');
   if(helloTA){ helloTA.id = 'helloMessage'; setupTransliteration('helloMessage'); }
   var prayerTA = document.querySelector('#prayerForm textarea[name="message"]');
