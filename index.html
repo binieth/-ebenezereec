@@ -565,8 +565,8 @@
   #prayerSuccess{flex-direction:column;align-items:center;gap:12px;text-align:center;padding:40px 20px}
 
   /* ---------- Daily Devotional ---------- */
-  .devotional-card{margin-top:48px;display:flex;align-items:flex-start;gap:24px;
-    padding:36px 32px;background:linear-gradient(135deg,#f8f6f0,#fff);
+  .devotional-card{margin-top:48px;display:flex;flex-direction:column;align-items:center;gap:16px;
+    padding:36px 32px;background:linear-gradient(135deg,#f8f6f0,#fff);text-align:center;
     border-radius:var(--radius);border:1px solid var(--border);
     box-shadow:0 2px 12px rgba(30,70,50,.05);position:relative;overflow:hidden}
   .devotional-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;
@@ -576,10 +576,10 @@
     display:flex;align-items:center;justify-content:center;flex-shrink:0;
     box-shadow:0 4px 12px rgba(30,70,50,.15)}
   .devotional-icon i{color:#fff;font-size:1.2rem}
-  .devotional-content{flex:1}
+  .devotional-content{flex:1;text-align:center}
   .devotional-content h3{margin:4px 0 8px;font-size:1.3rem}
   .devotional-date{font-size:.85rem;color:var(--accent);font-weight:600;margin-bottom:12px}
-  .devotional-desc{color:var(--ink-soft);font-size:.95rem;line-height:1.6;margin-bottom:18px}
+  .devotional-desc{color:var(--ink-soft);font-size:.95rem;line-height:1.6;margin-bottom:18px;max-width:520px;margin-left:auto;margin-right:auto}
   .devotional-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;
     background:var(--primary);color:#fff;border-radius:30px;font-size:.9rem;
     font-weight:600;text-decoration:none;transition:all .2s;
