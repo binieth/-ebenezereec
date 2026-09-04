@@ -250,6 +250,9 @@ section.section:nth-child(odd){background:var(--bg)}
   .pin-card .card-divider{margin-bottom:8px}
   .pin-card .card-time{font-size:.65rem}
   .hero-bottom{flex-direction:column;align-items:center}
+  .hero-amharic-welcome{font-size:clamp(1rem,3.5vw,1.4rem);margin-bottom:4px}
+  .hero-church-name[data-am]{font-size:clamp(2.8rem,12vw,4rem)!important;letter-spacing:.03em!important}
+  .hero-church-subtitle[data-am]{font-size:clamp(.55rem,2.5vw,.7rem)!important;letter-spacing:.04em!important}
 }
 @media(max-width:760px){.verse-grid{grid-template-columns:1fr}}
 
@@ -502,7 +505,8 @@ section.section:nth-child(odd){background:var(--bg)}
   }
   @media(min-width:769px){
     .hero-inner{min-height:88vh}
-    .hero-cross{top:45%}
+    .hero-cross{top:48%}
+    .hero-top{padding-bottom:20px}
   }
   /* ---------- Back to top button ---------- */
   .back-to-top{position:fixed;bottom:28px;right:28px;width:48px;height:48px;border-radius:50%;
@@ -549,7 +553,7 @@ section.section:nth-child(odd){background:var(--bg)}
 
   .hero-amharic-welcome{font-family:var(--amh);font-size:clamp(1.6rem,4.5vw,2.6rem);
     color:#fff;font-weight:700;letter-spacing:.02em;margin-bottom:8px;
-    text-shadow:0 2px 20px rgba(0,0,0,.3);opacity:.95;line-height:1.2}
+    text-shadow:0 2px 20px rgba(0,0,0,.3);opacity:.95;line-height:1.2;text-align:center}
 
   /* ---------- Hero Church Name ---------- */
   .hero-name-block{display:inline-flex;flex-direction:column;align-items:center;gap:0}
@@ -1728,6 +1732,7 @@ function setLang(l){
     document.getElementById('btn-en').classList.toggle('active', l==='en');
     document.getElementById('btn-am').classList.toggle('active', l==='am');
     document.documentElement.lang = l;
+    if(window.updateCountdown) window.updateCountdown();
   }
   document.getElementById('year').textContent = new Date().getFullYear();
 (function(){
@@ -1928,6 +1933,7 @@ function setLang(l){
       }
       timeEl.textContent = next.event.timeLabel;
     }
+    window.updateCountdown = updateCountdown;
     updateCountdown();
     setInterval(updateCountdown, 60000);
   })();
